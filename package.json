@@ -4,7 +4,7 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "dev": "parcel src/index.html"
+    "start": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
     "sass": "^1.54.0"
   }
 }
