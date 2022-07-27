@@ -8,7 +8,7 @@ Using React, build the client-side for an application called myFlix based on its
 
 # Project dependencies 
 - React
--Parcel
+- Parcel
 
 # Links 
 - https://github.com/wichofly/myFlix-client.git
