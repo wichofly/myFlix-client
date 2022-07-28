@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 // MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
 import { MainView } from './components/main-view/main-view';
 
+
 // Import statement to indicate that you need to bundle
 import './index.scss';
 

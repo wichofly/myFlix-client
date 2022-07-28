@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { MovieCard } from '../movie-card/movie-card';
+
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
 // Exposing a component makes it available for use by other components, modules, and files
 export class MainView extends React.Component { 
@@ -24,8 +26,8 @@ export class MainView extends React.Component {
   
     return (
       <div className="main-view">
-        {movies.map(movie => <div key={movie._id}>{movie.Title}</div>)}
-      </div>
+      {movies.map(movie => <MovieCard key={movie._id}/>)}
+    </div>
     );
   }
 }
