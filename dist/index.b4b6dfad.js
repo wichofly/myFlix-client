@@ -27294,9 +27294,8 @@ class MainView extends (0, _reactDefault.default).Component {
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "main-view",
             children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                    movie: movie,
-                    onClick: ()=>{
-                        this.state.selectedMovie = movie;
+                    onMovieClick: (newSelectedMovie)=>{
+                        this.state.selectedMovie = newSelectedMovie;
                     }
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
@@ -27331,13 +27330,16 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends (0, _reactDefault.default).Component {
     render() {
-        const { movie  } = this.props;
+        const { movie , onMovieClick  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "movie-card",
+            onClick: ()=>{
+                onMovieClick(movie);
+            },
             children: movie.Title
         }, void 0, false, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 6,
+            lineNumber: 7,
             columnNumber: 12
         }, this);
     }
