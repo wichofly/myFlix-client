@@ -27270,11 +27270,11 @@ class MainView extends (0, _reactDefault.default).Component {
             children: movies.map((movie)=>{
                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     children: movie.Title
-                }, void 0, false, {
+                }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 28,
                     columnNumber: 20
-                }, this);
+                }, this); //
             })
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",

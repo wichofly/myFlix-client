@@ -16,21 +16,35 @@ export class MainView extends React.Component {
     }
   }
 
-  // This function is what returns the visual representation of the component, in other words, it renders what will be displayed on the screen.                                             
+  // Condensed code
   render() {
-    const movies = this.state.movies;
-    if (movies.length === 0){
-      return <div className="main-view">The list is empty!</div>;
-    } else {
-      return (
-        <div className="main-view">
-          {movies.map((movie) => {          // The map() method in the code above maps through the movies array, for each element in an array
-            return <div key={movie._id}>{movie.Title}</div>; //
-          })}
-        </div>
-      );
-    }
+    const { movies } = this.state;
+  
+    if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
+  
+    return (
+      <div className="main-view">
+        {movies.map(movie => <div key={movie._id}>{movie.Title}</div>)}
+      </div>
+    );
   }
 }
+
+  // This function is what returns the visual representation of the component, in other words, it renders what will be displayed on the screen.                                             
+//   render() {
+//     const movies = this.state.movies;
+//     if (movies.length === 0){
+//       return <div className="main-view">The list is empty!</div>;
+//     } else {
+//       return (
+//         <div className="main-view">
+//           {movies.map((movie) => {          // The map() method in the code above maps through the movies array, for each element in an array
+//             return <div key={movie._id}>{movie.Title}</div>; //
+//           })}
+//         </div>
+//       );
+//     }
+//   }
+// }
 
 // export default MainView;
