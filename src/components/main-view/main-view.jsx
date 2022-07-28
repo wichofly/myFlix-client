@@ -25,7 +25,7 @@ export class MainView extends React.Component {
       return (
         <div className="main-view">
           {movies.map((movie) => {          // The map() method in the code above maps through the movies array, for each element in an array
-            return <div>{movie.Title}</div>;
+            return <div key={movie._id}>{movie.Title}</div>; //
           })}
         </div>
       );
