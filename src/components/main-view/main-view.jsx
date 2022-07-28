@@ -2,7 +2,7 @@ import React from 'react';
 
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
 // Exposing a component makes it available for use by other components, modules, and files
-export class MainView extends React.Component {  
+export class MainView extends React.Component { 
 
   // React will use this constructor method to create the component's state.
   constructor(){ 
@@ -18,14 +18,19 @@ export class MainView extends React.Component {
 
   // This function is what returns the visual representation of the component, in other words, it renders what will be displayed on the screen.                                             
   render() {
-    return (
-      <div className="main-view">
-        <div>Inception</div>
-        <div>The Shawshank Redemption</div>
-        <div>Gladiator</div>
-      </div>
-    );
+    const movies = this.state.movies;
+    if (movies.length === 0){
+      return <div className="main-view">The list is empty!</div>;
+    } else {
+      return (
+        <div className="main-view">
+          {movies.map((movie) => {          // The map() method in the code above maps through the movies array, for each element in an array
+            return <div>{movie.Title}</div>;
+          })}
+        </div>
+      );
+    }
   }
 }
 
-// export default MainView; 
+// export default MainView;
