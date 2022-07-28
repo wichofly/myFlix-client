@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
 // Exposing a component makes it available for use by other components, modules, and files
