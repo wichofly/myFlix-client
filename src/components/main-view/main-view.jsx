@@ -4,6 +4,18 @@ import React from 'react';
 // Exposing a component makes it available for use by other components, modules, and files
 export class MainView extends React.Component {  
 
+  // React will use this constructor method to create the component's state.
+  constructor(){ 
+    super();      // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor(). 
+    this.state = {
+      movies: [
+        { _id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...'},
+        { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...'},
+        { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...'}
+      ]
+    }
+  }
+
   // This function is what returns the visual representation of the component, in other words, it renders what will be displayed on the screen.                                             
   render() {
     return (
