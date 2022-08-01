@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
 
+import { LoginView } from '../login-view/loging-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
@@ -13,12 +14,13 @@ export class MainView extends React.Component {
     super();      // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor(). 
     this.state = {
       movies: [],
-      selectedMovie: null
+      selectedMovie: null,
+      user: null
     };
   }
 
   componentDidMount(){
-    axios.get('https://wichoflix.herokuapp.com/movies')
+   /*  axios.get('https://wichoflix.herokuapp.com/movies')
       .then(response => {
         this.setState({
           movies: response.data
@@ -26,23 +28,37 @@ export class MainView extends React.Component {
       })
       .catch(error => {
         console.log(error);
-      });
+      }); */
   }
 
-  setSelectedMovie(newSelectedMovie) {
+
+  /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
+  setSelectedMovie(movie) {
     this.setState({
-      selectedMovie: newSelectedMovie
+      selectedMovie: movie
+    });
+  }
+
+  /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
+  onLoggedIn(user) {
+    this.setState({
+      user
     });
   }
 
   // Condensed code
   render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user } = this.state;
 
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+    // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <div className="main-view">
+        {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
         {selectedMovie
           ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
           : movies.map(movie => (
