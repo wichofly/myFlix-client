@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
 
 import { LoginView } from '../login-view/login-view';
+import {RegistrationView} from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
@@ -15,7 +16,8 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null
+      user: null,
+      register: null
     };
   }
 
@@ -45,12 +47,22 @@ export class MainView extends React.Component {
     });
   }
 
+  // When an user succesfully register, this function updates the user properties
+  onRegistration(registered) {
+    this.setState({
+      registered
+    });
+  }
+
   // Condensed code
   render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, selectedMovie, user, registered } = this.state;
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+     if (!registered) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
     // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
@@ -68,22 +80,5 @@ export class MainView extends React.Component {
     );
   }
 }
-
-  // This function is what returns the visual representation of the component, in other words, it renders what will be displayed on the screen.                                             
-//   render() {
-//     const movies = this.state.movies;
-//     if (movies.length === 0){
-//       return <div className="main-view">The list is empty!</div>;
-//     } else {
-//       return (
-//         <div className="main-view">
-//           {movies.map((movie) => {          // The map() method in the code above maps through the movies array, for each element in an array
-//             return <div key={movie._id}>{movie.Title}</div>; //
-//           })}
-//         </div>
-//       );
-//     }
-//   }
-// }
 
 // export default MainView;
