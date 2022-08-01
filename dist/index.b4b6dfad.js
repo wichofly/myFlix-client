@@ -5941,11 +5941,12 @@ MovieCard.propTypes = {
             Birthyear: (0, _propTypesDefault.default).string.isRequired,
             Deathyear: (0, _propTypesDefault.default).string.isRequired
         }),
-        Actors: (0, _propTypesDefault.default).string.isRequired,
+        Actors: (0, _propTypesDefault.default).array.isRequired,
         Year: (0, _propTypesDefault.default).number.isRequired,
         Score: (0, _propTypesDefault.default).number.isRequired,
         Rating: (0, _propTypesDefault.default).string.isRequired,
-        ImageURL: (0, _propTypesDefault.default).string
+        ImageURL: (0, _propTypesDefault.default).string,
+        Feature: (0, _propTypesDefault.default).bool
     }).isRequired,
     onMovieClick: (0, _propTypesDefault.default).func.isRequired
 };

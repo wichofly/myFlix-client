@@ -25,11 +25,12 @@ MovieCard.propTypes = {
       Birthyear: PropTypes.string.isRequired,
       Deathyear: PropTypes.string.isRequired
     }),
-    Actors: PropTypes.string.isRequired,
+    Actors: PropTypes.array.isRequired,
     Year: PropTypes.number.isRequired,
     Score: PropTypes.number.isRequired,
     Rating: PropTypes.string.isRequired,
     ImageURL: PropTypes.string,
+    Feature: PropTypes.bool
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired
 };
