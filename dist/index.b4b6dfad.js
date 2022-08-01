@@ -5814,7 +5814,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios"); // It will help to perform an ajax operation to call the movies from myFlix API
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _logingView = require("../login-view/loging-view");
+var _loginView = require("../login-view/login-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 class MainView extends (0, _reactDefault.default).Component {
@@ -5849,7 +5849,7 @@ class MainView extends (0, _reactDefault.default).Component {
     // Condensed code
     render() {
         const { movies , selectedMovie , user: user1  } = this.state;
-        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user1) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _logingView.LoginView), {
+        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user1) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
@@ -5898,7 +5898,7 @@ class MainView extends (0, _reactDefault.default).Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","axios":"jo6P5","../login-view/loging-view":"kjELJ"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","axios":"jo6P5","../login-view/login-view":"9YtA0"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -10314,11 +10314,11 @@ var utils = require("./../utils");
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"kjELJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$18c4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./../utils":"5By4s"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$18c4.prelude(module);
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -10347,13 +10347,13 @@ function LoginView(props) {
                         value: username,
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
-                        fileName: "src/components/login-view/loging-view.jsx",
+                        fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 19,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "src/components/login-view/loging-view.jsx",
+                fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 17,
                 columnNumber: 7
             }, this),
@@ -10365,13 +10365,13 @@ function LoginView(props) {
                         value: password,
                         onChange: (e)=>setPassword(e.target.value)
                     }, void 0, false, {
-                        fileName: "src/components/login-view/loging-view.jsx",
+                        fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 23,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "src/components/login-view/loging-view.jsx",
+                fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 21,
                 columnNumber: 7
             }, this),
@@ -10380,13 +10380,13 @@ function LoginView(props) {
                 onClick: handleSubmit,
                 children: "Submit"
             }, void 0, false, {
-                fileName: "src/components/login-view/loging-view.jsx",
+                fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 25,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
-        fileName: "src/components/login-view/loging-view.jsx",
+        fileName: "src/components/login-view/login-view.jsx",
         lineNumber: 16,
         columnNumber: 5
     }, this);
@@ -10396,7 +10396,7 @@ _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
 
-  $parcel$ReactRefreshHelpers$18c4.postlude(module);
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

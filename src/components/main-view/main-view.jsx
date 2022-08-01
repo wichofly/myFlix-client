@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
 
-import { LoginView } from '../login-view/loging-view';
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
