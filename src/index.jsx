@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 // MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
 import { MainView } from './components/main-view/main-view';
 
@@ -17,7 +18,15 @@ class MyFlixApplication extends React.Component {
 }
 
 // Finds the root of your app
-const container = document.getElementsByClassName('app-container')[0];
+// const root = document.getElementsByClassName('app-container')[0];
 
 // Tells React to render your app in the root DOM element
-ReactDOM.render(React.createElement(MyFlixApplication), container);
+// ReactDOM.render(React.createElement(MyFlixApplication), container);
+
+// Correcting warning "ReactDOM.render is no longer supported in React 18"
+const root = ReactDOM.createRoot(document.getElementsByClassName('app-container')[0]);
+root.render(
+  <React.StrictMode>
+    <MyFlixApplication />
+  </React.StrictMode>
+);
