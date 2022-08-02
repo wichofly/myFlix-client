@@ -15,6 +15,7 @@ export function LoginView(props) {
 
   return (
     <form>
+      <h2>Welcome to myFlix</h2>
       <label>
         Username:
         <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
