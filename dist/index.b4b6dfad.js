@@ -10164,52 +10164,64 @@ function LoginView(props) {
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "text-center mb-4",
+                children: "Login"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-3",
                 controlId: "formUsername",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                         children: "Username:"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 21,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "text",
-                        onChange: (e)=>setUsername(e.target.value)
+                        onChange: (e)=>setUsername(e.target.value),
+                        placeholder: "Enter your username"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-3",
                 controlId: "formPassword",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 29,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "password",
-                        onChange: (e)=>setPassword(e.target.value)
+                        onChange: (e)=>setPassword(e.target.value),
+                        placeholder: "Password"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -10219,7 +10231,7 @@ function LoginView(props) {
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 7
             }, this)
         ]
