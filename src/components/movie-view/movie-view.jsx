@@ -4,11 +4,11 @@ import {Button, Row, Col} from 'react-bootstrap';
 import "./movie-view.scss";
 
 export class MovieView extends React.Component {
-
+  // change 4
   keypressCallback(event) {
     console.log(event.key);
   }
-
+  // change 1
   componentDidMount() {
     document.addEventListener('keypress', this.keypressCallback);
   }
