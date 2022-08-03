@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap'; // It is another way to import Bootstrap compoonent
+import { Container } from 'react-bootstrap'; // It is another way to import Bootstrap component
 // import ReactDOM from 'react-dom';
 import ReactDOM from 'react-dom/client';
 // MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
