@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -78,8 +79,10 @@ export class MainView extends React.Component {
       <div className="main-view">
         {selectedMovie
           ? (
-            <Row>
+            <Row className="justify-content-md-center">
+              <Col md={8}>
               <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+              </Col>
             </Row>
           )
           : movies.map(movie => (
