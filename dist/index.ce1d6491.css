@@ -1,7 +1,11 @@
 body {
   min-height: 100vh;
-  background: #f8fafc;
+  background-color: #f5f5f5;
   display: grid;
+}
+
+#form {
+  place-items: center;
 }
 
 #form {

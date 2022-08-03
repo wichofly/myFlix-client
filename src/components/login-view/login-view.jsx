@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import "./login-view.scss";
+
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,8 +18,8 @@ export function LoginView(props) {
   };
 
   return (
-    <Form>
-      <h2 className='text-center mb-4'>Login</h2>
+    <Form id='form' className='d-grid h-100'>
+      <h2 className='text-center mt-4 mb-4'>Login</h2>
       <Form.Group className="mb-3" controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
@@ -33,9 +35,15 @@ export function LoginView(props) {
           onChange={(e) => setPassword(e.target.value)} placeholder="Password"
         />
       </Form.Group>
+
+      <Form.Group className="mb-2 d-flex justify-content-center" controlId="rememberMe">
+        <Form.Check label='Remember me' />
+      </Form.Group>
+      <div className='d-grid'>
       <Button variant="primary" type="submit" onClick={handleSubmit} >
         Submit
       </Button>
+      </div>
     </Form>
   );
 }
