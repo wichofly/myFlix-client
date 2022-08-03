@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // using Hooks
 import PropTypes from 'prop-types';
 
 export function RegistrationView(props) {
