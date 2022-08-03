@@ -5942,24 +5942,24 @@ class MovieCard extends (0, _reactDefault.default).Component {
 }
 MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
-        Title: (0, _propTypesDefault.default).string.isRequired,
-        Description: (0, _propTypesDefault.default).string.isRequired,
-        Genre: (0, _propTypesDefault.default).shape({
-            Name: (0, _propTypesDefault.default).string.isRequired,
-            Description: (0, _propTypesDefault.default).string.isRequired
+        title: (0, _propTypesDefault.default).string.isRequired,
+        description: (0, _propTypesDefault.default).string.isRequired,
+        genre: (0, _propTypesDefault.default).shape({
+            name: (0, _propTypesDefault.default).string.isRequired,
+            description: (0, _propTypesDefault.default).string.isRequired
         }),
-        Director: (0, _propTypesDefault.default).shape({
-            Name: (0, _propTypesDefault.default).string.isRequired,
-            Bio: (0, _propTypesDefault.default).string.isRequired,
-            Birthyear: (0, _propTypesDefault.default).string.isRequired,
-            Deathyear: (0, _propTypesDefault.default).string
+        director: (0, _propTypesDefault.default).shape({
+            name: (0, _propTypesDefault.default).string.isRequired,
+            bio: (0, _propTypesDefault.default).string.isRequired,
+            birthyear: (0, _propTypesDefault.default).string.isRequired,
+            deathyear: (0, _propTypesDefault.default).string
         }),
-        Actors: (0, _propTypesDefault.default).array.isRequired,
-        Year: (0, _propTypesDefault.default).number.isRequired,
-        Score: (0, _propTypesDefault.default).number.isRequired,
-        Rating: (0, _propTypesDefault.default).string.isRequired,
-        ImageURL: (0, _propTypesDefault.default).string,
-        Feature: (0, _propTypesDefault.default).bool
+        actors: (0, _propTypesDefault.default).array.isRequired,
+        year: (0, _propTypesDefault.default).number.isRequired,
+        score: (0, _propTypesDefault.default).number.isRequired,
+        rating: (0, _propTypesDefault.default).string.isRequired,
+        imageURL: (0, _propTypesDefault.default).string,
+        feature: (0, _propTypesDefault.default).bool
     }).isRequired,
     onMovieClick: (0, _propTypesDefault.default).func.isRequired
 };
