@@ -5827,6 +5827,7 @@ var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
+var _mainViewScss = require("./main-view.scss");
 class MainView extends (0, _reactDefault.default).Component {
     // React will use this constructor method to create the component's state.
     constructor(){
@@ -5870,14 +5871,14 @@ class MainView extends (0, _reactDefault.default).Component {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 65,
+            lineNumber: 67,
             columnNumber: 14
         }, this);
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!registered) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registrationView.RegistrationView), {
             onRegistration: (register)=>this.onRegistration(register)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 70,
+            lineNumber: 72,
             columnNumber: 9
         }, this);
         // Before the movies have been loaded
@@ -5885,7 +5886,7 @@ class MainView extends (0, _reactDefault.default).Component {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 76,
+            lineNumber: 78,
             columnNumber: 37
         }, this);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -5899,12 +5900,12 @@ class MainView extends (0, _reactDefault.default).Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 83,
+                    lineNumber: 85,
                     columnNumber: 15
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 82,
+                lineNumber: 84,
                 columnNumber: 13
             }, this) : movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                     md: 3,
@@ -5915,17 +5916,17 @@ class MainView extends (0, _reactDefault.default).Component {
                         }
                     }, movie._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88,
+                        lineNumber: 90,
                         columnNumber: 15
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 87,
+                    lineNumber: 89,
                     columnNumber: 13
                 }, this))
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 79,
+            lineNumber: 81,
             columnNumber: 7
         }, this);
     }
@@ -5936,7 +5937,7 @@ class MainView extends (0, _reactDefault.default).Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","../login-view/login-view":"9YtA0","../registration-view/registration-view":"3U8r7","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../login-view/login-view":"9YtA0","../registration-view/registration-view":"3U8r7","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./main-view.scss":"eBaMl"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -9146,938 +9147,39 @@ var utils = require("./../utils");
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"9YtA0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9fee.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react"); // using Hooks
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _s = $RefreshSig$();
-function LoginView(props) {
-    _s();
-    const [username, setUsername] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "text-center mb-4",
-                children: "Login"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 20,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                className: "mb-3",
-                controlId: "formUsername",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Username:"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 22,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        onChange: (e)=>setUsername(e.target.value),
-                        placeholder: "Enter your username"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 23,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 21,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                className: "mb-3",
-                controlId: "formPassword",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Password:"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 30,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "password",
-                        onChange: (e)=>setPassword(e.target.value),
-                        placeholder: "Password"
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 31,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 29,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                variant: "primary",
-                type: "submit",
-                onClick: handleSubmit,
-                children: "Submit"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 19,
-        columnNumber: 5
-    }, this);
-}
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
-_c = LoginView;
-LoginView.propTypes = {
-    user: (0, _propTypesDefault.default).shape({
-        username: (0, _propTypesDefault.default).string.isRequired,
-        password: (0, _propTypesDefault.default).string.isRequired
-    }),
-    onLoggedIn: (0, _propTypesDefault.default).func.isRequired
-};
-var _c;
-$RefreshReg$(_c, "LoginView");
-
-  $parcel$ReactRefreshHelpers$9fee.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt"}],"7wKI2":[function(require,module,exports) {
-var ReactIs = require("react-is");
-// By explicitly using `prop-types` you are opting into new development behavior.
-// http://fb.me/prop-types-in-prod
-var throwOnDirectAccess = true;
-module.exports = require("./factoryWithTypeCheckers")(ReactIs.isElement, throwOnDirectAccess);
-
-},{"react-is":"7EuwB","./factoryWithTypeCheckers":"bBUgD"}],"7EuwB":[function(require,module,exports) {
-"use strict";
-module.exports = require("./cjs/react-is.development.js");
-
-},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === "function" && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
-    function isValidElementType(type) {
-        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === "object" && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"bBUgD":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactIs = require("react-is");
-var assign = require("object-assign");
-var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
-var has = require("./lib/has");
-var checkPropTypes = require("./checkPropTypes");
-var printWarning = function() {};
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-function emptyFunctionThatReturnsNull() {
-    return null;
-}
-module.exports = function(isValidElement, throwOnDirectAccess) {
-    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
-    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
-    /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */ function getIteratorFn(maybeIterable) {
-        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-        if (typeof iteratorFn === "function") return iteratorFn;
-    }
-    /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */ var ANONYMOUS = "<<anonymous>>";
-    // Important!
-    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-    var ReactPropTypes = {
-        array: createPrimitiveTypeChecker("array"),
-        bigint: createPrimitiveTypeChecker("bigint"),
-        bool: createPrimitiveTypeChecker("boolean"),
-        func: createPrimitiveTypeChecker("function"),
-        number: createPrimitiveTypeChecker("number"),
-        object: createPrimitiveTypeChecker("object"),
-        string: createPrimitiveTypeChecker("string"),
-        symbol: createPrimitiveTypeChecker("symbol"),
-        any: createAnyTypeChecker(),
-        arrayOf: createArrayOfTypeChecker,
-        element: createElementTypeChecker(),
-        elementType: createElementTypeTypeChecker(),
-        instanceOf: createInstanceTypeChecker,
-        node: createNodeChecker(),
-        objectOf: createObjectOfTypeChecker,
-        oneOf: createEnumTypeChecker,
-        oneOfType: createUnionTypeChecker,
-        shape: createShapeTypeChecker,
-        exact: createStrictShapeTypeChecker
-    };
-    /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */ /*eslint-disable no-self-compare*/ function is(x, y) {
-        // SameValue algorithm
-        if (x === y) // Steps 1-5, 7-10
-        // Steps 6.b-6.e: +0 != -0
-        return x !== 0 || 1 / x === 1 / y;
-        else // Step 6.a: NaN == NaN
-        return x !== x && y !== y;
-    }
-    /*eslint-enable no-self-compare*/ /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */ function PropTypeError(message, data) {
-        this.message = message;
-        this.data = data && typeof data === "object" ? data : {};
-        this.stack = "";
-    }
-    // Make `instanceof Error` still work for returned errors.
-    PropTypeError.prototype = Error.prototype;
-    function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {};
-        var manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-                if (throwOnDirectAccess) {
-                    // New behavior only for users of `prop-types` package
-                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
-                    err.name = "Invariant Violation";
-                    throw err;
-                } else if (typeof console !== "undefined") {
-                    // Old behavior for people using React.PropTypes
-                    var cacheKey = componentName + ":" + propName;
-                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                    manualPropTypeWarningCount < 3) {
-                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
-                        manualPropTypeCallCache[cacheKey] = true;
-                        manualPropTypeWarningCount++;
-                    }
-                }
-            }
-            if (props[propName] == null) {
-                if (isRequired) {
-                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
-                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
-                }
-                return null;
-            } else return validate(props, propName, componentName, location, propFullName);
-        }
-        var chainedCheckType = checkType.bind(null, false);
-        chainedCheckType.isRequired = checkType.bind(null, true);
-        return chainedCheckType;
-    }
-    function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-                // `propValue` being instance of, say, date/regexp, pass the 'object'
-                // check, but we can offer a more precise error message here rather than
-                // 'of type `object`'.
-                var preciseType = getPreciseType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
-                    expectedType: expectedType
-                });
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createAnyTypeChecker() {
-        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-    }
-    function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
-            }
-            for(var i = 0; i < propValue.length; i++){
-                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createEnumTypeChecker(expectedValues) {
-        if (!Array.isArray(expectedValues)) {
-            {
-                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
-                else printWarning("Invalid argument supplied to oneOf, expected an array.");
-            }
-            return emptyFunctionThatReturnsNull;
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for(var i = 0; i < expectedValues.length; i++){
-                if (is(propValue, expectedValues[i])) return null;
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-                var type = getPreciseType(value);
-                if (type === "symbol") return String(value);
-                return value;
-            });
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
-            for(var key in propValue)if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-        if (!Array.isArray(arrayOfTypeCheckers)) {
-            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
-            return emptyFunctionThatReturnsNull;
-        }
-        for(var i1 = 0; i1 < arrayOfTypeCheckers.length; i1++){
-            var checker = arrayOfTypeCheckers[i1];
-            if (typeof checker !== "function") {
-                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i1 + ".");
-                return emptyFunctionThatReturnsNull;
-            }
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var expectedTypes = [];
-            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-                var checker = arrayOfTypeCheckers[i];
-                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-                if (checkerResult == null) return null;
-                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
-            }
-            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function invalidValidatorError(componentName, location, propFullName, key, type) {
-        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
-    }
-    function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            for(var key in shapeTypes){
-                var checker = shapeTypes[key];
-                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            // We need to check all keys in case some are required but missing from props.
-            var allKeys = assign({}, props[propName], shapeTypes);
-            for(var key in allKeys){
-                var checker = shapeTypes[key];
-                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function isNode(propValue) {
-        switch(typeof propValue){
-            case "number":
-            case "string":
-            case "undefined":
-                return true;
-            case "boolean":
-                return !propValue;
-            case "object":
-                if (Array.isArray(propValue)) return propValue.every(isNode);
-                if (propValue === null || isValidElement(propValue)) return true;
-                var iteratorFn = getIteratorFn(propValue);
-                if (iteratorFn) {
-                    var iterator = iteratorFn.call(propValue);
-                    var step;
-                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
-                        if (!isNode(step.value)) return false;
-                    }
-                    else // Iterator will provide entry [k,v] tuples rather than values.
-                    while(!(step = iterator.next()).done){
-                        var entry = step.value;
-                        if (entry) {
-                            if (!isNode(entry[1])) return false;
-                        }
-                    }
-                } else return false;
-                return true;
-            default:
-                return false;
-        }
-    }
-    function isSymbol(propType, propValue) {
-        // Native Symbol.
-        if (propType === "symbol") return true;
-        // falsy value can't be a Symbol
-        if (!propValue) return false;
-        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-        if (propValue["@@toStringTag"] === "Symbol") return true;
-        // Fallback for non-spec compliant Symbols which are polyfilled.
-        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
-        return false;
-    }
-    // Equivalent of `typeof` but with special handling for array and regexp.
-    function getPropType(propValue) {
-        var propType = typeof propValue;
-        if (Array.isArray(propValue)) return "array";
-        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return "object";
-        if (isSymbol(propType, propValue)) return "symbol";
-        return propType;
-    }
-    // This handles more types than `getPropType`. Only used for error messages.
-    // See `createPrimitiveTypeChecker`.
-    function getPreciseType(propValue) {
-        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
-        var propType = getPropType(propValue);
-        if (propType === "object") {
-            if (propValue instanceof Date) return "date";
-            else if (propValue instanceof RegExp) return "regexp";
-        }
-        return propType;
-    }
-    // Returns a string that is postfixed to a warning about an invalid type.
-    // For example, "undefined" or "of type array"
-    function getPostfixForTypeWarning(value) {
-        var type = getPreciseType(value);
-        switch(type){
-            case "array":
-            case "object":
-                return "an " + type;
-            case "boolean":
-            case "date":
-            case "regexp":
-                return "a " + type;
-            default:
-                return type;
-        }
-    }
-    // Returns class name of the object, if any.
-    function getClassName(propValue) {
-        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
-        return propValue.constructor.name;
-    }
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-};
-
-},{"react-is":"7EuwB","object-assign":"7OXxh","./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf","./checkPropTypes":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/ "use strict";
-/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-function toObject(val) {
-    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
-    return Object(val);
-}
-function shouldUseNative() {
-    try {
-        if (!Object.assign) return false;
-        // Detect buggy property enumeration order in older V8 versions.
-        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
-        test1[5] = "de";
-        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {};
-        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
-        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
-        });
-        if (order2.join("") !== "0123456789") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {};
-        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
-            test3[letter] = letter;
-        });
-        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
-        return true;
-    } catch (err) {
-        // We don't expect any of the above to throw, but better to be safe.
-        return false;
-    }
-}
-module.exports = shouldUseNative() ? Object.assign : function(target, source) {
-    var from;
-    var to = toObject(target);
-    var symbols;
-    for(var s = 1; s < arguments.length; s++){
-        from = Object(arguments[s]);
-        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
-        if (getOwnPropertySymbols) {
-            symbols = getOwnPropertySymbols(from);
-            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
-        }
-    }
-    return to;
-};
-
-},{}],"jZTZJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-module.exports = ReactPropTypesSecret;
-
-},{}],"fqKuf":[function(require,module,exports) {
-module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-
-},{}],"5VwyJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var printWarning = function() {};
-var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
-var loggedTypeFailures = {};
-var has = require("./lib/has");
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-            // This is intentionally an invariant that gets caught. It's the same
-            // behavior as without this statement except with a better message.
-            if (typeof typeSpecs[typeSpecName] !== "function") {
-                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                err.name = "Invariant Violation";
-                throw err;
-            }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-            error = ex;
-        }
-        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            // Only monitor this failure once because there tends to be a lot of the
-            // same error.
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : "";
-            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
-        }
-    }
-}
-/**
- * Resets warning cache when testing.
- *
- * @private
- */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {};
-};
-module.exports = checkPropTypes;
-
-},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"iBZ80":[function(require,module,exports) {
+},{"./../utils":"5By4s"}],"cMC39":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _react = require("react");
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formControl = require("./FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formFloating = require("./FormFloating");
-var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _formLabel = require("./FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
-var _formRange = require("./FormRange");
-var _formRangeDefault = parcelHelpers.interopDefault(_formRange);
-var _formSelect = require("./FormSelect");
-var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
-var _formText = require("./FormText");
-var _formTextDefault = parcelHelpers.interopDefault(_formText);
-var _switch = require("./Switch");
-var _switchDefault = parcelHelpers.interopDefault(_switch);
-var _floatingLabel = require("./FloatingLabel");
-var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
-const propTypes = {
-    /**
-   * The Form `ref` will be forwarded to the underlying element,
-   * which means, unless it's rendered `as` a composite component,
-   * it will be a DOM node, when resolved.
-   *
-   * @type {ReactRef}
-   * @alias ref
-   */ _ref: (0, _propTypesDefault.default).any,
-    /**
-   * Mark a form as having been validated. Setting it to `true` will
-   * toggle any validation styles on the forms elements.
-   */ validated: (0, _propTypesDefault.default).bool,
-    as: (0, _propTypesDefault.default).elementType
-};
-const Form = /*#__PURE__*/ _react.forwardRef(({ className , validated , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "form" , ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
+const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div" , ...props }, ref)=>{
+    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const sizePrefix = `${decoratedBsPrefix}-cols`;
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let cols;
+        if (propValue != null && typeof propValue === "object") ({ cols  } = propValue);
+        else cols = propValue;
+        const infix = brkPoint !== "xs" ? `-${brkPoint}` : "";
+        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, validated && "was-validated")
-    }));
-Form.displayName = "Form";
-Form.propTypes = propTypes;
-exports.default = Object.assign(Form, {
-    Group: (0, _formGroupDefault.default),
-    Control: (0, _formControlDefault.default),
-    Floating: (0, _formFloatingDefault.default),
-    Check: (0, _formCheckDefault.default),
-    Switch: (0, _switchDefault.default),
-    Label: (0, _formLabelDefault.default),
-    Text: (0, _formTextDefault.default),
-    Range: (0, _formRangeDefault.default),
-    Select: (0, _formSelectDefault.default),
-    FloatingLabel: (0, _floatingLabelDefault.default)
+        ...props,
+        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+    });
 });
+Row.displayName = "Row";
+exports.default = Row;
 
-},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jocGM":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jocGM":[function(require,module,exports) {
 /*!
   Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
@@ -10115,100 +9217,79 @@ exports.default = Object.assign(Form, {
     else window.classNames = classNames;
 })();
 
-},{}],"idkr0":[function(require,module,exports) {
+},{}],"dVixI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+parcelHelpers.export(exports, "DEFAULT_BREAKPOINTS", ()=>DEFAULT_BREAKPOINTS);
+parcelHelpers.export(exports, "useBootstrapPrefix", ()=>useBootstrapPrefix);
+parcelHelpers.export(exports, "useBootstrapBreakpoints", ()=>useBootstrapBreakpoints);
+parcelHelpers.export(exports, "useIsRTL", ()=>useIsRTL);
+parcelHelpers.export(exports, "createBootstrapComponent", ()=>createBootstrapComponent);
+parcelHelpers.export(exports, "ThemeConsumer", ()=>Consumer);
 var _react = require("react");
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formCheckInput = require("./FormCheckInput");
-var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
-var _formCheckLabel = require("./FormCheckLabel");
-var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _elementChildren = require("./ElementChildren");
 var _jsxRuntime = require("react/jsx-runtime");
-const FormCheck = /*#__PURE__*/ _react.forwardRef(({ id , bsPrefix , bsSwitchPrefix , inline =false , disabled =false , isValid =false , isInvalid =false , feedbackTooltip =false , feedback , feedbackType , className , style , title ="" , type ="checkbox" , label , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as ="input" , ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check");
-    bsSwitchPrefix = (0, _themeProvider.useBootstrapPrefix)(bsSwitchPrefix, "form-switch");
-    const { controlId  } = (0, _react.useContext)((0, _formContextDefault.default));
-    const innerFormContext = (0, _react.useMemo)(()=>({
-            controlId: id || controlId
+const DEFAULT_BREAKPOINTS = [
+    "xxl",
+    "xl",
+    "lg",
+    "md",
+    "sm",
+    "xs"
+];
+const ThemeContext = /*#__PURE__*/ _react.createContext({
+    prefixes: {},
+    breakpoints: DEFAULT_BREAKPOINTS
+});
+const { Consumer , Provider  } = ThemeContext;
+function ThemeProvider({ prefixes ={} , breakpoints =DEFAULT_BREAKPOINTS , dir , children  }) {
+    const contextValue = (0, _react.useMemo)(()=>({
+            prefixes: {
+                ...prefixes
+            },
+            breakpoints,
+            dir
         }), [
-        controlId,
-        id
+        prefixes,
+        breakpoints,
+        dir
     ]);
-    const hasLabel = !children && label != null && label !== false || (0, _elementChildren.hasChildOfType)(children, (0, _formCheckLabelDefault.default));
-    const input = /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckInputDefault.default), {
-        ...props,
-        type: type === "switch" ? "checkbox" : type,
-        ref: ref,
-        isValid: isValid,
-        isInvalid: isInvalid,
-        disabled: disabled,
-        as: as
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Provider, {
+        value: contextValue,
+        children: children
     });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
-        value: innerFormContext,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-            style: style,
-            className: (0, _classnamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, type === "switch" && bsSwitchPrefix),
-            children: children || /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
-                children: [
-                    input,
-                    hasLabel && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckLabelDefault.default), {
-                        title: title,
-                        children: label
-                    }),
-                    feedback && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _feedbackDefault.default), {
-                        type: feedbackType,
-                        tooltip: feedbackTooltip,
-                        children: feedback
-                    })
-                ]
-            })
-        })
+}
+function useBootstrapPrefix(prefix, defaultPrefix) {
+    const { prefixes  } = (0, _react.useContext)(ThemeContext);
+    return prefix || prefixes[defaultPrefix] || defaultPrefix;
+}
+function useBootstrapBreakpoints() {
+    const { breakpoints  } = (0, _react.useContext)(ThemeContext);
+    return breakpoints;
+}
+function useIsRTL() {
+    const { dir  } = (0, _react.useContext)(ThemeContext);
+    return dir === "rtl";
+}
+function createBootstrapComponent(Component, opts) {
+    if (typeof opts === "string") opts = {
+        prefix: opts
+    };
+    const isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
+    const { prefix , forwardRefAs =isClassy ? "ref" : "innerRef"  } = opts;
+    const Wrapped = /*#__PURE__*/ _react.forwardRef(({ ...props }, ref)=>{
+        props[forwardRefAs] = ref;
+        const bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            ...props,
+            bsPrefix: bsPrefix
+        });
     });
-});
-FormCheck.displayName = "FormCheck";
-exports.default = Object.assign(FormCheck, {
-    Input: (0, _formCheckInputDefault.default),
-    Label: (0, _formCheckLabelDefault.default)
-});
+    Wrapped.displayName = `Bootstrap(${Component.displayName || Component.name})`;
+    return Wrapped;
+}
+exports.default = ThemeProvider;
 
-},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aWeg2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _jsxRuntime = require("react/jsx-runtime");
-const propTypes = {
-    /**
-   * Specify whether the feedback is for valid or invalid fields
-   *
-   * @type {('valid'|'invalid')}
-   */ type: (0, _propTypesDefault.default).string,
-    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
-    as: (0, _propTypesDefault.default).elementType
-};
-const Feedback = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div" , className , type ="valid" , tooltip =false , ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
-    }));
-Feedback.displayName = "Feedback";
-Feedback.propTypes = propTypes;
-exports.default = Feedback;
-
-},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-runtime.development.js");
 
@@ -11053,7 +10134,1106 @@ module.exports = require("./cjs/react-jsx-runtime.development.js");
     exports.jsxs = jsxs;
 })();
 
-},{"react":"21dqq"}],"dPzD9":[function(require,module,exports) {
+},{"react":"21dqq"}],"2L2I6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCol", ()=>useCol);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function useCol({ as , bsPrefix , className , ...props }) {
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const spans = [];
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let span;
+        let offset;
+        let order;
+        if (typeof propValue === "object" && propValue != null) ({ span , offset , order  } = propValue);
+        else span = propValue;
+        const infix = brkPoint !== "xs" ? `-${brkPoint}` : "";
+        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
+        if (order != null) classes.push(`order${infix}-${order}`);
+        if (offset != null) classes.push(`offset${infix}-${offset}`);
+    });
+    return [
+        {
+            ...props,
+            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
+        },
+        {
+            as,
+            bsPrefix,
+            spans
+        }
+    ];
+}
+const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const [{ className , ...colProps }, { as: Component = "div" , bsPrefix , spans  }] = useCol(props);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...colProps,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
+    });
+});
+Col.displayName = "Col";
+exports.default = Col;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react"); // using Hooks
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _loginViewScss = require("./login-view.scss");
+var _s = $RefreshSig$();
+function LoginView(props) {
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log(username, password);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+        id: "form",
+        className: "d-grid h-100",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "text-center mt-4 mb-4",
+                children: "Login"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 22,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-3",
+                controlId: "formUsername",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Username:"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        onChange: (e)=>setUsername(e.target.value),
+                        placeholder: "Enter your username"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 23,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-3",
+                controlId: "formPassword",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Password:"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "password",
+                        onChange: (e)=>setPassword(e.target.value),
+                        placeholder: "Password"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 33,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 31,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                className: "mb-2 d-flex justify-content-center",
+                controlId: "rememberMe",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Check, {
+                    label: "Remember me"
+                }, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 39,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "d-grid",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                    variant: "primary",
+                    type: "submit",
+                    onClick: handleSubmit,
+                    children: "Submit"
+                }, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 43,
+                    columnNumber: 7
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 42,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 21,
+        columnNumber: 5
+    }, this);
+}
+_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_c = LoginView;
+LoginView.propTypes = {
+    user: (0, _propTypesDefault.default).shape({
+        username: (0, _propTypesDefault.default).string.isRequired,
+        password: (0, _propTypesDefault.default).string.isRequired
+    }),
+    onLoggedIn: (0, _propTypesDefault.default).func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","./login-view.scss":"e57ax","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7wKI2":[function(require,module,exports) {
+var ReactIs = require("react-is");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("./factoryWithTypeCheckers")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"react-is":"7EuwB","./factoryWithTypeCheckers":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("./cjs/react-is.development.js");
+
+},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("react-is");
+var assign = require("object-assign");
+var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
+var has = require("./lib/has");
+var checkPropTypes = require("./checkPropTypes");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i1 = 0; i1 < arrayOfTypeCheckers.length; i1++){
+            var checker = arrayOfTypeCheckers[i1];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i1 + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"react-is":"7EuwB","object-assign":"7OXxh","./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf","./checkPropTypes":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
+        }
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
+var loggedTypeFailures = {};
+var has = require("./lib/has");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"iBZ80":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _formControl = require("./FormControl");
+var _formControlDefault = parcelHelpers.interopDefault(_formControl);
+var _formFloating = require("./FormFloating");
+var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _formLabel = require("./FormLabel");
+var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
+var _formRange = require("./FormRange");
+var _formRangeDefault = parcelHelpers.interopDefault(_formRange);
+var _formSelect = require("./FormSelect");
+var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
+var _formText = require("./FormText");
+var _formTextDefault = parcelHelpers.interopDefault(_formText);
+var _switch = require("./Switch");
+var _switchDefault = parcelHelpers.interopDefault(_switch);
+var _floatingLabel = require("./FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _jsxRuntime = require("react/jsx-runtime");
+const propTypes = {
+    /**
+   * The Form `ref` will be forwarded to the underlying element,
+   * which means, unless it's rendered `as` a composite component,
+   * it will be a DOM node, when resolved.
+   *
+   * @type {ReactRef}
+   * @alias ref
+   */ _ref: (0, _propTypesDefault.default).any,
+    /**
+   * Mark a form as having been validated. Setting it to `true` will
+   * toggle any validation styles on the forms elements.
+   */ validated: (0, _propTypesDefault.default).bool,
+    as: (0, _propTypesDefault.default).elementType
+};
+const Form = /*#__PURE__*/ _react.forwardRef(({ className , validated , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "form" , ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, validated && "was-validated")
+    }));
+Form.displayName = "Form";
+Form.propTypes = propTypes;
+exports.default = Object.assign(Form, {
+    Group: (0, _formGroupDefault.default),
+    Control: (0, _formControlDefault.default),
+    Floating: (0, _formFloatingDefault.default),
+    Check: (0, _formCheckDefault.default),
+    Switch: (0, _switchDefault.default),
+    Label: (0, _formLabelDefault.default),
+    Text: (0, _formTextDefault.default),
+    Range: (0, _formRangeDefault.default),
+    Select: (0, _formSelectDefault.default),
+    FloatingLabel: (0, _floatingLabelDefault.default)
+});
+
+},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"idkr0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formCheckInput = require("./FormCheckInput");
+var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
+var _formCheckLabel = require("./FormCheckLabel");
+var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _elementChildren = require("./ElementChildren");
+var _jsxRuntime = require("react/jsx-runtime");
+const FormCheck = /*#__PURE__*/ _react.forwardRef(({ id , bsPrefix , bsSwitchPrefix , inline =false , disabled =false , isValid =false , isInvalid =false , feedbackTooltip =false , feedback , feedbackType , className , style , title ="" , type ="checkbox" , label , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as ="input" , ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-check");
+    bsSwitchPrefix = (0, _themeProvider.useBootstrapPrefix)(bsSwitchPrefix, "form-switch");
+    const { controlId  } = (0, _react.useContext)((0, _formContextDefault.default));
+    const innerFormContext = (0, _react.useMemo)(()=>({
+            controlId: id || controlId
+        }), [
+        controlId,
+        id
+    ]);
+    const hasLabel = !children && label != null && label !== false || (0, _elementChildren.hasChildOfType)(children, (0, _formCheckLabelDefault.default));
+    const input = /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckInputDefault.default), {
+        ...props,
+        type: type === "switch" ? "checkbox" : type,
+        ref: ref,
+        isValid: isValid,
+        isInvalid: isInvalid,
+        disabled: disabled,
+        as: as
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formContextDefault.default).Provider, {
+        value: innerFormContext,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+            style: style,
+            className: (0, _classnamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, type === "switch" && bsSwitchPrefix),
+            children: children || /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
+                children: [
+                    input,
+                    hasLabel && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _formCheckLabelDefault.default), {
+                        title: title,
+                        children: label
+                    }),
+                    feedback && /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _feedbackDefault.default), {
+                        type: feedbackType,
+                        tooltip: feedbackTooltip,
+                        children: feedback
+                    })
+                ]
+            })
+        })
+    });
+});
+FormCheck.displayName = "FormCheck";
+exports.default = Object.assign(FormCheck, {
+    Input: (0, _formCheckInputDefault.default),
+    Label: (0, _formCheckLabelDefault.default)
+});
+
+},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aWeg2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _jsxRuntime = require("react/jsx-runtime");
+const propTypes = {
+    /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */ type: (0, _propTypesDefault.default).string,
+    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
+    as: (0, _propTypesDefault.default).elementType
+};
+const Feedback = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div" , className , type ="valid" , tooltip =false , ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...props,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
+    }));
+Feedback.displayName = "Feedback";
+Feedback.propTypes = propTypes;
+exports.default = Feedback;
+
+},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dPzD9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -11085,79 +11265,7 @@ var _react = require("react"); // TODO
 const FormContext = /*#__PURE__*/ _react.createContext({});
 exports.default = FormContext;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dVixI":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "DEFAULT_BREAKPOINTS", ()=>DEFAULT_BREAKPOINTS);
-parcelHelpers.export(exports, "useBootstrapPrefix", ()=>useBootstrapPrefix);
-parcelHelpers.export(exports, "useBootstrapBreakpoints", ()=>useBootstrapBreakpoints);
-parcelHelpers.export(exports, "useIsRTL", ()=>useIsRTL);
-parcelHelpers.export(exports, "createBootstrapComponent", ()=>createBootstrapComponent);
-parcelHelpers.export(exports, "ThemeConsumer", ()=>Consumer);
-var _react = require("react");
-var _jsxRuntime = require("react/jsx-runtime");
-const DEFAULT_BREAKPOINTS = [
-    "xxl",
-    "xl",
-    "lg",
-    "md",
-    "sm",
-    "xs"
-];
-const ThemeContext = /*#__PURE__*/ _react.createContext({
-    prefixes: {},
-    breakpoints: DEFAULT_BREAKPOINTS
-});
-const { Consumer , Provider  } = ThemeContext;
-function ThemeProvider({ prefixes ={} , breakpoints =DEFAULT_BREAKPOINTS , dir , children  }) {
-    const contextValue = (0, _react.useMemo)(()=>({
-            prefixes: {
-                ...prefixes
-            },
-            breakpoints,
-            dir
-        }), [
-        prefixes,
-        breakpoints,
-        dir
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Provider, {
-        value: contextValue,
-        children: children
-    });
-}
-function useBootstrapPrefix(prefix, defaultPrefix) {
-    const { prefixes  } = (0, _react.useContext)(ThemeContext);
-    return prefix || prefixes[defaultPrefix] || defaultPrefix;
-}
-function useBootstrapBreakpoints() {
-    const { breakpoints  } = (0, _react.useContext)(ThemeContext);
-    return breakpoints;
-}
-function useIsRTL() {
-    const { dir  } = (0, _react.useContext)(ThemeContext);
-    return dir === "rtl";
-}
-function createBootstrapComponent(Component, opts) {
-    if (typeof opts === "string") opts = {
-        prefix: opts
-    };
-    const isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
-    const { prefix , forwardRefAs =isClassy ? "ref" : "innerRef"  } = opts;
-    const Wrapped = /*#__PURE__*/ _react.forwardRef(({ ...props }, ref)=>{
-        props[forwardRefAs] = ref;
-        const bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
-        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            ...props,
-            bsPrefix: bsPrefix
-        });
-    });
-    Wrapped.displayName = `Bootstrap(${Component.displayName || Component.name})`;
-    return Wrapped;
-}
-exports.default = ThemeProvider;
-
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fGhS2":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fGhS2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -11416,57 +11524,7 @@ FormLabel.displayName = "FormLabel";
 FormLabel.defaultProps = defaultProps;
 exports.default = FormLabel;
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2L2I6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCol", ()=>useCol);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-function useCol({ as , bsPrefix , className , ...props }) {
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const spans = [];
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let span;
-        let offset;
-        let order;
-        if (typeof propValue === "object" && propValue != null) ({ span , offset , order  } = propValue);
-        else span = propValue;
-        const infix = brkPoint !== "xs" ? `-${brkPoint}` : "";
-        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-        if (order != null) classes.push(`order${infix}-${order}`);
-        if (offset != null) classes.push(`offset${infix}-${offset}`);
-    });
-    return [
-        {
-            ...props,
-            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
-        },
-        {
-            as,
-            bsPrefix,
-            spans
-        }
-    ];
-}
-const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const [{ className , ...colProps }, { as: Component = "div" , bsPrefix , spans  }] = useCol(props);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...colProps,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
-    });
-});
-Col.displayName = "Col";
-exports.default = Col;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zsCO":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zsCO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -11717,6 +11775,10 @@ var _react = require("react"); // using Hooks
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _registrationViewScss = require("./registration-view.scss");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
@@ -11726,96 +11788,149 @@ function RegistrationView(props) {
     const [birthday, setBirthday] = (0, _react.useState)("");
     const handleSubmit = (e)=>{
         e.preventDefault();
+        // axios.post('https://wichoflix.herokuapp.com/users', {
+        //  username: username,
+        //  password: password,
+        //  emial: email,
+        //  birthday: birthday
+        // })
+        // .then(response => {
+        //   const data = response.data;
+        //   console.log(data);
+        //   window.open('/', '_self');
+        //   // The second argument '_sel' is necessary so that
+        //   // the page will open in the current tab
+        // })
+        // .catch(e => {
+        //   console.log('error registering the user');
+        //   alert('Something wasn\'t entered correctly')
+        // })
         console.log(username, password, email, birthday);
         props.onRegistration(username);
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                className: "mb-3",
                 children: [
-                    "Username:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                        children: "Username:"
+                    }, void 0, false, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 48,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                         type: "text",
                         value: username,
-                        onChange: (e)=>setUsername(e.target.value)
+                        onChange: (e)=>setUsername(e.target.value),
+                        required: true,
+                        placeholder: "Enter a username"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 20,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 18,
+                lineNumber: 47,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                className: "mb-3",
                 children: [
-                    "Password:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                        children: "Password:"
+                    }, void 0, false, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 59,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                         type: "password",
                         value: password,
-                        onChange: (e)=>setPassword(e.target.value)
+                        onChange: (e)=>setPassword(e.target.value),
+                        required: true,
+                        minLength: "8",
+                        placeholder: "at least 8 characters"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 28,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 26,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                className: "mb-3",
                 children: [
-                    "Email:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                        children: "Email:"
+                    }, void 0, false, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 71,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                         type: "email",
                         value: email,
-                        onChange: (e)=>setEmail(e.target.value)
+                        onChange: (e)=>setEmail(e.target.value),
+                        required: true,
+                        placeholder: "Email"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 34,
+                lineNumber: 70,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                className: "mb-2",
                 children: [
-                    "Birthday:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {
+                        children: "Birthday:"
+                    }, void 0, false, {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 82,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                         type: "date",
                         value: birthday,
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 44,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 42,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                variant: "primary",
                 type: "submit",
                 onClick: handleSubmit,
                 children: "Register"
             }, void 0, false, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 50,
+                lineNumber: 89,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 17,
+        lineNumber: 46,
         columnNumber: 5
     }, this);
 }
@@ -11832,671 +11947,1535 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bwuIu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$67b2.prelude(module);
-
-try {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap":"3AD9A","./registration-view.scss":"clIxH","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _button = require("react-bootstrap/Button");
+parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
+parcelHelpers.export(exports, "AccordionContext", ()=>(0, _accordionContextDefault.default));
+parcelHelpers.export(exports, "AccordionCollapse", ()=>(0, _accordionCollapseDefault.default));
+parcelHelpers.export(exports, "AccordionButton", ()=>(0, _accordionButtonDefault.default));
+parcelHelpers.export(exports, "useAccordionButton", ()=>(0, _accordionButton.useAccordionButton));
+parcelHelpers.export(exports, "Alert", ()=>(0, _alertDefault.default));
+parcelHelpers.export(exports, "Anchor", ()=>(0, _anchorDefault.default));
+parcelHelpers.export(exports, "Badge", ()=>(0, _badgeDefault.default));
+parcelHelpers.export(exports, "Breadcrumb", ()=>(0, _breadcrumbDefault.default));
+parcelHelpers.export(exports, "BreadcrumbItem", ()=>(0, _breadcrumbItemDefault.default));
+parcelHelpers.export(exports, "Button", ()=>(0, _buttonDefault.default));
+parcelHelpers.export(exports, "ButtonGroup", ()=>(0, _buttonGroupDefault.default));
+parcelHelpers.export(exports, "ButtonToolbar", ()=>(0, _buttonToolbarDefault.default));
+parcelHelpers.export(exports, "Card", ()=>(0, _cardDefault.default));
+parcelHelpers.export(exports, "CardImg", ()=>(0, _cardImgDefault.default));
+parcelHelpers.export(exports, "CardGroup", ()=>(0, _cardGroupDefault.default));
+parcelHelpers.export(exports, "Carousel", ()=>(0, _carouselDefault.default));
+parcelHelpers.export(exports, "CarouselItem", ()=>(0, _carouselItemDefault.default));
+parcelHelpers.export(exports, "CloseButton", ()=>(0, _closeButtonDefault.default));
+parcelHelpers.export(exports, "Col", ()=>(0, _colDefault.default));
+parcelHelpers.export(exports, "Collapse", ()=>(0, _collapseDefault.default));
+parcelHelpers.export(exports, "Dropdown", ()=>(0, _dropdownDefault.default));
+parcelHelpers.export(exports, "DropdownButton", ()=>(0, _dropdownButtonDefault.default));
+parcelHelpers.export(exports, "Fade", ()=>(0, _fadeDefault.default));
+parcelHelpers.export(exports, "Form", ()=>(0, _formDefault.default));
+parcelHelpers.export(exports, "FormControl", ()=>(0, _formControlDefault.default));
+parcelHelpers.export(exports, "FormCheck", ()=>(0, _formCheckDefault.default));
+parcelHelpers.export(exports, "FormFloating", ()=>(0, _formFloatingDefault.default));
+parcelHelpers.export(exports, "FloatingLabel", ()=>(0, _floatingLabelDefault.default));
+parcelHelpers.export(exports, "FormGroup", ()=>(0, _formGroupDefault.default));
+parcelHelpers.export(exports, "FormLabel", ()=>(0, _formLabelDefault.default));
+parcelHelpers.export(exports, "FormText", ()=>(0, _formTextDefault.default));
+parcelHelpers.export(exports, "FormSelect", ()=>(0, _formSelectDefault.default));
+parcelHelpers.export(exports, "Container", ()=>(0, _containerDefault.default));
+parcelHelpers.export(exports, "Image", ()=>(0, _imageDefault.default));
+parcelHelpers.export(exports, "Figure", ()=>(0, _figureDefault.default));
+parcelHelpers.export(exports, "InputGroup", ()=>(0, _inputGroupDefault.default));
+parcelHelpers.export(exports, "ListGroup", ()=>(0, _listGroupDefault.default));
+parcelHelpers.export(exports, "ListGroupItem", ()=>(0, _listGroupItemDefault.default));
+parcelHelpers.export(exports, "Modal", ()=>(0, _modalDefault.default));
+parcelHelpers.export(exports, "ModalBody", ()=>(0, _modalBodyDefault.default));
+parcelHelpers.export(exports, "ModalDialog", ()=>(0, _modalDialogDefault.default));
+parcelHelpers.export(exports, "ModalHeader", ()=>(0, _modalHeaderDefault.default));
+parcelHelpers.export(exports, "ModalFooter", ()=>(0, _modalFooterDefault.default));
+parcelHelpers.export(exports, "ModalTitle", ()=>(0, _modalTitleDefault.default));
+parcelHelpers.export(exports, "Nav", ()=>(0, _navDefault.default));
+parcelHelpers.export(exports, "Navbar", ()=>(0, _navbarDefault.default));
+parcelHelpers.export(exports, "NavbarBrand", ()=>(0, _navbarBrandDefault.default));
+parcelHelpers.export(exports, "NavDropdown", ()=>(0, _navDropdownDefault.default));
+parcelHelpers.export(exports, "NavItem", ()=>(0, _navItemDefault.default));
+parcelHelpers.export(exports, "NavLink", ()=>(0, _navLinkDefault.default));
+parcelHelpers.export(exports, "Offcanvas", ()=>(0, _offcanvasDefault.default));
+parcelHelpers.export(exports, "OffcanvasHeader", ()=>(0, _offcanvasHeaderDefault.default));
+parcelHelpers.export(exports, "OffcanvasTitle", ()=>(0, _offcanvasTitleDefault.default));
+parcelHelpers.export(exports, "OffcanvasBody", ()=>(0, _offcanvasBodyDefault.default));
+parcelHelpers.export(exports, "Overlay", ()=>(0, _overlayDefault.default));
+parcelHelpers.export(exports, "OverlayTrigger", ()=>(0, _overlayTriggerDefault.default));
+parcelHelpers.export(exports, "PageItem", ()=>(0, _pageItemDefault.default));
+parcelHelpers.export(exports, "Pagination", ()=>(0, _paginationDefault.default));
+parcelHelpers.export(exports, "Placeholder", ()=>(0, _placeholderDefault.default));
+parcelHelpers.export(exports, "PlaceholderButton", ()=>(0, _placeholderButtonDefault.default));
+parcelHelpers.export(exports, "Popover", ()=>(0, _popoverDefault.default));
+parcelHelpers.export(exports, "PopoverHeader", ()=>(0, _popoverHeaderDefault.default));
+parcelHelpers.export(exports, "PopoverBody", ()=>(0, _popoverBodyDefault.default));
+parcelHelpers.export(exports, "ProgressBar", ()=>(0, _progressBarDefault.default));
+parcelHelpers.export(exports, "Ratio", ()=>(0, _ratioDefault.default));
+parcelHelpers.export(exports, "Row", ()=>(0, _rowDefault.default));
+parcelHelpers.export(exports, "Spinner", ()=>(0, _spinnerDefault.default));
+parcelHelpers.export(exports, "SplitButton", ()=>(0, _splitButtonDefault.default));
+parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssrproviderDefault.default));
+parcelHelpers.export(exports, "Stack", ()=>(0, _stackDefault.default));
+parcelHelpers.export(exports, "Tab", ()=>(0, _tabDefault.default));
+parcelHelpers.export(exports, "TabContainer", ()=>(0, _tabContainerDefault.default));
+parcelHelpers.export(exports, "TabContent", ()=>(0, _tabContentDefault.default));
+parcelHelpers.export(exports, "Table", ()=>(0, _tableDefault.default));
+parcelHelpers.export(exports, "TabPane", ()=>(0, _tabPaneDefault.default));
+parcelHelpers.export(exports, "Tabs", ()=>(0, _tabsDefault.default));
+parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
+parcelHelpers.export(exports, "Toast", ()=>(0, _toastDefault.default));
+parcelHelpers.export(exports, "ToastBody", ()=>(0, _toastBodyDefault.default));
+parcelHelpers.export(exports, "ToastHeader", ()=>(0, _toastHeaderDefault.default));
+parcelHelpers.export(exports, "ToastContainer", ()=>(0, _toastContainerDefault.default));
+parcelHelpers.export(exports, "ToggleButton", ()=>(0, _toggleButtonDefault.default));
+parcelHelpers.export(exports, "ToggleButtonGroup", ()=>(0, _toggleButtonGroupDefault.default));
+parcelHelpers.export(exports, "Tooltip", ()=>(0, _tooltipDefault.default));
+var _accordion = require("./Accordion");
+var _accordionDefault = parcelHelpers.interopDefault(_accordion);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _alert = require("./Alert");
+var _alertDefault = parcelHelpers.interopDefault(_alert);
+var _anchor = require("./Anchor");
+var _anchorDefault = parcelHelpers.interopDefault(_anchor);
+var _badge = require("./Badge");
+var _badgeDefault = parcelHelpers.interopDefault(_badge);
+var _breadcrumb = require("./Breadcrumb");
+var _breadcrumbDefault = parcelHelpers.interopDefault(_breadcrumb);
+var _breadcrumbItem = require("./BreadcrumbItem");
+var _breadcrumbItemDefault = parcelHelpers.interopDefault(_breadcrumbItem);
+var _button = require("./Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _card = require("react-bootstrap/Card");
+var _buttonGroup = require("./ButtonGroup");
+var _buttonGroupDefault = parcelHelpers.interopDefault(_buttonGroup);
+var _buttonToolbar = require("./ButtonToolbar");
+var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
+var _card = require("./Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-class MovieCard extends (0, _reactDefault.default).Component {
-    render() {
-        const { movie , onMovieClick  } = this.props;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
-                    variant: "top",
-                    src: movie.imageURL
-                }, void 0, false, {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 12,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
-                            children: movie.title
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 14,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
-                            children: movie.description
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 15,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            onClick: ()=>onMovieClick(movie),
-                            variant: "link",
-                            children: "Open"
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 16,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 13,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 11,
-            columnNumber: 7
-        }, this);
-    }
-}
-MovieCard.propTypes = {
-    movie: (0, _propTypesDefault.default).shape({
-        title: (0, _propTypesDefault.default).string.isRequired,
-        description: (0, _propTypesDefault.default).string.isRequired,
-        genre: (0, _propTypesDefault.default).shape({
-            name: (0, _propTypesDefault.default).string.isRequired,
-            description: (0, _propTypesDefault.default).string.isRequired
-        }),
-        director: (0, _propTypesDefault.default).shape({
-            name: (0, _propTypesDefault.default).string.isRequired,
-            bio: (0, _propTypesDefault.default).string.isRequired,
-            birthyear: (0, _propTypesDefault.default).string.isRequired,
-            deathyear: (0, _propTypesDefault.default).string
-        }),
-        actors: (0, _propTypesDefault.default).array.isRequired,
-        year: (0, _propTypesDefault.default).number.isRequired,
-        score: (0, _propTypesDefault.default).number.isRequired,
-        rating: (0, _propTypesDefault.default).string.isRequired,
-        imageURL: (0, _propTypesDefault.default).string,
-        feature: (0, _propTypesDefault.default).bool
-    }).isRequired,
-    onMovieClick: (0, _propTypesDefault.default).func.isRequired
-};
-
-  $parcel$ReactRefreshHelpers$67b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp"}],"lAynp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _createWithBsPrefix = require("./createWithBsPrefix");
-var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-var _divWithClassName = require("./divWithClassName");
-var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
 var _cardImg = require("./CardImg");
 var _cardImgDefault = parcelHelpers.interopDefault(_cardImg);
-var _cardHeader = require("./CardHeader");
-var _cardHeaderDefault = parcelHelpers.interopDefault(_cardHeader);
-var _jsxRuntime = require("react/jsx-runtime");
-const DivStyledAsH5 = (0, _divWithClassNameDefault.default)("h5");
-const DivStyledAsH6 = (0, _divWithClassNameDefault.default)("h6");
-const CardBody = (0, _createWithBsPrefixDefault.default)("card-body");
-const CardTitle = (0, _createWithBsPrefixDefault.default)("card-title", {
-    Component: DivStyledAsH5
-});
-const CardSubtitle = (0, _createWithBsPrefixDefault.default)("card-subtitle", {
-    Component: DivStyledAsH6
-});
-const CardLink = (0, _createWithBsPrefixDefault.default)("card-link", {
-    Component: "a"
-});
-const CardText = (0, _createWithBsPrefixDefault.default)("card-text", {
-    Component: "p"
-});
-const CardFooter = (0, _createWithBsPrefixDefault.default)("card-footer");
-const CardImgOverlay = (0, _createWithBsPrefixDefault.default)("card-img-overlay");
-const defaultProps = {
-    body: false
-};
-const Card = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , bg , text , border , body , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div" , ...props }, ref)=>{
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        ...props,
-        className: (0, _classnamesDefault.default)(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
-        children: body ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(CardBody, {
-            children: children
-        }) : children
-    });
-});
-Card.displayName = "Card";
-Card.defaultProps = defaultProps;
-exports.default = Object.assign(Card, {
-    Img: (0, _cardImgDefault.default),
-    Title: CardTitle,
-    Subtitle: CardSubtitle,
-    Body: CardBody,
-    Link: CardLink,
-    Text: CardText,
-    Header: (0, _cardHeaderDefault.default),
-    Footer: CardFooter,
-    ImgOverlay: CardImgOverlay
-});
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","./CardImg":"1reTi","./CardHeader":"dXnnx","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eDg7t":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _jsxRuntime = require("react/jsx-runtime");
-exports.default = (className)=>/*#__PURE__*/ _react.forwardRef((p, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-            ...p,
-            ref: ref,
-            className: (0, _classnamesDefault.default)(p.className, className)
-        }));
-
-},{"react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1reTi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
+var _cardGroup = require("./CardGroup");
+var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
+var _carousel = require("./Carousel");
+var _carouselDefault = parcelHelpers.interopDefault(_carousel);
+var _carouselItem = require("./CarouselItem");
+var _carouselItemDefault = parcelHelpers.interopDefault(_carouselItem);
+var _closeButton = require("./CloseButton");
+var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
+var _col = require("./Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _dropdown = require("./Dropdown");
+var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
+var _dropdownButton = require("./DropdownButton");
+var _dropdownButtonDefault = parcelHelpers.interopDefault(_dropdownButton);
+var _fade = require("./Fade");
+var _fadeDefault = parcelHelpers.interopDefault(_fade);
+var _form = require("./Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _formControl = require("./FormControl");
+var _formControlDefault = parcelHelpers.interopDefault(_formControl);
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _formFloating = require("./FormFloating");
+var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
+var _floatingLabel = require("./FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _formLabel = require("./FormLabel");
+var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
+var _formText = require("./FormText");
+var _formTextDefault = parcelHelpers.interopDefault(_formText);
+var _formSelect = require("./FormSelect");
+var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
+var _container = require("./Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _image = require("./Image");
+var _imageDefault = parcelHelpers.interopDefault(_image);
+var _figure = require("./Figure");
+var _figureDefault = parcelHelpers.interopDefault(_figure);
+var _inputGroup = require("./InputGroup");
+var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
+var _listGroup = require("./ListGroup");
+var _listGroupDefault = parcelHelpers.interopDefault(_listGroup);
+var _listGroupItem = require("./ListGroupItem");
+var _listGroupItemDefault = parcelHelpers.interopDefault(_listGroupItem);
+var _modal = require("./Modal");
+var _modalDefault = parcelHelpers.interopDefault(_modal);
+var _modalBody = require("./ModalBody");
+var _modalBodyDefault = parcelHelpers.interopDefault(_modalBody);
+var _modalDialog = require("./ModalDialog");
+var _modalDialogDefault = parcelHelpers.interopDefault(_modalDialog);
+var _modalHeader = require("./ModalHeader");
+var _modalHeaderDefault = parcelHelpers.interopDefault(_modalHeader);
+var _modalFooter = require("./ModalFooter");
+var _modalFooterDefault = parcelHelpers.interopDefault(_modalFooter);
+var _modalTitle = require("./ModalTitle");
+var _modalTitleDefault = parcelHelpers.interopDefault(_modalTitle);
+var _nav = require("./Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _navbar = require("./Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _navbarBrand = require("./NavbarBrand");
+var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
+var _navDropdown = require("./NavDropdown");
+var _navDropdownDefault = parcelHelpers.interopDefault(_navDropdown);
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _navLink = require("./NavLink");
+var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
+var _offcanvas = require("./Offcanvas");
+var _offcanvasDefault = parcelHelpers.interopDefault(_offcanvas);
+var _offcanvasHeader = require("./OffcanvasHeader");
+var _offcanvasHeaderDefault = parcelHelpers.interopDefault(_offcanvasHeader);
+var _offcanvasTitle = require("./OffcanvasTitle");
+var _offcanvasTitleDefault = parcelHelpers.interopDefault(_offcanvasTitle);
+var _offcanvasBody = require("./OffcanvasBody");
+var _offcanvasBodyDefault = parcelHelpers.interopDefault(_offcanvasBody);
+var _overlay = require("./Overlay");
+var _overlayDefault = parcelHelpers.interopDefault(_overlay);
+var _overlayTrigger = require("./OverlayTrigger");
+var _overlayTriggerDefault = parcelHelpers.interopDefault(_overlayTrigger);
+var _pageItem = require("./PageItem");
+var _pageItemDefault = parcelHelpers.interopDefault(_pageItem);
+var _pagination = require("./Pagination");
+var _paginationDefault = parcelHelpers.interopDefault(_pagination);
+var _placeholder = require("./Placeholder");
+var _placeholderDefault = parcelHelpers.interopDefault(_placeholder);
+var _placeholderButton = require("./PlaceholderButton");
+var _placeholderButtonDefault = parcelHelpers.interopDefault(_placeholderButton);
+var _popover = require("./Popover");
+var _popoverDefault = parcelHelpers.interopDefault(_popover);
+var _popoverHeader = require("./PopoverHeader");
+var _popoverHeaderDefault = parcelHelpers.interopDefault(_popoverHeader);
+var _popoverBody = require("./PopoverBody");
+var _popoverBodyDefault = parcelHelpers.interopDefault(_popoverBody);
+var _progressBar = require("./ProgressBar");
+var _progressBarDefault = parcelHelpers.interopDefault(_progressBar);
+var _ratio = require("./Ratio");
+var _ratioDefault = parcelHelpers.interopDefault(_ratio);
+var _row = require("./Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _spinner = require("./Spinner");
+var _spinnerDefault = parcelHelpers.interopDefault(_spinner);
+var _splitButton = require("./SplitButton");
+var _splitButtonDefault = parcelHelpers.interopDefault(_splitButton);
+var _ssrprovider = require("./SSRProvider");
+var _ssrproviderDefault = parcelHelpers.interopDefault(_ssrprovider);
+var _stack = require("./Stack");
+var _stackDefault = parcelHelpers.interopDefault(_stack);
+var _tab = require("./Tab");
+var _tabDefault = parcelHelpers.interopDefault(_tab);
+var _tabContainer = require("./TabContainer");
+var _tabContainerDefault = parcelHelpers.interopDefault(_tabContainer);
+var _tabContent = require("./TabContent");
+var _tabContentDefault = parcelHelpers.interopDefault(_tabContent);
+var _table = require("./Table");
+var _tableDefault = parcelHelpers.interopDefault(_table);
+var _tabPane = require("./TabPane");
+var _tabPaneDefault = parcelHelpers.interopDefault(_tabPane);
+var _tabs = require("./Tabs");
+var _tabsDefault = parcelHelpers.interopDefault(_tabs);
 var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const CardImg = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , variant , as: Component = "img" , ...props }, ref)=>{
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-img");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(variant ? `${prefix}-${variant}` : prefix, className),
-        ...props
-    });
-});
-CardImg.displayName = "CardImg";
-exports.default = CardImg;
+var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
+var _toast = require("./Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+var _toastBody = require("./ToastBody");
+var _toastBodyDefault = parcelHelpers.interopDefault(_toastBody);
+var _toastHeader = require("./ToastHeader");
+var _toastHeaderDefault = parcelHelpers.interopDefault(_toastHeader);
+var _toastContainer = require("./ToastContainer");
+var _toastContainerDefault = parcelHelpers.interopDefault(_toastContainer);
+var _toggleButton = require("./ToggleButton");
+var _toggleButtonDefault = parcelHelpers.interopDefault(_toggleButton);
+var _toggleButtonGroup = require("./ToggleButtonGroup");
+var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup);
+var _tooltip = require("./Tooltip");
+var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXnnx":[function(require,module,exports) {
+},{"./Accordion":"1m6xp","./AccordionContext":"e5D96","./AccordionCollapse":"kI8r5","./AccordionButton":"hkYfS","./Alert":"e3Xec","./Anchor":"lwVpH","./Badge":"eEyks","./Breadcrumb":"hOow1","./BreadcrumbItem":"bWkuO","./Button":"aPzUt","./ButtonGroup":"gXYCe","./ButtonToolbar":"k88gW","./Card":"lAynp","./CardImg":"1reTi","./CardGroup":"2j3Ij","./Carousel":"bsGhm","./CarouselItem":"9A3DI","./CloseButton":"1wmVl","./Col":"2L2I6","./Collapse":"acuzI","./Dropdown":"88m2L","./DropdownButton":"5sMVB","./Fade":"aH18S","./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":"idkr0","./FormFloating":"aj346","./FloatingLabel":"coYzo","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./FormSelect":"hHWyB","./Container":"hEdsw","./Image":"cyVPa","./Figure":"7Eckp","./InputGroup":"htx7r","./ListGroup":"4tGXh","./ListGroupItem":"9U5b8","./Modal":"aNVmp","./ModalBody":"e0aNG","./ModalDialog":"cwGGq","./ModalHeader":"cxgdE","./ModalFooter":"9SLlP","./ModalTitle":"kYqJp","./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavDropdown":"8e6QB","./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasBody":"fX7Bo","./Overlay":"bHdwO","./OverlayTrigger":"acOnV","./PageItem":"i0zxH","./Pagination":"6yvxS","./Placeholder":"fw5xV","./PlaceholderButton":"dRc7O","./Popover":"afWr1","./PopoverHeader":"1rLXn","./PopoverBody":"amJTZ","./ProgressBar":"cCHIb","./Ratio":"ioXys","./Row":"cMC39","./Spinner":"2r8jr","./SplitButton":"fWabe","./SSRProvider":"kdCr8","./Stack":"eZkZ1","./Tab":"kfiWM","./TabContainer":"hkO95","./TabContent":"fQxYB","./Table":"3UQc3","./TabPane":"4jWis","./Tabs":"cq1ML","./ThemeProvider":"dVixI","./Toast":"iyxlo","./ToastBody":"30cvm","./ToastHeader":"gsTvK","./ToastContainer":"kqOPy","./ToggleButton":"dCmeV","./ToggleButtonGroup":"2t8MV","./Tooltip":"ajjgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1m6xp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
+var _uncontrollable = require("uncontrollable");
 var _themeProvider = require("./ThemeProvider");
-var _cardHeaderContext = require("./CardHeaderContext");
-var _cardHeaderContextDefault = parcelHelpers.interopDefault(_cardHeaderContext);
+var _accordionBody = require("./AccordionBody");
+var _accordionBodyDefault = parcelHelpers.interopDefault(_accordionBody);
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionHeader = require("./AccordionHeader");
+var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
+var _accordionItem = require("./AccordionItem");
+var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
 var _jsxRuntime = require("react/jsx-runtime");
-const CardHeader = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div" , ...props }, ref)=>{
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-header");
+const Accordion = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = "div" , activeKey , bsPrefix , className , onSelect , flush , alwaysOpen , ...controlledProps } = (0, _uncontrollable.useUncontrolled)(props, {
+        activeKey: "onSelect"
+    });
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion");
     const contextValue = (0, _react.useMemo)(()=>({
-            cardHeaderBsPrefix: prefix
+            activeEventKey: activeKey,
+            onSelect,
+            alwaysOpen
         }), [
-        prefix
+        activeKey,
+        onSelect,
+        alwaysOpen
     ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _cardHeaderContextDefault.default).Provider, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionContextDefault.default).Provider, {
         value: contextValue,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
             ref: ref,
-            ...props,
-            className: (0, _classnamesDefault.default)(className, prefix)
+            ...controlledProps,
+            className: (0, _classnamesDefault.default)(className, prefix, flush && `${prefix}-flush`)
         })
     });
 });
-CardHeader.displayName = "CardHeader";
-exports.default = CardHeader;
+Accordion.displayName = "Accordion";
+exports.default = Object.assign(Accordion, {
+    Button: (0, _accordionButtonDefault.default),
+    Collapse: (0, _accordionCollapseDefault.default),
+    Item: (0, _accordionItemDefault.default),
+    Header: (0, _accordionHeaderDefault.default),
+    Body: (0, _accordionBodyDefault.default)
+});
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"36cNB":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","./ThemeProvider":"dVixI","./AccordionBody":"2p9OR","./AccordionButton":"hkYfS","./AccordionCollapse":"kI8r5","./AccordionContext":"e5D96","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3yWY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUncontrolled", ()=>(0, _hookDefault.default));
+parcelHelpers.export(exports, "useUncontrolledProp", ()=>(0, _hook.useUncontrolledProp));
+parcelHelpers.export(exports, "uncontrollable", ()=>(0, _uncontrollableDefault.default));
+var _hook = require("./hook");
+var _hookDefault = parcelHelpers.interopDefault(_hook);
+var _uncontrollable = require("./uncontrollable");
+var _uncontrollableDefault = parcelHelpers.interopDefault(_uncontrollable);
+
+},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cv9oS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
 var _react = require("react");
-const context = /*#__PURE__*/ _react.createContext(null);
-context.displayName = "CardHeaderContext";
-exports.default = context;
+var _utils = require("./utils");
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+function useUncontrolledProp(propValue, defaultValue, handler) {
+    var wasPropRef = (0, _react.useRef)(propValue !== undefined);
+    var _useState = (0, _react.useState)(defaultValue), stateValue = _useState[0], setState = _useState[1];
+    var isProp = propValue !== undefined;
+    var wasProp = wasPropRef.current;
+    wasPropRef.current = isProp;
+    /**
+   * If a prop switches from controlled to Uncontrolled
+   * reset its value to the defaultValue
+   */ if (!isProp && wasProp && stateValue !== defaultValue) setState(defaultValue);
+    return [
+        isProp ? propValue : stateValue,
+        (0, _react.useCallback)(function(value) {
+            for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
+            if (handler) handler.apply(void 0, [
+                value
+            ].concat(args));
+            setState(value);
+        }, [
+            handler
+        ])
+    ];
+}
+function useUncontrolled(props, config) {
+    return Object.keys(config).reduce(function(result, fieldName) {
+        var _extends2;
+        var _ref = result, defaultValue = _ref[_utils.defaultKey(fieldName)], propsValue = _ref[fieldName], rest = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, [
+            _utils.defaultKey(fieldName),
+            fieldName
+        ].map(_toPropertyKey));
+        var handlerName = config[fieldName];
+        var _useUncontrolledProp = useUncontrolledProp(propsValue, defaultValue, props[handlerName]), value = _useUncontrolledProp[0], handler = _useUncontrolledProp[1];
+        return (0, _extendsDefault.default)({}, rest, (_extends2 = {}, _extends2[fieldName] = value, _extends2[handlerName] = handler, _extends2));
+    }, props);
+}
+exports.default = useUncontrolled;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ggaUx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e9f6.prelude(module);
-
-try {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fTBFS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieView", ()=>MovieView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+exports.default = _extends;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"adHgr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+exports.default = _objectWithoutPropertiesLoose;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7UQ73":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "uncontrolledPropTypes", ()=>uncontrolledPropTypes);
+parcelHelpers.export(exports, "isProp", ()=>isProp);
+parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */ parcelHelpers.export(exports, "canAcceptRef", ()=>canAcceptRef);
+var _invariant = require("invariant");
+var _invariantDefault = parcelHelpers.interopDefault(_invariant);
+var noop = function noop() {};
+function readOnlyPropType(handler, name) {
+    return function(props, propName) {
+        if (props[propName] !== undefined) {
+            if (!props[handler]) return new Error("You have provided a `" + propName + "` prop to `" + name + "` " + ("without an `" + handler + "` handler prop. This will render a read-only field. ") + ("If the field should be mutable use `" + defaultKey(propName) + "`. ") + ("Otherwise, set `" + handler + "`."));
+        }
+    };
+}
+function uncontrolledPropTypes(controlledValues, displayName) {
+    var propTypes = {};
+    Object.keys(controlledValues).forEach(function(prop) {
+        // add default propTypes for folks that use runtime checks
+        propTypes[defaultKey(prop)] = noop;
+        var handler = controlledValues[prop];
+        !(typeof handler === "string" && handler.trim().length) && (0, _invariantDefault.default)(false, "Uncontrollable - [%s]: the prop `%s` needs a valid handler key name in order to make it uncontrollable", displayName, prop);
+        propTypes[prop] = readOnlyPropType(handler, displayName);
+    });
+    return propTypes;
+}
+function isProp(props, prop) {
+    return props[prop] !== undefined;
+}
+function defaultKey(key) {
+    return "default" + key.charAt(0).toUpperCase() + key.substr(1);
+}
+function canAcceptRef(component) {
+    return !!component && (typeof component !== "function" || component.prototype && component.prototype.isReactComponent);
+}
+
+},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d1QgR":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */ var invariant = function(condition, format, a, b, c, d, e, f) {
+    if (format === undefined) throw new Error("invariant requires an error message argument");
+    if (!condition) {
+        var error;
+        if (format === undefined) error = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
+        else {
+            var args = [
+                a,
+                b,
+                c,
+                d,
+                e,
+                f
+            ];
+            var argIndex = 0;
+            error = new Error(format.replace(/%s/g, function() {
+                return args[argIndex++];
+            }));
+            error.name = "Invariant Violation";
+        }
+        error.framesToPop = 1; // we don't care about invariant's own frame
+        throw error;
+    }
+};
+module.exports = invariant;
+
+},{}],"aqbCD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-class MovieView extends (0, _reactDefault.default).Component {
-    keypressCallback(event) {
-        console.log(event.key);
+var _reactLifecyclesCompat = require("react-lifecycles-compat");
+var _invariant = require("invariant");
+var _invariantDefault = parcelHelpers.interopDefault(_invariant);
+var _utils = require("./utils");
+var _jsxFileName = "/Users/jquense/src/uncontrollable/src/uncontrollable.js";
+function uncontrollable(Component, controlledValues, methods) {
+    if (methods === void 0) methods = [];
+    var displayName = Component.displayName || Component.name || "Component";
+    var canAcceptRef = _utils.canAcceptRef(Component);
+    var controlledProps = Object.keys(controlledValues);
+    var PROPS_TO_OMIT = controlledProps.map(_utils.defaultKey);
+    !(canAcceptRef || !methods.length) && (0, _invariantDefault.default)(false, "[uncontrollable] stateless function components cannot pass through methods because they have no associated instances. Check component: " + displayName + ", " + "attempting to pass through methods: " + methods.join(", "));
+    var UncontrolledComponent1 = /*#__PURE__*/ function(_React$Component) {
+        (0, _inheritsLooseDefault.default)(UncontrolledComponent, _React$Component);
+        function UncontrolledComponent() {
+            var _this;
+            for(var _len = arguments.length, args1 = new Array(_len), _key = 0; _key < _len; _key++)args1[_key] = arguments[_key];
+            _this = _React$Component.call.apply(_React$Component, [
+                this
+            ].concat(args1)) || this;
+            _this.handlers = Object.create(null);
+            controlledProps.forEach(function(propName) {
+                var handlerName = controlledValues[propName];
+                var handleChange = function handleChange(value) {
+                    if (_this.props[handlerName]) {
+                        var _this$props;
+                        _this._notifying = true;
+                        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
+                        (_this$props = _this.props)[handlerName].apply(_this$props, [
+                            value
+                        ].concat(args));
+                        _this._notifying = false;
+                    }
+                    if (!_this.unmounted) _this.setState(function(_ref) {
+                        var _extends2;
+                        var values = _ref.values;
+                        return {
+                            values: (0, _extendsDefault.default)(Object.create(null), values, (_extends2 = {}, _extends2[propName] = value, _extends2))
+                        };
+                    });
+                };
+                _this.handlers[handlerName] = handleChange;
+            });
+            if (methods.length) _this.attachRef = function(ref) {
+                _this.inner = ref;
+            };
+            var values1 = Object.create(null);
+            controlledProps.forEach(function(key) {
+                values1[key] = _this.props[_utils.defaultKey(key)];
+            });
+            _this.state = {
+                values: values1,
+                prevProps: {}
+            };
+            return _this;
+        }
+        var _proto = UncontrolledComponent.prototype;
+        _proto.shouldComponentUpdate = function shouldComponentUpdate() {
+            //let setState trigger the update
+            return !this._notifying;
+        };
+        UncontrolledComponent.getDerivedStateFromProps = function getDerivedStateFromProps(props, _ref2) {
+            var values = _ref2.values, prevProps = _ref2.prevProps;
+            var nextState = {
+                values: (0, _extendsDefault.default)(Object.create(null), values),
+                prevProps: {}
+            };
+            controlledProps.forEach(function(key) {
+                /**
+         * If a prop switches from controlled to Uncontrolled
+         * reset its value to the defaultValue
+         */ nextState.prevProps[key] = props[key];
+                if (!_utils.isProp(props, key) && _utils.isProp(prevProps, key)) nextState.values[key] = props[_utils.defaultKey(key)];
+            });
+            return nextState;
+        };
+        _proto.componentWillUnmount = function componentWillUnmount() {
+            this.unmounted = true;
+        };
+        _proto.render = function render() {
+            var _this2 = this;
+            var _this$props2 = this.props, innerRef = _this$props2.innerRef, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props2, [
+                "innerRef"
+            ]);
+            PROPS_TO_OMIT.forEach(function(prop) {
+                delete props[prop];
+            });
+            var newProps = {};
+            controlledProps.forEach(function(propName) {
+                var propValue = _this2.props[propName];
+                newProps[propName] = propValue !== undefined ? propValue : _this2.state.values[propName];
+            });
+            return (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, newProps, this.handlers, {
+                ref: innerRef || this.attachRef
+            }));
+        };
+        return UncontrolledComponent;
+    }((0, _reactDefault.default).Component);
+    (0, _reactLifecyclesCompat.polyfill)(UncontrolledComponent1);
+    UncontrolledComponent1.displayName = "Uncontrolled(" + displayName + ")";
+    UncontrolledComponent1.propTypes = (0, _extendsDefault.default)({
+        innerRef: function innerRef() {}
+    }, _utils.uncontrolledPropTypes(controlledValues, displayName));
+    methods.forEach(function(method) {
+        UncontrolledComponent1.prototype[method] = function $proxiedMethod() {
+            var _this$inner;
+            return (_this$inner = this.inner)[method].apply(_this$inner, arguments);
+        };
+    });
+    var WrappedComponent = UncontrolledComponent1;
+    if ((0, _reactDefault.default).forwardRef) {
+        WrappedComponent = (0, _reactDefault.default).forwardRef(function(props, ref) {
+            return (0, _reactDefault.default).createElement(UncontrolledComponent1, (0, _extendsDefault.default)({}, props, {
+                innerRef: ref,
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 128
+                },
+                __self: this
+            }));
+        });
+        WrappedComponent.propTypes = UncontrolledComponent1.propTypes;
     }
-    componentDidMount() {
-        document.addEventListener("keypress", this.keypressCallback);
+    WrappedComponent.ControlledComponent = Component;
+    /**
+   * useful when wrapping a Component and you want to control
+   * everything
+   */ WrappedComponent.deferControlTo = function(newComponent, additions, nextMethods) {
+        if (additions === void 0) additions = {};
+        return uncontrollable(newComponent, (0, _extendsDefault.default)({}, controlledValues, additions), nextMethods);
+    };
+    return WrappedComponent;
+}
+exports.default = uncontrollable;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9u2Z8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _setPrototypeOfJs = require("./setPrototypeOf.js");
+var _setPrototypeOfJsDefault = parcelHelpers.interopDefault(_setPrototypeOfJs);
+function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    (0, _setPrototypeOfJsDefault.default)(subClass, superClass);
+}
+exports.default = _inheritsLoose;
+
+},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3XDFA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function _setPrototypeOf(o1, p1) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+    };
+    return _setPrototypeOf(o1, p1);
+}
+exports.default = _setPrototypeOf;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3f3fU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "polyfill", ()=>polyfill);
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ function componentWillMount() {
+    // Call this.constructor.gDSFP to support sub-classes.
+    var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
+    if (state !== null && state !== undefined) this.setState(state);
+}
+function componentWillReceiveProps(nextProps) {
+    // Call this.constructor.gDSFP to support sub-classes.
+    // Use the setState() updater to ensure state isn't stale in certain edge cases.
+    function updater(prevState) {
+        var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
+        return state !== null && state !== undefined ? state : null;
     }
-    componentWillUnmount() {
-        document.removeEventListener("keypress", this.keypressCallback);
+    // Binding "this" is important for shallow renderer support.
+    this.setState(updater.bind(this));
+}
+function componentWillUpdate(nextProps, nextState) {
+    try {
+        var prevProps = this.props;
+        var prevState = this.state;
+        this.props = nextProps;
+        this.state = nextState;
+        this.__reactInternalSnapshotFlag = true;
+        this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(prevProps, prevState);
+    } finally{
+        this.props = prevProps;
+        this.state = prevState;
     }
-    render() {
-        const { movie , onBackClick  } = this.props;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "movie-view",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-poster",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: movie.imageURL,
-                        width: "200",
-                        height: "200"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 23,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 22,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-title",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Title: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 26,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.title
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 27,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 25,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-description",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Description: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 30,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.description
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 31,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 29,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-genre",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "label",
-                        children: "Genre: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 34,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 33,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-name",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Name: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 38,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.genre?.name
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 39,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 37,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "label",
-                    children: "Description: "
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 41,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "value",
-                    children: movie.genre?.description
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 42,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-director",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "label",
-                        children: "Director: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 44,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 43,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "director-name",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Name: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 48,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.director?.name
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 49,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 47,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "director-bio",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Bio: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 52,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.director?.bio
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 53,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 51,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "director-birthyear",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Birthyear: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 56,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.director?.birthyear
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 57,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 55,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "director-deathyear",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Deathyear: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 60,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.director?.deathyear
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 61,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 59,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-actors",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "label",
-                        children: "Actors: "
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 64,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 63,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-year",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Year: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 68,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.year
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 69,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 67,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-score",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Score: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 72,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.score
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 73,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 71,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-rating",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "label",
-                            children: "Rating: "
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 76,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "value",
-                            children: movie.rating
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 77,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 75,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        onBackClick(null);
-                    },
-                    children: "Back"
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 79,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 21,
-            columnNumber: 7
-        }, this);
+}
+// React may warn about cWM/cWRP/cWU methods being deprecated.
+// Add a flag to suppress these warnings for this special case.
+componentWillMount.__suppressDeprecationWarning = true;
+componentWillReceiveProps.__suppressDeprecationWarning = true;
+componentWillUpdate.__suppressDeprecationWarning = true;
+function polyfill(Component) {
+    var prototype = Component.prototype;
+    if (!prototype || !prototype.isReactComponent) throw new Error("Can only polyfill class components");
+    if (typeof Component.getDerivedStateFromProps !== "function" && typeof prototype.getSnapshotBeforeUpdate !== "function") return Component;
+    // If new component APIs are defined, "unsafe" lifecycles won't be called.
+    // Error if any of these lifecycles are present,
+    // Because they would work differently between older and newer (16.3+) versions of React.
+    var foundWillMountName = null;
+    var foundWillReceivePropsName = null;
+    var foundWillUpdateName = null;
+    if (typeof prototype.componentWillMount === "function") foundWillMountName = "componentWillMount";
+    else if (typeof prototype.UNSAFE_componentWillMount === "function") foundWillMountName = "UNSAFE_componentWillMount";
+    if (typeof prototype.componentWillReceiveProps === "function") foundWillReceivePropsName = "componentWillReceiveProps";
+    else if (typeof prototype.UNSAFE_componentWillReceiveProps === "function") foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
+    if (typeof prototype.componentWillUpdate === "function") foundWillUpdateName = "componentWillUpdate";
+    else if (typeof prototype.UNSAFE_componentWillUpdate === "function") foundWillUpdateName = "UNSAFE_componentWillUpdate";
+    if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
+        var componentName = Component.displayName || Component.name;
+        var newApiName = typeof Component.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+        throw Error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n" + componentName + " uses " + newApiName + " but also contains the following legacy lifecycles:" + (foundWillMountName !== null ? "\n  " + foundWillMountName : "") + (foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "") + (foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "") + "\n\nThe above lifecycles should be removed. Learn more about this warning here:\n" + "https://fb.me/react-async-component-lifecycle-hooks");
     }
+    // React <= 16.2 does not support static getDerivedStateFromProps.
+    // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
+    // Newer versions of React will ignore these lifecycles if gDSFP exists.
+    if (typeof Component.getDerivedStateFromProps === "function") {
+        prototype.componentWillMount = componentWillMount;
+        prototype.componentWillReceiveProps = componentWillReceiveProps;
+    }
+    // React <= 16.2 does not support getSnapshotBeforeUpdate.
+    // As a workaround, use cWU to invoke the new lifecycle.
+    // Newer versions of React will ignore that lifecycle if gSBU exists.
+    if (typeof prototype.getSnapshotBeforeUpdate === "function") {
+        if (typeof prototype.componentDidUpdate !== "function") throw new Error("Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype");
+        prototype.componentWillUpdate = componentWillUpdate;
+        var componentDidUpdate = prototype.componentDidUpdate;
+        prototype.componentDidUpdate = function componentDidUpdatePolyfill(prevProps, prevState, maybeSnapshot) {
+            // 16.3+ will not execute our will-update method;
+            // It will pass a snapshot value to did-update though.
+            // Older versions will require our polyfilled will-update value.
+            // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
+            // Because for <= 15.x versions this might be a "prevContext" object.
+            // We also can't just check "__reactInternalSnapshot",
+            // Because get-snapshot might return a falsy value.
+            // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
+            var snapshot = this.__reactInternalSnapshotFlag ? this.__reactInternalSnapshot : maybeSnapshot;
+            componentDidUpdate.call(this, prevProps, prevState, snapshot);
+        };
+    }
+    return Component;
 }
 
-  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cMC39":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2p9OR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionItemContext = require("./AccordionItemContext");
+var _accordionItemContextDefault = parcelHelpers.interopDefault(_accordionItemContext);
 var _jsxRuntime = require("react/jsx-runtime");
-const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div" , ...props }, ref)=>{
-    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const sizePrefix = `${decoratedBsPrefix}-cols`;
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let cols;
-        if (propValue != null && typeof propValue === "object") ({ cols  } = propValue);
-        else cols = propValue;
-        const infix = brkPoint !== "xs" ? `-${brkPoint}` : "";
-        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
-    });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        ...props,
-        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+const AccordionBody = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div" , bsPrefix , className , ...props }, ref)=>{
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion-body");
+    const { eventKey  } = (0, _react.useContext)((0, _accordionItemContextDefault.default));
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionCollapseDefault.default), {
+        eventKey: eventKey,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            ref: ref,
+            ...props,
+            className: (0, _classnamesDefault.default)(className, bsPrefix)
+        })
     });
 });
-Row.displayName = "Row";
-exports.default = Row;
+AccordionBody.displayName = "AccordionBody";
+exports.default = AccordionBody;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lOjBx":[function(require,module,exports) {
-"use strict";
-var m = require("react-dom");
-var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-        return m.createRoot(c, o);
-    } finally{
-        i.usingClientEntryPoint = false;
-    }
-};
-exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-        return m.hydrateRoot(c, h, o);
-    } finally{
-        i.usingClientEntryPoint = false;
-    }
-};
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AccordionCollapse":"kI8r5","./AccordionItemContext":"35RRI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kI8r5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const AccordionCollapse = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div" , bsPrefix , className , children , eventKey , ...props }, ref)=>{
+    const { activeEventKey  } = (0, _react.useContext)((0, _accordionContextDefault.default));
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion-collapse");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _collapseDefault.default), {
+        ref: ref,
+        in: (0, _accordionContext.isAccordionItemSelected)(activeEventKey, eventKey),
+        ...props,
+        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            children: _react.Children.only(children)
+        })
+    });
+});
+AccordionCollapse.displayName = "AccordionCollapse";
+exports.default = AccordionCollapse;
 
-},{"react-dom":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./Collapse":"acuzI","./AccordionContext":"e5D96","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"acuzI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _css = require("dom-helpers/css");
+var _cssDefault = parcelHelpers.interopDefault(_css);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _transition = require("react-transition-group/Transition");
+var _transitionEndListener = require("./transitionEndListener");
+var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
+var _createChainedFunction = require("./createChainedFunction");
+var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
+var _triggerBrowserReflow = require("./triggerBrowserReflow");
+var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
+var _transitionWrapper = require("./TransitionWrapper");
+var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
+var _jsxRuntime = require("react/jsx-runtime");
+const MARGINS = {
+    height: [
+        "marginTop",
+        "marginBottom"
+    ],
+    width: [
+        "marginLeft",
+        "marginRight"
+    ]
+};
+function getDefaultDimensionValue(dimension, elem) {
+    const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
+    const value = elem[offset];
+    const margins = MARGINS[dimension];
+    return value + parseInt((0, _cssDefault.default)(elem, margins[0]), 10) + parseInt((0, _cssDefault.default)(elem, margins[1]), 10);
+}
+const collapseStyles = {
+    [(0, _transition.EXITED)]: "collapse",
+    [(0, _transition.EXITING)]: "collapsing",
+    [(0, _transition.ENTERING)]: "collapsing",
+    [(0, _transition.ENTERED)]: "collapse show"
+};
+const defaultProps = {
+    in: false,
+    timeout: 300,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false,
+    getDimensionValue: getDefaultDimensionValue
+};
+const Collapse = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(({ onEnter , onEntering , onEntered , onExit , onExiting , className , children , dimension ="height" , getDimensionValue =getDefaultDimensionValue , ...props }, ref)=>{
+    /* Compute dimension */ const computedDimension = typeof dimension === "function" ? dimension() : dimension;
+    /* -- Expanding -- */ const handleEnter = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
+            elem.style[computedDimension] = "0";
+        }, onEnter), [
+        computedDimension,
+        onEnter
+    ]);
+    const handleEntering = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
+            const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
+            elem.style[computedDimension] = `${elem[scroll]}px`;
+        }, onEntering), [
+        computedDimension,
+        onEntering
+    ]);
+    const handleEntered = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
+            elem.style[computedDimension] = null;
+        }, onEntered), [
+        computedDimension,
+        onEntered
+    ]);
+    /* -- Collapsing -- */ const handleExit = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
+            elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
+            (0, _triggerBrowserReflowDefault.default)(elem);
+        }, onExit), [
+        onExit,
+        getDimensionValue,
+        computedDimension
+    ]);
+    const handleExiting = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
+            elem.style[computedDimension] = null;
+        }, onExiting), [
+        computedDimension,
+        onExiting
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _transitionWrapperDefault.default), {
+        ref: ref,
+        addEndListener: (0, _transitionEndListenerDefault.default),
+        ...props,
+        "aria-expanded": props.role ? props.in : null,
+        onEnter: handleEnter,
+        onEntering: handleEntering,
+        onEntered: handleEntered,
+        onExit: handleExit,
+        onExiting: handleExiting,
+        childRef: children.ref,
+        children: (state, innerProps)=>/*#__PURE__*/ (0, _reactDefault.default).cloneElement(children, {
+                ...innerProps,
+                className: (0, _classnamesDefault.default)(className, children.props.className, collapseStyles[state], computedDimension === "width" && "collapse-horizontal")
+            })
+    });
+}); // @ts-ignore
+// @ts-ignore
+Collapse.defaultProps = defaultProps;
+exports.default = Collapse;
+
+},{"classnames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"klmhr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _getComputedStyle = require("./getComputedStyle");
+var _getComputedStyleDefault = parcelHelpers.interopDefault(_getComputedStyle);
+var _hyphenateStyle = require("./hyphenateStyle");
+var _hyphenateStyleDefault = parcelHelpers.interopDefault(_hyphenateStyle);
+var _isTransform = require("./isTransform");
+var _isTransformDefault = parcelHelpers.interopDefault(_isTransform);
+function style(node, property) {
+    var css = "";
+    var transforms = "";
+    if (typeof property === "string") return node.style.getPropertyValue((0, _hyphenateStyleDefault.default)(property)) || (0, _getComputedStyleDefault.default)(node).getPropertyValue((0, _hyphenateStyleDefault.default)(property));
+    Object.keys(property).forEach(function(key) {
+        var value = property[key];
+        if (!value && value !== 0) node.style.removeProperty((0, _hyphenateStyleDefault.default)(key));
+        else if ((0, _isTransformDefault.default)(key)) transforms += key + "(" + value + ") ";
+        else css += (0, _hyphenateStyleDefault.default)(key) + ": " + value + ";";
+    });
+    if (transforms) css += "transform: " + transforms + ";";
+    node.style.cssText += ";" + css;
+}
+exports.default = style;
+
+},{"./getComputedStyle":"adqGa","./hyphenateStyle":"hbsNp","./isTransform":"gnxjD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"adqGa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _ownerWindow = require("./ownerWindow");
+var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
+function getComputedStyle(node, psuedoElement) {
+    return (0, _ownerWindowDefault.default)(node).getComputedStyle(node, psuedoElement);
+}
+exports.default = getComputedStyle;
+
+},{"./ownerWindow":"3nPSD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3nPSD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _ownerDocument = require("./ownerDocument");
+var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
+function ownerWindow(node) {
+    var doc = (0, _ownerDocumentDefault.default)(node);
+    return doc && doc.defaultView || window;
+}
+exports.default = ownerWindow;
+
+},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2WpOk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function ownerDocument(node) {
+    return node && node.ownerDocument || document;
+}
+exports.default = ownerDocument;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hbsNp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Copyright 2013-2014, Facebook, Inc.
+ * All rights reserved.
+ * https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/vendor/core/hyphenateStyleName.js
+ */ var _hyphenate = require("./hyphenate");
+var _hyphenateDefault = parcelHelpers.interopDefault(_hyphenate);
+var msPattern = /^ms-/;
+function hyphenateStyleName(string) {
+    return (0, _hyphenateDefault.default)(string).replace(msPattern, "-ms-");
+}
+exports.default = hyphenateStyleName;
+
+},{"./hyphenate":"3UJRr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJRr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var rUpper = /([A-Z])/g;
+function hyphenate(string) {
+    return string.replace(rUpper, "-$1").toLowerCase();
+}
+exports.default = hyphenate;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gnxjD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i;
+function isTransform(value) {
+    return !!(value && supportedTransforms.test(value));
+}
+exports.default = isTransform;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cKsrS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UNMOUNTED", ()=>UNMOUNTED);
+parcelHelpers.export(exports, "EXITED", ()=>EXITED);
+parcelHelpers.export(exports, "ENTERING", ()=>ENTERING);
+parcelHelpers.export(exports, "ENTERED", ()=>ENTERED);
+parcelHelpers.export(exports, "EXITING", ()=>EXITING);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactDom = require("react-dom");
+var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _config = require("./config");
+var _configDefault = parcelHelpers.interopDefault(_config);
+var _propTypes1 = require("./utils/PropTypes");
+var _transitionGroupContext = require("./TransitionGroupContext");
+var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
+var _reflow = require("./utils/reflow");
+var UNMOUNTED = "unmounted";
+var EXITED = "exited";
+var ENTERING = "entering";
+var ENTERED = "entered";
+var EXITING = "exiting";
+/**
+ * The Transition component lets you describe a transition from one component
+ * state to another _over time_ with a simple declarative API. Most commonly
+ * it's used to animate the mounting and unmounting of a component, but can also
+ * be used to describe in-place transition states as well.
+ *
+ * ---
+ *
+ * **Note**: `Transition` is a platform-agnostic base component. If you're using
+ * transitions in CSS, you'll probably want to use
+ * [`CSSTransition`](https://reactcommunity.org/react-transition-group/css-transition)
+ * instead. It inherits all the features of `Transition`, but contains
+ * additional features necessary to play nice with CSS transitions (hence the
+ * name of the component).
+ *
+ * ---
+ *
+ * By default the `Transition` component does not alter the behavior of the
+ * component it renders, it only tracks "enter" and "exit" states for the
+ * components. It's up to you to give meaning and effect to those states. For
+ * example we can add styles to a component when it enters or exits:
+ *
+ * ```jsx
+ * import { Transition } from 'react-transition-group';
+ *
+ * const duration = 300;
+ *
+ * const defaultStyle = {
+ *   transition: `opacity ${duration}ms ease-in-out`,
+ *   opacity: 0,
+ * }
+ *
+ * const transitionStyles = {
+ *   entering: { opacity: 1 },
+ *   entered:  { opacity: 1 },
+ *   exiting:  { opacity: 0 },
+ *   exited:  { opacity: 0 },
+ * };
+ *
+ * const Fade = ({ in: inProp }) => (
+ *   <Transition in={inProp} timeout={duration}>
+ *     {state => (
+ *       <div style={{
+ *         ...defaultStyle,
+ *         ...transitionStyles[state]
+ *       }}>
+ *         I'm a fade Transition!
+ *       </div>
+ *     )}
+ *   </Transition>
+ * );
+ * ```
+ *
+ * There are 4 main states a Transition can be in:
+ *  - `'entering'`
+ *  - `'entered'`
+ *  - `'exiting'`
+ *  - `'exited'`
+ *
+ * Transition state is toggled via the `in` prop. When `true` the component
+ * begins the "Enter" stage. During this stage, the component will shift from
+ * its current transition state, to `'entering'` for the duration of the
+ * transition and then to the `'entered'` stage once it's complete. Let's take
+ * the following example (we'll use the
+ * [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook):
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <Transition in={inProp} timeout={500}>
+ *         {state => (
+ *           // ...
+ *         )}
+ *       </Transition>
+ *       <button onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the button is clicked the component will shift to the `'entering'` state
+ * and stay there for 500ms (the value of `timeout`) before it finally switches
+ * to `'entered'`.
+ *
+ * When `in` is `false` the same thing happens except the state moves from
+ * `'exiting'` to `'exited'`.
+ */ var Transition = /*#__PURE__*/ function(_React$Component) {
+    (0, _inheritsLooseDefault.default)(Transition1, _React$Component);
+    function Transition1(props, context) {
+        var _this;
+        _this = _React$Component.call(this, props, context) || this;
+        var parentGroup = context; // In the context of a TransitionGroup all enters are really appears
+        var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
+        var initialStatus;
+        _this.appearStatus = null;
+        if (props.in) {
+            if (appear) {
+                initialStatus = EXITED;
+                _this.appearStatus = ENTERING;
+            } else initialStatus = ENTERED;
+        } else if (props.unmountOnExit || props.mountOnEnter) initialStatus = UNMOUNTED;
+        else initialStatus = EXITED;
+        _this.state = {
+            status: initialStatus
+        };
+        _this.nextCallback = null;
+        return _this;
+    }
+    Transition1.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
+        var nextIn = _ref.in;
+        if (nextIn && prevState.status === UNMOUNTED) return {
+            status: EXITED
+        };
+        return null;
+    } // getSnapshotBeforeUpdate(prevProps) {
+    ;
+    var _proto = Transition1.prototype;
+    _proto.componentDidMount = function componentDidMount() {
+        this.updateStatus(true, this.appearStatus);
+    };
+    _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+        var nextStatus = null;
+        if (prevProps !== this.props) {
+            var status = this.state.status;
+            if (this.props.in) {
+                if (status !== ENTERING && status !== ENTERED) nextStatus = ENTERING;
+            } else if (status === ENTERING || status === ENTERED) nextStatus = EXITING;
+        }
+        this.updateStatus(false, nextStatus);
+    };
+    _proto.componentWillUnmount = function componentWillUnmount() {
+        this.cancelNextCallback();
+    };
+    _proto.getTimeouts = function getTimeouts() {
+        var timeout = this.props.timeout;
+        var exit, enter, appear;
+        exit = enter = appear = timeout;
+        if (timeout != null && typeof timeout !== "number") {
+            exit = timeout.exit;
+            enter = timeout.enter; // TODO: remove fallback for next major
+            appear = timeout.appear !== undefined ? timeout.appear : enter;
+        }
+        return {
+            exit: exit,
+            enter: enter,
+            appear: appear
+        };
+    };
+    _proto.updateStatus = function updateStatus(mounting, nextStatus) {
+        if (mounting === void 0) mounting = false;
+        if (nextStatus !== null) {
+            // nextStatus will always be ENTERING or EXITING.
+            this.cancelNextCallback();
+            if (nextStatus === ENTERING) {
+                if (this.props.unmountOnExit || this.props.mountOnEnter) {
+                    var node = this.props.nodeRef ? this.props.nodeRef.current : (0, _reactDomDefault.default).findDOMNode(this); // https://github.com/reactjs/react-transition-group/pull/749
+                    // With unmountOnExit or mountOnEnter, the enter animation should happen at the transition between `exited` and `entering`.
+                    // To make the animation happen,  we have to separate each rendering and avoid being processed as batched.
+                    if (node) (0, _reflow.forceReflow)(node);
+                }
+                this.performEnter(mounting);
+            } else this.performExit();
+        } else if (this.props.unmountOnExit && this.state.status === EXITED) this.setState({
+            status: UNMOUNTED
+        });
+    };
+    _proto.performEnter = function performEnter(mounting) {
+        var _this2 = this;
+        var enter = this.props.enter;
+        var appearing = this.context ? this.context.isMounting : mounting;
+        var _ref2 = this.props.nodeRef ? [
+            appearing
+        ] : [
+            (0, _reactDomDefault.default).findDOMNode(this),
+            appearing
+        ], maybeNode = _ref2[0], maybeAppearing = _ref2[1];
+        var timeouts = this.getTimeouts();
+        var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
+        // if we are mounting and running this it means appear _must_ be set
+        if (!mounting && !enter || (0, _configDefault.default).disabled) {
+            this.safeSetState({
+                status: ENTERED
+            }, function() {
+                _this2.props.onEntered(maybeNode);
+            });
+            return;
+        }
+        this.props.onEnter(maybeNode, maybeAppearing);
+        this.safeSetState({
+            status: ENTERING
+        }, function() {
+            _this2.props.onEntering(maybeNode, maybeAppearing);
+            _this2.onTransitionEnd(enterTimeout, function() {
+                _this2.safeSetState({
+                    status: ENTERED
+                }, function() {
+                    _this2.props.onEntered(maybeNode, maybeAppearing);
+                });
+            });
+        });
+    };
+    _proto.performExit = function performExit() {
+        var _this3 = this;
+        var exit = this.props.exit;
+        var timeouts = this.getTimeouts();
+        var maybeNode = this.props.nodeRef ? undefined : (0, _reactDomDefault.default).findDOMNode(this); // no exit animation skip right to EXITED
+        if (!exit || (0, _configDefault.default).disabled) {
+            this.safeSetState({
+                status: EXITED
+            }, function() {
+                _this3.props.onExited(maybeNode);
+            });
+            return;
+        }
+        this.props.onExit(maybeNode);
+        this.safeSetState({
+            status: EXITING
+        }, function() {
+            _this3.props.onExiting(maybeNode);
+            _this3.onTransitionEnd(timeouts.exit, function() {
+                _this3.safeSetState({
+                    status: EXITED
+                }, function() {
+                    _this3.props.onExited(maybeNode);
+                });
+            });
+        });
+    };
+    _proto.cancelNextCallback = function cancelNextCallback() {
+        if (this.nextCallback !== null) {
+            this.nextCallback.cancel();
+            this.nextCallback = null;
+        }
+    };
+    _proto.safeSetState = function safeSetState(nextState, callback) {
+        // This shouldn't be necessary, but there are weird race conditions with
+        // setState callbacks and unmounting in testing, so always make sure that
+        // we can cancel any pending setState callbacks after we unmount.
+        callback = this.setNextCallback(callback);
+        this.setState(nextState, callback);
+    };
+    _proto.setNextCallback = function setNextCallback(callback) {
+        var _this4 = this;
+        var active = true;
+        this.nextCallback = function(event) {
+            if (active) {
+                active = false;
+                _this4.nextCallback = null;
+                callback(event);
+            }
+        };
+        this.nextCallback.cancel = function() {
+            active = false;
+        };
+        return this.nextCallback;
+    };
+    _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
+        this.setNextCallback(handler);
+        var node = this.props.nodeRef ? this.props.nodeRef.current : (0, _reactDomDefault.default).findDOMNode(this);
+        var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
+        if (!node || doesNotHaveTimeoutOrListener) {
+            setTimeout(this.nextCallback, 0);
+            return;
+        }
+        if (this.props.addEndListener) {
+            var _ref3 = this.props.nodeRef ? [
+                this.nextCallback
+            ] : [
+                node,
+                this.nextCallback
+            ], maybeNode = _ref3[0], maybeNextCallback = _ref3[1];
+            this.props.addEndListener(maybeNode, maybeNextCallback);
+        }
+        if (timeout != null) setTimeout(this.nextCallback, timeout);
+    };
+    _proto.render = function render() {
+        var status = this.state.status;
+        if (status === UNMOUNTED) return null;
+        var _this$props = this.props, children = _this$props.children, _in = _this$props.in, _mountOnEnter = _this$props.mountOnEnter, _unmountOnExit = _this$props.unmountOnExit, _appear = _this$props.appear, _enter = _this$props.enter, _exit = _this$props.exit, _timeout = _this$props.timeout, _addEndListener = _this$props.addEndListener, _onEnter = _this$props.onEnter, _onEntering = _this$props.onEntering, _onEntered = _this$props.onEntered, _onExit = _this$props.onExit, _onExiting = _this$props.onExiting, _onExited = _this$props.onExited, _nodeRef = _this$props.nodeRef, childProps = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props, [
+            "children",
+            "in",
+            "mountOnEnter",
+            "unmountOnExit",
+            "appear",
+            "enter",
+            "exit",
+            "timeout",
+            "addEndListener",
+            "onEnter",
+            "onEntering",
+            "onEntered",
+            "onExit",
+            "onExiting",
+            "onExited",
+            "nodeRef"
+        ]);
+        return(/*#__PURE__*/ // allows for nested Transitions
+        (0, _reactDefault.default).createElement((0, _transitionGroupContextDefault.default).Provider, {
+            value: null
+        }, typeof children === "function" ? children(status, childProps) : (0, _reactDefault.default).cloneElement((0, _reactDefault.default).Children.only(children), childProps)));
+    };
+    return Transition1;
+}((0, _reactDefault.default).Component);
+Transition.contextType = (0, _transitionGroupContextDefault.default);
+Transition.propTypes = {
+    /**
+   * A React reference to DOM element that need to transition:
+   * https://stackoverflow.com/a/51127130/4671932
+   *
+   *   - When `nodeRef` prop is used, `node` is not passed to callback functions
+   *      (e.g. `onEnter`) because user already has direct access to the node.
+   *   - When changing `key` prop of `Transition` in a `TransitionGroup` a new
+   *     `nodeRef` need to be provided to `Transition` with changed `key` prop
+   *     (see
+   *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
+   */ nodeRef: (0, _propTypesDefault.default).shape({
+        current: typeof Element === "undefined" ? (0, _propTypesDefault.default).any : function(propValue, key, componentName, location, propFullName, secret) {
+            var value = propValue[key];
+            return (0, _propTypesDefault.default).instanceOf(value && "ownerDocument" in value ? value.ownerDocument.defaultView.Element : Element)(propValue, key, componentName, location, propFullName, secret);
+        }
+    }),
+    /**
+   * A `function` child can be used instead of a React element. This function is
+   * called with the current transition status (`'entering'`, `'entered'`,
+   * `'exiting'`, `'exited'`), which can be used to apply context
+   * specific props to a component.
+   *
+   * ```jsx
+   * <Transition in={this.state.in} timeout={150}>
+   *   {state => (
+   *     <MyComponent className={`fade fade-${state}`} />
+   *   )}
+   * </Transition>
+   * ```
+   */ children: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).func.isRequired,
+        (0, _propTypesDefault.default).element.isRequired
+    ]).isRequired,
+    /**
+   * Show the component; triggers the enter or exit states
+   */ in: (0, _propTypesDefault.default).bool,
+    /**
+   * By default the child component is mounted immediately along with
+   * the parent `Transition` component. If you want to "lazy mount" the component on the
+   * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
+   * mounted, even on "exited", unless you also specify `unmountOnExit`.
+   */ mountOnEnter: (0, _propTypesDefault.default).bool,
+    /**
+   * By default the child component stays mounted after it reaches the `'exited'` state.
+   * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
+   */ unmountOnExit: (0, _propTypesDefault.default).bool,
+    /**
+   * By default the child component does not perform the enter transition when
+   * it first mounts, regardless of the value of `in`. If you want this
+   * behavior, set both `appear` and `in` to `true`.
+   *
+   * > **Note**: there are no special appear states like `appearing`/`appeared`, this prop
+   * > only adds an additional enter transition. However, in the
+   * > `<CSSTransition>` component that first enter transition does result in
+   * > additional `.appear-*` classes, that way you can choose to style it
+   * > differently.
+   */ appear: (0, _propTypesDefault.default).bool,
+    /**
+   * Enable or disable enter transitions.
+   */ enter: (0, _propTypesDefault.default).bool,
+    /**
+   * Enable or disable exit transitions.
+   */ exit: (0, _propTypesDefault.default).bool,
+    /**
+   * The duration of the transition, in milliseconds.
+   * Required unless `addEndListener` is provided.
+   *
+   * You may specify a single timeout for all transitions:
+   *
+   * ```jsx
+   * timeout={500}
+   * ```
+   *
+   * or individually:
+   *
+   * ```jsx
+   * timeout={{
+   *  appear: 500,
+   *  enter: 300,
+   *  exit: 500,
+   * }}
+   * ```
+   *
+   * - `appear` defaults to the value of `enter`
+   * - `enter` defaults to `0`
+   * - `exit` defaults to `0`
+   *
+   * @type {number | { enter?: number, exit?: number, appear?: number }}
+   */ timeout: function timeout(props) {
+        var pt = (0, _propTypes1.timeoutsShape);
+        if (!props.addEndListener) pt = pt.isRequired;
+        for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
+        return pt.apply(void 0, [
+            props
+        ].concat(args));
+    },
+    /**
+   * Add a custom transition end trigger. Called with the transitioning
+   * DOM node and a `done` callback. Allows for more fine grained transition end
+   * logic. Timeouts are still used as a fallback if provided.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * ```jsx
+   * addEndListener={(node, done) => {
+   *   // use the css transitionend event to mark the finish of a transition
+   *   node.addEventListener('transitionend', done, false);
+   * }}
+   * ```
+   */ addEndListener: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired before the "entering" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool) -> void
+   */ onEnter: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired after the "entering" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEntering: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired after the "entered" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool) -> void
+   */ onEntered: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired before the "exiting" status is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement) -> void
+   */ onExit: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired after the "exiting" status is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement) -> void
+   */ onExiting: (0, _propTypesDefault.default).func,
+    /**
+   * Callback fired after the "exited" status is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement) -> void
+   */ onExited: (0, _propTypesDefault.default).func
+}; // Name the function so it is clearer in the documentation
+function noop() {}
+Transition.defaultProps = {
+    in: false,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false,
+    enter: true,
+    exit: true,
+    onEnter: noop,
+    onEntering: noop,
+    onEntered: noop,
+    onExit: noop,
+    onExiting: noop,
+    onExited: noop
+};
+Transition.UNMOUNTED = UNMOUNTED;
+Transition.EXITED = EXITED;
+Transition.ENTERING = ENTERING;
+Transition.ENTERED = ENTERED;
+Transition.EXITING = EXITING;
+exports.default = Transition;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","react":"21dqq","react-dom":"j6uA9","./config":"cepoZ","./utils/PropTypes":"9Zqaa","./TransitionGroupContext":"47LXo","./utils/reflow":"V4VjQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -33927,1535 +34906,7 @@ module.exports = require("./cjs/scheduler.development.js");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"3AD9A":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
-parcelHelpers.export(exports, "AccordionContext", ()=>(0, _accordionContextDefault.default));
-parcelHelpers.export(exports, "AccordionCollapse", ()=>(0, _accordionCollapseDefault.default));
-parcelHelpers.export(exports, "AccordionButton", ()=>(0, _accordionButtonDefault.default));
-parcelHelpers.export(exports, "useAccordionButton", ()=>(0, _accordionButton.useAccordionButton));
-parcelHelpers.export(exports, "Alert", ()=>(0, _alertDefault.default));
-parcelHelpers.export(exports, "Anchor", ()=>(0, _anchorDefault.default));
-parcelHelpers.export(exports, "Badge", ()=>(0, _badgeDefault.default));
-parcelHelpers.export(exports, "Breadcrumb", ()=>(0, _breadcrumbDefault.default));
-parcelHelpers.export(exports, "BreadcrumbItem", ()=>(0, _breadcrumbItemDefault.default));
-parcelHelpers.export(exports, "Button", ()=>(0, _buttonDefault.default));
-parcelHelpers.export(exports, "ButtonGroup", ()=>(0, _buttonGroupDefault.default));
-parcelHelpers.export(exports, "ButtonToolbar", ()=>(0, _buttonToolbarDefault.default));
-parcelHelpers.export(exports, "Card", ()=>(0, _cardDefault.default));
-parcelHelpers.export(exports, "CardImg", ()=>(0, _cardImgDefault.default));
-parcelHelpers.export(exports, "CardGroup", ()=>(0, _cardGroupDefault.default));
-parcelHelpers.export(exports, "Carousel", ()=>(0, _carouselDefault.default));
-parcelHelpers.export(exports, "CarouselItem", ()=>(0, _carouselItemDefault.default));
-parcelHelpers.export(exports, "CloseButton", ()=>(0, _closeButtonDefault.default));
-parcelHelpers.export(exports, "Col", ()=>(0, _colDefault.default));
-parcelHelpers.export(exports, "Collapse", ()=>(0, _collapseDefault.default));
-parcelHelpers.export(exports, "Dropdown", ()=>(0, _dropdownDefault.default));
-parcelHelpers.export(exports, "DropdownButton", ()=>(0, _dropdownButtonDefault.default));
-parcelHelpers.export(exports, "Fade", ()=>(0, _fadeDefault.default));
-parcelHelpers.export(exports, "Form", ()=>(0, _formDefault.default));
-parcelHelpers.export(exports, "FormControl", ()=>(0, _formControlDefault.default));
-parcelHelpers.export(exports, "FormCheck", ()=>(0, _formCheckDefault.default));
-parcelHelpers.export(exports, "FormFloating", ()=>(0, _formFloatingDefault.default));
-parcelHelpers.export(exports, "FloatingLabel", ()=>(0, _floatingLabelDefault.default));
-parcelHelpers.export(exports, "FormGroup", ()=>(0, _formGroupDefault.default));
-parcelHelpers.export(exports, "FormLabel", ()=>(0, _formLabelDefault.default));
-parcelHelpers.export(exports, "FormText", ()=>(0, _formTextDefault.default));
-parcelHelpers.export(exports, "FormSelect", ()=>(0, _formSelectDefault.default));
-parcelHelpers.export(exports, "Container", ()=>(0, _containerDefault.default));
-parcelHelpers.export(exports, "Image", ()=>(0, _imageDefault.default));
-parcelHelpers.export(exports, "Figure", ()=>(0, _figureDefault.default));
-parcelHelpers.export(exports, "InputGroup", ()=>(0, _inputGroupDefault.default));
-parcelHelpers.export(exports, "ListGroup", ()=>(0, _listGroupDefault.default));
-parcelHelpers.export(exports, "ListGroupItem", ()=>(0, _listGroupItemDefault.default));
-parcelHelpers.export(exports, "Modal", ()=>(0, _modalDefault.default));
-parcelHelpers.export(exports, "ModalBody", ()=>(0, _modalBodyDefault.default));
-parcelHelpers.export(exports, "ModalDialog", ()=>(0, _modalDialogDefault.default));
-parcelHelpers.export(exports, "ModalHeader", ()=>(0, _modalHeaderDefault.default));
-parcelHelpers.export(exports, "ModalFooter", ()=>(0, _modalFooterDefault.default));
-parcelHelpers.export(exports, "ModalTitle", ()=>(0, _modalTitleDefault.default));
-parcelHelpers.export(exports, "Nav", ()=>(0, _navDefault.default));
-parcelHelpers.export(exports, "Navbar", ()=>(0, _navbarDefault.default));
-parcelHelpers.export(exports, "NavbarBrand", ()=>(0, _navbarBrandDefault.default));
-parcelHelpers.export(exports, "NavDropdown", ()=>(0, _navDropdownDefault.default));
-parcelHelpers.export(exports, "NavItem", ()=>(0, _navItemDefault.default));
-parcelHelpers.export(exports, "NavLink", ()=>(0, _navLinkDefault.default));
-parcelHelpers.export(exports, "Offcanvas", ()=>(0, _offcanvasDefault.default));
-parcelHelpers.export(exports, "OffcanvasHeader", ()=>(0, _offcanvasHeaderDefault.default));
-parcelHelpers.export(exports, "OffcanvasTitle", ()=>(0, _offcanvasTitleDefault.default));
-parcelHelpers.export(exports, "OffcanvasBody", ()=>(0, _offcanvasBodyDefault.default));
-parcelHelpers.export(exports, "Overlay", ()=>(0, _overlayDefault.default));
-parcelHelpers.export(exports, "OverlayTrigger", ()=>(0, _overlayTriggerDefault.default));
-parcelHelpers.export(exports, "PageItem", ()=>(0, _pageItemDefault.default));
-parcelHelpers.export(exports, "Pagination", ()=>(0, _paginationDefault.default));
-parcelHelpers.export(exports, "Placeholder", ()=>(0, _placeholderDefault.default));
-parcelHelpers.export(exports, "PlaceholderButton", ()=>(0, _placeholderButtonDefault.default));
-parcelHelpers.export(exports, "Popover", ()=>(0, _popoverDefault.default));
-parcelHelpers.export(exports, "PopoverHeader", ()=>(0, _popoverHeaderDefault.default));
-parcelHelpers.export(exports, "PopoverBody", ()=>(0, _popoverBodyDefault.default));
-parcelHelpers.export(exports, "ProgressBar", ()=>(0, _progressBarDefault.default));
-parcelHelpers.export(exports, "Ratio", ()=>(0, _ratioDefault.default));
-parcelHelpers.export(exports, "Row", ()=>(0, _rowDefault.default));
-parcelHelpers.export(exports, "Spinner", ()=>(0, _spinnerDefault.default));
-parcelHelpers.export(exports, "SplitButton", ()=>(0, _splitButtonDefault.default));
-parcelHelpers.export(exports, "SSRProvider", ()=>(0, _ssrproviderDefault.default));
-parcelHelpers.export(exports, "Stack", ()=>(0, _stackDefault.default));
-parcelHelpers.export(exports, "Tab", ()=>(0, _tabDefault.default));
-parcelHelpers.export(exports, "TabContainer", ()=>(0, _tabContainerDefault.default));
-parcelHelpers.export(exports, "TabContent", ()=>(0, _tabContentDefault.default));
-parcelHelpers.export(exports, "Table", ()=>(0, _tableDefault.default));
-parcelHelpers.export(exports, "TabPane", ()=>(0, _tabPaneDefault.default));
-parcelHelpers.export(exports, "Tabs", ()=>(0, _tabsDefault.default));
-parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
-parcelHelpers.export(exports, "Toast", ()=>(0, _toastDefault.default));
-parcelHelpers.export(exports, "ToastBody", ()=>(0, _toastBodyDefault.default));
-parcelHelpers.export(exports, "ToastHeader", ()=>(0, _toastHeaderDefault.default));
-parcelHelpers.export(exports, "ToastContainer", ()=>(0, _toastContainerDefault.default));
-parcelHelpers.export(exports, "ToggleButton", ()=>(0, _toggleButtonDefault.default));
-parcelHelpers.export(exports, "ToggleButtonGroup", ()=>(0, _toggleButtonGroupDefault.default));
-parcelHelpers.export(exports, "Tooltip", ()=>(0, _tooltipDefault.default));
-var _accordion = require("./Accordion");
-var _accordionDefault = parcelHelpers.interopDefault(_accordion);
-var _accordionContext = require("./AccordionContext");
-var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
-var _accordionCollapse = require("./AccordionCollapse");
-var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
-var _accordionButton = require("./AccordionButton");
-var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
-var _alert = require("./Alert");
-var _alertDefault = parcelHelpers.interopDefault(_alert);
-var _anchor = require("./Anchor");
-var _anchorDefault = parcelHelpers.interopDefault(_anchor);
-var _badge = require("./Badge");
-var _badgeDefault = parcelHelpers.interopDefault(_badge);
-var _breadcrumb = require("./Breadcrumb");
-var _breadcrumbDefault = parcelHelpers.interopDefault(_breadcrumb);
-var _breadcrumbItem = require("./BreadcrumbItem");
-var _breadcrumbItemDefault = parcelHelpers.interopDefault(_breadcrumbItem);
-var _button = require("./Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _buttonGroup = require("./ButtonGroup");
-var _buttonGroupDefault = parcelHelpers.interopDefault(_buttonGroup);
-var _buttonToolbar = require("./ButtonToolbar");
-var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
-var _card = require("./Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _cardImg = require("./CardImg");
-var _cardImgDefault = parcelHelpers.interopDefault(_cardImg);
-var _cardGroup = require("./CardGroup");
-var _cardGroupDefault = parcelHelpers.interopDefault(_cardGroup);
-var _carousel = require("./Carousel");
-var _carouselDefault = parcelHelpers.interopDefault(_carousel);
-var _carouselItem = require("./CarouselItem");
-var _carouselItemDefault = parcelHelpers.interopDefault(_carouselItem);
-var _closeButton = require("./CloseButton");
-var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
-var _col = require("./Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _collapse = require("./Collapse");
-var _collapseDefault = parcelHelpers.interopDefault(_collapse);
-var _dropdown = require("./Dropdown");
-var _dropdownDefault = parcelHelpers.interopDefault(_dropdown);
-var _dropdownButton = require("./DropdownButton");
-var _dropdownButtonDefault = parcelHelpers.interopDefault(_dropdownButton);
-var _fade = require("./Fade");
-var _fadeDefault = parcelHelpers.interopDefault(_fade);
-var _form = require("./Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _formControl = require("./FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formFloating = require("./FormFloating");
-var _formFloatingDefault = parcelHelpers.interopDefault(_formFloating);
-var _floatingLabel = require("./FloatingLabel");
-var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _formLabel = require("./FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
-var _formText = require("./FormText");
-var _formTextDefault = parcelHelpers.interopDefault(_formText);
-var _formSelect = require("./FormSelect");
-var _formSelectDefault = parcelHelpers.interopDefault(_formSelect);
-var _container = require("./Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _image = require("./Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _figure = require("./Figure");
-var _figureDefault = parcelHelpers.interopDefault(_figure);
-var _inputGroup = require("./InputGroup");
-var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
-var _listGroup = require("./ListGroup");
-var _listGroupDefault = parcelHelpers.interopDefault(_listGroup);
-var _listGroupItem = require("./ListGroupItem");
-var _listGroupItemDefault = parcelHelpers.interopDefault(_listGroupItem);
-var _modal = require("./Modal");
-var _modalDefault = parcelHelpers.interopDefault(_modal);
-var _modalBody = require("./ModalBody");
-var _modalBodyDefault = parcelHelpers.interopDefault(_modalBody);
-var _modalDialog = require("./ModalDialog");
-var _modalDialogDefault = parcelHelpers.interopDefault(_modalDialog);
-var _modalHeader = require("./ModalHeader");
-var _modalHeaderDefault = parcelHelpers.interopDefault(_modalHeader);
-var _modalFooter = require("./ModalFooter");
-var _modalFooterDefault = parcelHelpers.interopDefault(_modalFooter);
-var _modalTitle = require("./ModalTitle");
-var _modalTitleDefault = parcelHelpers.interopDefault(_modalTitle);
-var _nav = require("./Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-var _navbar = require("./Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _navbarBrand = require("./NavbarBrand");
-var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
-var _navDropdown = require("./NavDropdown");
-var _navDropdownDefault = parcelHelpers.interopDefault(_navDropdown);
-var _navItem = require("./NavItem");
-var _navItemDefault = parcelHelpers.interopDefault(_navItem);
-var _navLink = require("./NavLink");
-var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
-var _offcanvas = require("./Offcanvas");
-var _offcanvasDefault = parcelHelpers.interopDefault(_offcanvas);
-var _offcanvasHeader = require("./OffcanvasHeader");
-var _offcanvasHeaderDefault = parcelHelpers.interopDefault(_offcanvasHeader);
-var _offcanvasTitle = require("./OffcanvasTitle");
-var _offcanvasTitleDefault = parcelHelpers.interopDefault(_offcanvasTitle);
-var _offcanvasBody = require("./OffcanvasBody");
-var _offcanvasBodyDefault = parcelHelpers.interopDefault(_offcanvasBody);
-var _overlay = require("./Overlay");
-var _overlayDefault = parcelHelpers.interopDefault(_overlay);
-var _overlayTrigger = require("./OverlayTrigger");
-var _overlayTriggerDefault = parcelHelpers.interopDefault(_overlayTrigger);
-var _pageItem = require("./PageItem");
-var _pageItemDefault = parcelHelpers.interopDefault(_pageItem);
-var _pagination = require("./Pagination");
-var _paginationDefault = parcelHelpers.interopDefault(_pagination);
-var _placeholder = require("./Placeholder");
-var _placeholderDefault = parcelHelpers.interopDefault(_placeholder);
-var _placeholderButton = require("./PlaceholderButton");
-var _placeholderButtonDefault = parcelHelpers.interopDefault(_placeholderButton);
-var _popover = require("./Popover");
-var _popoverDefault = parcelHelpers.interopDefault(_popover);
-var _popoverHeader = require("./PopoverHeader");
-var _popoverHeaderDefault = parcelHelpers.interopDefault(_popoverHeader);
-var _popoverBody = require("./PopoverBody");
-var _popoverBodyDefault = parcelHelpers.interopDefault(_popoverBody);
-var _progressBar = require("./ProgressBar");
-var _progressBarDefault = parcelHelpers.interopDefault(_progressBar);
-var _ratio = require("./Ratio");
-var _ratioDefault = parcelHelpers.interopDefault(_ratio);
-var _row = require("./Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _spinner = require("./Spinner");
-var _spinnerDefault = parcelHelpers.interopDefault(_spinner);
-var _splitButton = require("./SplitButton");
-var _splitButtonDefault = parcelHelpers.interopDefault(_splitButton);
-var _ssrprovider = require("./SSRProvider");
-var _ssrproviderDefault = parcelHelpers.interopDefault(_ssrprovider);
-var _stack = require("./Stack");
-var _stackDefault = parcelHelpers.interopDefault(_stack);
-var _tab = require("./Tab");
-var _tabDefault = parcelHelpers.interopDefault(_tab);
-var _tabContainer = require("./TabContainer");
-var _tabContainerDefault = parcelHelpers.interopDefault(_tabContainer);
-var _tabContent = require("./TabContent");
-var _tabContentDefault = parcelHelpers.interopDefault(_tabContent);
-var _table = require("./Table");
-var _tableDefault = parcelHelpers.interopDefault(_table);
-var _tabPane = require("./TabPane");
-var _tabPaneDefault = parcelHelpers.interopDefault(_tabPane);
-var _tabs = require("./Tabs");
-var _tabsDefault = parcelHelpers.interopDefault(_tabs);
-var _themeProvider = require("./ThemeProvider");
-var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
-var _toast = require("./Toast");
-var _toastDefault = parcelHelpers.interopDefault(_toast);
-var _toastBody = require("./ToastBody");
-var _toastBodyDefault = parcelHelpers.interopDefault(_toastBody);
-var _toastHeader = require("./ToastHeader");
-var _toastHeaderDefault = parcelHelpers.interopDefault(_toastHeader);
-var _toastContainer = require("./ToastContainer");
-var _toastContainerDefault = parcelHelpers.interopDefault(_toastContainer);
-var _toggleButton = require("./ToggleButton");
-var _toggleButtonDefault = parcelHelpers.interopDefault(_toggleButton);
-var _toggleButtonGroup = require("./ToggleButtonGroup");
-var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup);
-var _tooltip = require("./Tooltip");
-var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
-
-},{"./Accordion":"1m6xp","./AccordionContext":"e5D96","./AccordionCollapse":"kI8r5","./AccordionButton":"hkYfS","./Alert":"e3Xec","./Anchor":"lwVpH","./Badge":"eEyks","./Breadcrumb":"hOow1","./BreadcrumbItem":"bWkuO","./Button":"aPzUt","./ButtonGroup":"gXYCe","./ButtonToolbar":"k88gW","./Card":"lAynp","./CardImg":"1reTi","./CardGroup":"2j3Ij","./Carousel":"bsGhm","./CarouselItem":"9A3DI","./CloseButton":"1wmVl","./Col":"2L2I6","./Collapse":"acuzI","./Dropdown":"88m2L","./DropdownButton":"5sMVB","./Fade":"aH18S","./Form":"iBZ80","./FormControl":"iynMc","./FormCheck":"idkr0","./FormFloating":"aj346","./FloatingLabel":"coYzo","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./FormSelect":"hHWyB","./Container":"hEdsw","./Image":"cyVPa","./Figure":"7Eckp","./InputGroup":"htx7r","./ListGroup":"4tGXh","./ListGroupItem":"9U5b8","./Modal":"aNVmp","./ModalBody":"e0aNG","./ModalDialog":"cwGGq","./ModalHeader":"cxgdE","./ModalFooter":"9SLlP","./ModalTitle":"kYqJp","./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavDropdown":"8e6QB","./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasBody":"fX7Bo","./Overlay":"bHdwO","./OverlayTrigger":"acOnV","./PageItem":"i0zxH","./Pagination":"6yvxS","./Placeholder":"fw5xV","./PlaceholderButton":"dRc7O","./Popover":"afWr1","./PopoverHeader":"1rLXn","./PopoverBody":"amJTZ","./ProgressBar":"cCHIb","./Ratio":"ioXys","./Row":"cMC39","./Spinner":"2r8jr","./SplitButton":"fWabe","./SSRProvider":"kdCr8","./Stack":"eZkZ1","./Tab":"kfiWM","./TabContainer":"hkO95","./TabContent":"fQxYB","./Table":"3UQc3","./TabPane":"4jWis","./Tabs":"cq1ML","./ThemeProvider":"dVixI","./Toast":"iyxlo","./ToastBody":"30cvm","./ToastHeader":"gsTvK","./ToastContainer":"kqOPy","./ToggleButton":"dCmeV","./ToggleButtonGroup":"2t8MV","./Tooltip":"ajjgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1m6xp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _uncontrollable = require("uncontrollable");
-var _themeProvider = require("./ThemeProvider");
-var _accordionBody = require("./AccordionBody");
-var _accordionBodyDefault = parcelHelpers.interopDefault(_accordionBody);
-var _accordionButton = require("./AccordionButton");
-var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
-var _accordionCollapse = require("./AccordionCollapse");
-var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
-var _accordionContext = require("./AccordionContext");
-var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
-var _accordionHeader = require("./AccordionHeader");
-var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
-var _accordionItem = require("./AccordionItem");
-var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
-var _jsxRuntime = require("react/jsx-runtime");
-const Accordion = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-    as: Component = "div" , activeKey , bsPrefix , className , onSelect , flush , alwaysOpen , ...controlledProps } = (0, _uncontrollable.useUncontrolled)(props, {
-        activeKey: "onSelect"
-    });
-    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion");
-    const contextValue = (0, _react.useMemo)(()=>({
-            activeEventKey: activeKey,
-            onSelect,
-            alwaysOpen
-        }), [
-        activeKey,
-        onSelect,
-        alwaysOpen
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionContextDefault.default).Provider, {
-        value: contextValue,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            ref: ref,
-            ...controlledProps,
-            className: (0, _classnamesDefault.default)(className, prefix, flush && `${prefix}-flush`)
-        })
-    });
-});
-Accordion.displayName = "Accordion";
-exports.default = Object.assign(Accordion, {
-    Button: (0, _accordionButtonDefault.default),
-    Collapse: (0, _accordionCollapseDefault.default),
-    Item: (0, _accordionItemDefault.default),
-    Header: (0, _accordionHeaderDefault.default),
-    Body: (0, _accordionBodyDefault.default)
-});
-
-},{"classnames":"jocGM","react":"21dqq","uncontrollable":"b3yWY","./ThemeProvider":"dVixI","./AccordionBody":"2p9OR","./AccordionButton":"hkYfS","./AccordionCollapse":"kI8r5","./AccordionContext":"e5D96","./AccordionHeader":"LJXVf","./AccordionItem":"8sXhn","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3yWY":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useUncontrolled", ()=>(0, _hookDefault.default));
-parcelHelpers.export(exports, "useUncontrolledProp", ()=>(0, _hook.useUncontrolledProp));
-parcelHelpers.export(exports, "uncontrollable", ()=>(0, _uncontrollableDefault.default));
-var _hook = require("./hook");
-var _hookDefault = parcelHelpers.interopDefault(_hook);
-var _uncontrollable = require("./uncontrollable");
-var _uncontrollableDefault = parcelHelpers.interopDefault(_uncontrollable);
-
-},{"./hook":"cv9oS","./uncontrollable":"aqbCD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cv9oS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useUncontrolledProp", ()=>useUncontrolledProp);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _react = require("react");
-var _utils = require("./utils");
-function _toPropertyKey(arg) {
-    var key = _toPrimitive(arg, "string");
-    return typeof key === "symbol" ? key : String(key);
-}
-function _toPrimitive(input, hint) {
-    if (typeof input !== "object" || input === null) return input;
-    var prim = input[Symbol.toPrimitive];
-    if (prim !== undefined) {
-        var res = prim.call(input, hint || "default");
-        if (typeof res !== "object") return res;
-        throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return (hint === "string" ? String : Number)(input);
-}
-function useUncontrolledProp(propValue, defaultValue, handler) {
-    var wasPropRef = (0, _react.useRef)(propValue !== undefined);
-    var _useState = (0, _react.useState)(defaultValue), stateValue = _useState[0], setState = _useState[1];
-    var isProp = propValue !== undefined;
-    var wasProp = wasPropRef.current;
-    wasPropRef.current = isProp;
-    /**
-   * If a prop switches from controlled to Uncontrolled
-   * reset its value to the defaultValue
-   */ if (!isProp && wasProp && stateValue !== defaultValue) setState(defaultValue);
-    return [
-        isProp ? propValue : stateValue,
-        (0, _react.useCallback)(function(value) {
-            for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
-            if (handler) handler.apply(void 0, [
-                value
-            ].concat(args));
-            setState(value);
-        }, [
-            handler
-        ])
-    ];
-}
-function useUncontrolled(props, config) {
-    return Object.keys(config).reduce(function(result, fieldName) {
-        var _extends2;
-        var _ref = result, defaultValue = _ref[_utils.defaultKey(fieldName)], propsValue = _ref[fieldName], rest = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, [
-            _utils.defaultKey(fieldName),
-            fieldName
-        ].map(_toPropertyKey));
-        var handlerName = config[fieldName];
-        var _useUncontrolledProp = useUncontrolledProp(propsValue, defaultValue, props[handlerName]), value = _useUncontrolledProp[0], handler = _useUncontrolledProp[1];
-        return (0, _extendsDefault.default)({}, rest, (_extends2 = {}, _extends2[fieldName] = value, _extends2[handlerName] = handler, _extends2));
-    }, props);
-}
-exports.default = useUncontrolled;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fTBFS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return _extends.apply(this, arguments);
-}
-exports.default = _extends;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"adHgr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-exports.default = _objectWithoutPropertiesLoose;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7UQ73":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "uncontrolledPropTypes", ()=>uncontrolledPropTypes);
-parcelHelpers.export(exports, "isProp", ()=>isProp);
-parcelHelpers.export(exports, "defaultKey", ()=>defaultKey);
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */ parcelHelpers.export(exports, "canAcceptRef", ()=>canAcceptRef);
-var _invariant = require("invariant");
-var _invariantDefault = parcelHelpers.interopDefault(_invariant);
-var noop = function noop() {};
-function readOnlyPropType(handler, name) {
-    return function(props, propName) {
-        if (props[propName] !== undefined) {
-            if (!props[handler]) return new Error("You have provided a `" + propName + "` prop to `" + name + "` " + ("without an `" + handler + "` handler prop. This will render a read-only field. ") + ("If the field should be mutable use `" + defaultKey(propName) + "`. ") + ("Otherwise, set `" + handler + "`."));
-        }
-    };
-}
-function uncontrolledPropTypes(controlledValues, displayName) {
-    var propTypes = {};
-    Object.keys(controlledValues).forEach(function(prop) {
-        // add default propTypes for folks that use runtime checks
-        propTypes[defaultKey(prop)] = noop;
-        var handler = controlledValues[prop];
-        !(typeof handler === "string" && handler.trim().length) && (0, _invariantDefault.default)(false, "Uncontrollable - [%s]: the prop `%s` needs a valid handler key name in order to make it uncontrollable", displayName, prop);
-        propTypes[prop] = readOnlyPropType(handler, displayName);
-    });
-    return propTypes;
-}
-function isProp(props, prop) {
-    return props[prop] !== undefined;
-}
-function defaultKey(key) {
-    return "default" + key.charAt(0).toUpperCase() + key.substr(1);
-}
-function canAcceptRef(component) {
-    return !!component && (typeof component !== "function" || component.prototype && component.prototype.isReactComponent);
-}
-
-},{"invariant":"d1QgR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d1QgR":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */ var invariant = function(condition, format, a, b, c, d, e, f) {
-    if (format === undefined) throw new Error("invariant requires an error message argument");
-    if (!condition) {
-        var error;
-        if (format === undefined) error = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
-        else {
-            var args = [
-                a,
-                b,
-                c,
-                d,
-                e,
-                f
-            ];
-            var argIndex = 0;
-            error = new Error(format.replace(/%s/g, function() {
-                return args[argIndex++];
-            }));
-            error.name = "Invariant Violation";
-        }
-        error.framesToPop = 1; // we don't care about invariant's own frame
-        throw error;
-    }
-};
-module.exports = invariant;
-
-},{}],"aqbCD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactLifecyclesCompat = require("react-lifecycles-compat");
-var _invariant = require("invariant");
-var _invariantDefault = parcelHelpers.interopDefault(_invariant);
-var _utils = require("./utils");
-var _jsxFileName = "/Users/jquense/src/uncontrollable/src/uncontrollable.js";
-function uncontrollable(Component, controlledValues, methods) {
-    if (methods === void 0) methods = [];
-    var displayName = Component.displayName || Component.name || "Component";
-    var canAcceptRef = _utils.canAcceptRef(Component);
-    var controlledProps = Object.keys(controlledValues);
-    var PROPS_TO_OMIT = controlledProps.map(_utils.defaultKey);
-    !(canAcceptRef || !methods.length) && (0, _invariantDefault.default)(false, "[uncontrollable] stateless function components cannot pass through methods because they have no associated instances. Check component: " + displayName + ", " + "attempting to pass through methods: " + methods.join(", "));
-    var UncontrolledComponent1 = /*#__PURE__*/ function(_React$Component) {
-        (0, _inheritsLooseDefault.default)(UncontrolledComponent, _React$Component);
-        function UncontrolledComponent() {
-            var _this;
-            for(var _len = arguments.length, args1 = new Array(_len), _key = 0; _key < _len; _key++)args1[_key] = arguments[_key];
-            _this = _React$Component.call.apply(_React$Component, [
-                this
-            ].concat(args1)) || this;
-            _this.handlers = Object.create(null);
-            controlledProps.forEach(function(propName) {
-                var handlerName = controlledValues[propName];
-                var handleChange = function handleChange(value) {
-                    if (_this.props[handlerName]) {
-                        var _this$props;
-                        _this._notifying = true;
-                        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
-                        (_this$props = _this.props)[handlerName].apply(_this$props, [
-                            value
-                        ].concat(args));
-                        _this._notifying = false;
-                    }
-                    if (!_this.unmounted) _this.setState(function(_ref) {
-                        var _extends2;
-                        var values = _ref.values;
-                        return {
-                            values: (0, _extendsDefault.default)(Object.create(null), values, (_extends2 = {}, _extends2[propName] = value, _extends2))
-                        };
-                    });
-                };
-                _this.handlers[handlerName] = handleChange;
-            });
-            if (methods.length) _this.attachRef = function(ref) {
-                _this.inner = ref;
-            };
-            var values1 = Object.create(null);
-            controlledProps.forEach(function(key) {
-                values1[key] = _this.props[_utils.defaultKey(key)];
-            });
-            _this.state = {
-                values: values1,
-                prevProps: {}
-            };
-            return _this;
-        }
-        var _proto = UncontrolledComponent.prototype;
-        _proto.shouldComponentUpdate = function shouldComponentUpdate() {
-            //let setState trigger the update
-            return !this._notifying;
-        };
-        UncontrolledComponent.getDerivedStateFromProps = function getDerivedStateFromProps(props, _ref2) {
-            var values = _ref2.values, prevProps = _ref2.prevProps;
-            var nextState = {
-                values: (0, _extendsDefault.default)(Object.create(null), values),
-                prevProps: {}
-            };
-            controlledProps.forEach(function(key) {
-                /**
-         * If a prop switches from controlled to Uncontrolled
-         * reset its value to the defaultValue
-         */ nextState.prevProps[key] = props[key];
-                if (!_utils.isProp(props, key) && _utils.isProp(prevProps, key)) nextState.values[key] = props[_utils.defaultKey(key)];
-            });
-            return nextState;
-        };
-        _proto.componentWillUnmount = function componentWillUnmount() {
-            this.unmounted = true;
-        };
-        _proto.render = function render() {
-            var _this2 = this;
-            var _this$props2 = this.props, innerRef = _this$props2.innerRef, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props2, [
-                "innerRef"
-            ]);
-            PROPS_TO_OMIT.forEach(function(prop) {
-                delete props[prop];
-            });
-            var newProps = {};
-            controlledProps.forEach(function(propName) {
-                var propValue = _this2.props[propName];
-                newProps[propName] = propValue !== undefined ? propValue : _this2.state.values[propName];
-            });
-            return (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, newProps, this.handlers, {
-                ref: innerRef || this.attachRef
-            }));
-        };
-        return UncontrolledComponent;
-    }((0, _reactDefault.default).Component);
-    (0, _reactLifecyclesCompat.polyfill)(UncontrolledComponent1);
-    UncontrolledComponent1.displayName = "Uncontrolled(" + displayName + ")";
-    UncontrolledComponent1.propTypes = (0, _extendsDefault.default)({
-        innerRef: function innerRef() {}
-    }, _utils.uncontrolledPropTypes(controlledValues, displayName));
-    methods.forEach(function(method) {
-        UncontrolledComponent1.prototype[method] = function $proxiedMethod() {
-            var _this$inner;
-            return (_this$inner = this.inner)[method].apply(_this$inner, arguments);
-        };
-    });
-    var WrappedComponent = UncontrolledComponent1;
-    if ((0, _reactDefault.default).forwardRef) {
-        WrappedComponent = (0, _reactDefault.default).forwardRef(function(props, ref) {
-            return (0, _reactDefault.default).createElement(UncontrolledComponent1, (0, _extendsDefault.default)({}, props, {
-                innerRef: ref,
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 128
-                },
-                __self: this
-            }));
-        });
-        WrappedComponent.propTypes = UncontrolledComponent1.propTypes;
-    }
-    WrappedComponent.ControlledComponent = Component;
-    /**
-   * useful when wrapping a Component and you want to control
-   * everything
-   */ WrappedComponent.deferControlTo = function(newComponent, additions, nextMethods) {
-        if (additions === void 0) additions = {};
-        return uncontrollable(newComponent, (0, _extendsDefault.default)({}, controlledValues, additions), nextMethods);
-    };
-    return WrappedComponent;
-}
-exports.default = uncontrollable;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","react":"21dqq","react-lifecycles-compat":"3f3fU","invariant":"d1QgR","./utils":"7UQ73","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9u2Z8":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _setPrototypeOfJs = require("./setPrototypeOf.js");
-var _setPrototypeOfJsDefault = parcelHelpers.interopDefault(_setPrototypeOfJs);
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    (0, _setPrototypeOfJsDefault.default)(subClass, superClass);
-}
-exports.default = _inheritsLoose;
-
-},{"./setPrototypeOf.js":"3XDFA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3XDFA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function _setPrototypeOf(o1, p1) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-        o.__proto__ = p;
-        return o;
-    };
-    return _setPrototypeOf(o1, p1);
-}
-exports.default = _setPrototypeOf;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3f3fU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "polyfill", ()=>polyfill);
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ function componentWillMount() {
-    // Call this.constructor.gDSFP to support sub-classes.
-    var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
-    if (state !== null && state !== undefined) this.setState(state);
-}
-function componentWillReceiveProps(nextProps) {
-    // Call this.constructor.gDSFP to support sub-classes.
-    // Use the setState() updater to ensure state isn't stale in certain edge cases.
-    function updater(prevState) {
-        var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
-        return state !== null && state !== undefined ? state : null;
-    }
-    // Binding "this" is important for shallow renderer support.
-    this.setState(updater.bind(this));
-}
-function componentWillUpdate(nextProps, nextState) {
-    try {
-        var prevProps = this.props;
-        var prevState = this.state;
-        this.props = nextProps;
-        this.state = nextState;
-        this.__reactInternalSnapshotFlag = true;
-        this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(prevProps, prevState);
-    } finally{
-        this.props = prevProps;
-        this.state = prevState;
-    }
-}
-// React may warn about cWM/cWRP/cWU methods being deprecated.
-// Add a flag to suppress these warnings for this special case.
-componentWillMount.__suppressDeprecationWarning = true;
-componentWillReceiveProps.__suppressDeprecationWarning = true;
-componentWillUpdate.__suppressDeprecationWarning = true;
-function polyfill(Component) {
-    var prototype = Component.prototype;
-    if (!prototype || !prototype.isReactComponent) throw new Error("Can only polyfill class components");
-    if (typeof Component.getDerivedStateFromProps !== "function" && typeof prototype.getSnapshotBeforeUpdate !== "function") return Component;
-    // If new component APIs are defined, "unsafe" lifecycles won't be called.
-    // Error if any of these lifecycles are present,
-    // Because they would work differently between older and newer (16.3+) versions of React.
-    var foundWillMountName = null;
-    var foundWillReceivePropsName = null;
-    var foundWillUpdateName = null;
-    if (typeof prototype.componentWillMount === "function") foundWillMountName = "componentWillMount";
-    else if (typeof prototype.UNSAFE_componentWillMount === "function") foundWillMountName = "UNSAFE_componentWillMount";
-    if (typeof prototype.componentWillReceiveProps === "function") foundWillReceivePropsName = "componentWillReceiveProps";
-    else if (typeof prototype.UNSAFE_componentWillReceiveProps === "function") foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
-    if (typeof prototype.componentWillUpdate === "function") foundWillUpdateName = "componentWillUpdate";
-    else if (typeof prototype.UNSAFE_componentWillUpdate === "function") foundWillUpdateName = "UNSAFE_componentWillUpdate";
-    if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
-        var componentName = Component.displayName || Component.name;
-        var newApiName = typeof Component.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
-        throw Error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n" + componentName + " uses " + newApiName + " but also contains the following legacy lifecycles:" + (foundWillMountName !== null ? "\n  " + foundWillMountName : "") + (foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "") + (foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "") + "\n\nThe above lifecycles should be removed. Learn more about this warning here:\n" + "https://fb.me/react-async-component-lifecycle-hooks");
-    }
-    // React <= 16.2 does not support static getDerivedStateFromProps.
-    // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
-    // Newer versions of React will ignore these lifecycles if gDSFP exists.
-    if (typeof Component.getDerivedStateFromProps === "function") {
-        prototype.componentWillMount = componentWillMount;
-        prototype.componentWillReceiveProps = componentWillReceiveProps;
-    }
-    // React <= 16.2 does not support getSnapshotBeforeUpdate.
-    // As a workaround, use cWU to invoke the new lifecycle.
-    // Newer versions of React will ignore that lifecycle if gSBU exists.
-    if (typeof prototype.getSnapshotBeforeUpdate === "function") {
-        if (typeof prototype.componentDidUpdate !== "function") throw new Error("Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype");
-        prototype.componentWillUpdate = componentWillUpdate;
-        var componentDidUpdate = prototype.componentDidUpdate;
-        prototype.componentDidUpdate = function componentDidUpdatePolyfill(prevProps, prevState, maybeSnapshot) {
-            // 16.3+ will not execute our will-update method;
-            // It will pass a snapshot value to did-update though.
-            // Older versions will require our polyfilled will-update value.
-            // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
-            // Because for <= 15.x versions this might be a "prevContext" object.
-            // We also can't just check "__reactInternalSnapshot",
-            // Because get-snapshot might return a falsy value.
-            // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
-            var snapshot = this.__reactInternalSnapshotFlag ? this.__reactInternalSnapshot : maybeSnapshot;
-            componentDidUpdate.call(this, prevProps, prevState, snapshot);
-        };
-    }
-    return Component;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2p9OR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _accordionCollapse = require("./AccordionCollapse");
-var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
-var _accordionItemContext = require("./AccordionItemContext");
-var _accordionItemContextDefault = parcelHelpers.interopDefault(_accordionItemContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const AccordionBody = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div" , bsPrefix , className , ...props }, ref)=>{
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion-body");
-    const { eventKey  } = (0, _react.useContext)((0, _accordionItemContextDefault.default));
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _accordionCollapseDefault.default), {
-        eventKey: eventKey,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            ref: ref,
-            ...props,
-            className: (0, _classnamesDefault.default)(className, bsPrefix)
-        })
-    });
-});
-AccordionBody.displayName = "AccordionBody";
-exports.default = AccordionBody;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AccordionCollapse":"kI8r5","./AccordionItemContext":"35RRI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kI8r5":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _collapse = require("./Collapse");
-var _collapseDefault = parcelHelpers.interopDefault(_collapse);
-var _accordionContext = require("./AccordionContext");
-var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const AccordionCollapse = /*#__PURE__*/ _react.forwardRef(({ as: Component = "div" , bsPrefix , className , children , eventKey , ...props }, ref)=>{
-    const { activeEventKey  } = (0, _react.useContext)((0, _accordionContextDefault.default));
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "accordion-collapse");
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _collapseDefault.default), {
-        ref: ref,
-        in: (0, _accordionContext.isAccordionItemSelected)(activeEventKey, eventKey),
-        ...props,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-            children: _react.Children.only(children)
-        })
-    });
-});
-AccordionCollapse.displayName = "AccordionCollapse";
-exports.default = AccordionCollapse;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./Collapse":"acuzI","./AccordionContext":"e5D96","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"acuzI":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _css = require("dom-helpers/css");
-var _cssDefault = parcelHelpers.interopDefault(_css);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _transition = require("react-transition-group/Transition");
-var _transitionEndListener = require("./transitionEndListener");
-var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
-var _createChainedFunction = require("./createChainedFunction");
-var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
-var _triggerBrowserReflow = require("./triggerBrowserReflow");
-var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
-var _transitionWrapper = require("./TransitionWrapper");
-var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
-var _jsxRuntime = require("react/jsx-runtime");
-const MARGINS = {
-    height: [
-        "marginTop",
-        "marginBottom"
-    ],
-    width: [
-        "marginLeft",
-        "marginRight"
-    ]
-};
-function getDefaultDimensionValue(dimension, elem) {
-    const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
-    const value = elem[offset];
-    const margins = MARGINS[dimension];
-    return value + parseInt((0, _cssDefault.default)(elem, margins[0]), 10) + parseInt((0, _cssDefault.default)(elem, margins[1]), 10);
-}
-const collapseStyles = {
-    [(0, _transition.EXITED)]: "collapse",
-    [(0, _transition.EXITING)]: "collapsing",
-    [(0, _transition.ENTERING)]: "collapsing",
-    [(0, _transition.ENTERED)]: "collapse show"
-};
-const defaultProps = {
-    in: false,
-    timeout: 300,
-    mountOnEnter: false,
-    unmountOnExit: false,
-    appear: false,
-    getDimensionValue: getDefaultDimensionValue
-};
-const Collapse = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(({ onEnter , onEntering , onEntered , onExit , onExiting , className , children , dimension ="height" , getDimensionValue =getDefaultDimensionValue , ...props }, ref)=>{
-    /* Compute dimension */ const computedDimension = typeof dimension === "function" ? dimension() : dimension;
-    /* -- Expanding -- */ const handleEnter = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
-            elem.style[computedDimension] = "0";
-        }, onEnter), [
-        computedDimension,
-        onEnter
-    ]);
-    const handleEntering = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
-            const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
-            elem.style[computedDimension] = `${elem[scroll]}px`;
-        }, onEntering), [
-        computedDimension,
-        onEntering
-    ]);
-    const handleEntered = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
-            elem.style[computedDimension] = null;
-        }, onEntered), [
-        computedDimension,
-        onEntered
-    ]);
-    /* -- Collapsing -- */ const handleExit = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
-            elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
-            (0, _triggerBrowserReflowDefault.default)(elem);
-        }, onExit), [
-        onExit,
-        getDimensionValue,
-        computedDimension
-    ]);
-    const handleExiting = (0, _react.useMemo)(()=>(0, _createChainedFunctionDefault.default)((elem)=>{
-            elem.style[computedDimension] = null;
-        }, onExiting), [
-        computedDimension,
-        onExiting
-    ]);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _transitionWrapperDefault.default), {
-        ref: ref,
-        addEndListener: (0, _transitionEndListenerDefault.default),
-        ...props,
-        "aria-expanded": props.role ? props.in : null,
-        onEnter: handleEnter,
-        onEntering: handleEntering,
-        onEntered: handleEntered,
-        onExit: handleExit,
-        onExiting: handleExiting,
-        childRef: children.ref,
-        children: (state, innerProps)=>/*#__PURE__*/ (0, _reactDefault.default).cloneElement(children, {
-                ...innerProps,
-                className: (0, _classnamesDefault.default)(className, children.props.className, collapseStyles[state], computedDimension === "width" && "collapse-horizontal")
-            })
-    });
-}); // @ts-ignore
-// @ts-ignore
-Collapse.defaultProps = defaultProps;
-exports.default = Collapse;
-
-},{"classnames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"klmhr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _getComputedStyle = require("./getComputedStyle");
-var _getComputedStyleDefault = parcelHelpers.interopDefault(_getComputedStyle);
-var _hyphenateStyle = require("./hyphenateStyle");
-var _hyphenateStyleDefault = parcelHelpers.interopDefault(_hyphenateStyle);
-var _isTransform = require("./isTransform");
-var _isTransformDefault = parcelHelpers.interopDefault(_isTransform);
-function style(node, property) {
-    var css = "";
-    var transforms = "";
-    if (typeof property === "string") return node.style.getPropertyValue((0, _hyphenateStyleDefault.default)(property)) || (0, _getComputedStyleDefault.default)(node).getPropertyValue((0, _hyphenateStyleDefault.default)(property));
-    Object.keys(property).forEach(function(key) {
-        var value = property[key];
-        if (!value && value !== 0) node.style.removeProperty((0, _hyphenateStyleDefault.default)(key));
-        else if ((0, _isTransformDefault.default)(key)) transforms += key + "(" + value + ") ";
-        else css += (0, _hyphenateStyleDefault.default)(key) + ": " + value + ";";
-    });
-    if (transforms) css += "transform: " + transforms + ";";
-    node.style.cssText += ";" + css;
-}
-exports.default = style;
-
-},{"./getComputedStyle":"adqGa","./hyphenateStyle":"hbsNp","./isTransform":"gnxjD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"adqGa":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _ownerWindow = require("./ownerWindow");
-var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
-function getComputedStyle(node, psuedoElement) {
-    return (0, _ownerWindowDefault.default)(node).getComputedStyle(node, psuedoElement);
-}
-exports.default = getComputedStyle;
-
-},{"./ownerWindow":"3nPSD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3nPSD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _ownerDocument = require("./ownerDocument");
-var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
-function ownerWindow(node) {
-    var doc = (0, _ownerDocumentDefault.default)(node);
-    return doc && doc.defaultView || window;
-}
-exports.default = ownerWindow;
-
-},{"./ownerDocument":"2WpOk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2WpOk":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function ownerDocument(node) {
-    return node && node.ownerDocument || document;
-}
-exports.default = ownerDocument;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hbsNp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/**
- * Copyright 2013-2014, Facebook, Inc.
- * All rights reserved.
- * https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/vendor/core/hyphenateStyleName.js
- */ var _hyphenate = require("./hyphenate");
-var _hyphenateDefault = parcelHelpers.interopDefault(_hyphenate);
-var msPattern = /^ms-/;
-function hyphenateStyleName(string) {
-    return (0, _hyphenateDefault.default)(string).replace(msPattern, "-ms-");
-}
-exports.default = hyphenateStyleName;
-
-},{"./hyphenate":"3UJRr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJRr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var rUpper = /([A-Z])/g;
-function hyphenate(string) {
-    return string.replace(rUpper, "-$1").toLowerCase();
-}
-exports.default = hyphenate;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gnxjD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i;
-function isTransform(value) {
-    return !!(value && supportedTransforms.test(value));
-}
-exports.default = isTransform;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cKsrS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "UNMOUNTED", ()=>UNMOUNTED);
-parcelHelpers.export(exports, "EXITED", ()=>EXITED);
-parcelHelpers.export(exports, "ENTERING", ()=>ENTERING);
-parcelHelpers.export(exports, "ENTERED", ()=>ENTERED);
-parcelHelpers.export(exports, "EXITING", ()=>EXITING);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactDom = require("react-dom");
-var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-var _config = require("./config");
-var _configDefault = parcelHelpers.interopDefault(_config);
-var _propTypes1 = require("./utils/PropTypes");
-var _transitionGroupContext = require("./TransitionGroupContext");
-var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
-var _reflow = require("./utils/reflow");
-var UNMOUNTED = "unmounted";
-var EXITED = "exited";
-var ENTERING = "entering";
-var ENTERED = "entered";
-var EXITING = "exiting";
-/**
- * The Transition component lets you describe a transition from one component
- * state to another _over time_ with a simple declarative API. Most commonly
- * it's used to animate the mounting and unmounting of a component, but can also
- * be used to describe in-place transition states as well.
- *
- * ---
- *
- * **Note**: `Transition` is a platform-agnostic base component. If you're using
- * transitions in CSS, you'll probably want to use
- * [`CSSTransition`](https://reactcommunity.org/react-transition-group/css-transition)
- * instead. It inherits all the features of `Transition`, but contains
- * additional features necessary to play nice with CSS transitions (hence the
- * name of the component).
- *
- * ---
- *
- * By default the `Transition` component does not alter the behavior of the
- * component it renders, it only tracks "enter" and "exit" states for the
- * components. It's up to you to give meaning and effect to those states. For
- * example we can add styles to a component when it enters or exits:
- *
- * ```jsx
- * import { Transition } from 'react-transition-group';
- *
- * const duration = 300;
- *
- * const defaultStyle = {
- *   transition: `opacity ${duration}ms ease-in-out`,
- *   opacity: 0,
- * }
- *
- * const transitionStyles = {
- *   entering: { opacity: 1 },
- *   entered:  { opacity: 1 },
- *   exiting:  { opacity: 0 },
- *   exited:  { opacity: 0 },
- * };
- *
- * const Fade = ({ in: inProp }) => (
- *   <Transition in={inProp} timeout={duration}>
- *     {state => (
- *       <div style={{
- *         ...defaultStyle,
- *         ...transitionStyles[state]
- *       }}>
- *         I'm a fade Transition!
- *       </div>
- *     )}
- *   </Transition>
- * );
- * ```
- *
- * There are 4 main states a Transition can be in:
- *  - `'entering'`
- *  - `'entered'`
- *  - `'exiting'`
- *  - `'exited'`
- *
- * Transition state is toggled via the `in` prop. When `true` the component
- * begins the "Enter" stage. During this stage, the component will shift from
- * its current transition state, to `'entering'` for the duration of the
- * transition and then to the `'entered'` stage once it's complete. Let's take
- * the following example (we'll use the
- * [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook):
- *
- * ```jsx
- * function App() {
- *   const [inProp, setInProp] = useState(false);
- *   return (
- *     <div>
- *       <Transition in={inProp} timeout={500}>
- *         {state => (
- *           // ...
- *         )}
- *       </Transition>
- *       <button onClick={() => setInProp(true)}>
- *         Click to Enter
- *       </button>
- *     </div>
- *   );
- * }
- * ```
- *
- * When the button is clicked the component will shift to the `'entering'` state
- * and stay there for 500ms (the value of `timeout`) before it finally switches
- * to `'entered'`.
- *
- * When `in` is `false` the same thing happens except the state moves from
- * `'exiting'` to `'exited'`.
- */ var Transition = /*#__PURE__*/ function(_React$Component) {
-    (0, _inheritsLooseDefault.default)(Transition1, _React$Component);
-    function Transition1(props, context) {
-        var _this;
-        _this = _React$Component.call(this, props, context) || this;
-        var parentGroup = context; // In the context of a TransitionGroup all enters are really appears
-        var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
-        var initialStatus;
-        _this.appearStatus = null;
-        if (props.in) {
-            if (appear) {
-                initialStatus = EXITED;
-                _this.appearStatus = ENTERING;
-            } else initialStatus = ENTERED;
-        } else if (props.unmountOnExit || props.mountOnEnter) initialStatus = UNMOUNTED;
-        else initialStatus = EXITED;
-        _this.state = {
-            status: initialStatus
-        };
-        _this.nextCallback = null;
-        return _this;
-    }
-    Transition1.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
-        var nextIn = _ref.in;
-        if (nextIn && prevState.status === UNMOUNTED) return {
-            status: EXITED
-        };
-        return null;
-    } // getSnapshotBeforeUpdate(prevProps) {
-    ;
-    var _proto = Transition1.prototype;
-    _proto.componentDidMount = function componentDidMount() {
-        this.updateStatus(true, this.appearStatus);
-    };
-    _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-        var nextStatus = null;
-        if (prevProps !== this.props) {
-            var status = this.state.status;
-            if (this.props.in) {
-                if (status !== ENTERING && status !== ENTERED) nextStatus = ENTERING;
-            } else if (status === ENTERING || status === ENTERED) nextStatus = EXITING;
-        }
-        this.updateStatus(false, nextStatus);
-    };
-    _proto.componentWillUnmount = function componentWillUnmount() {
-        this.cancelNextCallback();
-    };
-    _proto.getTimeouts = function getTimeouts() {
-        var timeout = this.props.timeout;
-        var exit, enter, appear;
-        exit = enter = appear = timeout;
-        if (timeout != null && typeof timeout !== "number") {
-            exit = timeout.exit;
-            enter = timeout.enter; // TODO: remove fallback for next major
-            appear = timeout.appear !== undefined ? timeout.appear : enter;
-        }
-        return {
-            exit: exit,
-            enter: enter,
-            appear: appear
-        };
-    };
-    _proto.updateStatus = function updateStatus(mounting, nextStatus) {
-        if (mounting === void 0) mounting = false;
-        if (nextStatus !== null) {
-            // nextStatus will always be ENTERING or EXITING.
-            this.cancelNextCallback();
-            if (nextStatus === ENTERING) {
-                if (this.props.unmountOnExit || this.props.mountOnEnter) {
-                    var node = this.props.nodeRef ? this.props.nodeRef.current : (0, _reactDomDefault.default).findDOMNode(this); // https://github.com/reactjs/react-transition-group/pull/749
-                    // With unmountOnExit or mountOnEnter, the enter animation should happen at the transition between `exited` and `entering`.
-                    // To make the animation happen,  we have to separate each rendering and avoid being processed as batched.
-                    if (node) (0, _reflow.forceReflow)(node);
-                }
-                this.performEnter(mounting);
-            } else this.performExit();
-        } else if (this.props.unmountOnExit && this.state.status === EXITED) this.setState({
-            status: UNMOUNTED
-        });
-    };
-    _proto.performEnter = function performEnter(mounting) {
-        var _this2 = this;
-        var enter = this.props.enter;
-        var appearing = this.context ? this.context.isMounting : mounting;
-        var _ref2 = this.props.nodeRef ? [
-            appearing
-        ] : [
-            (0, _reactDomDefault.default).findDOMNode(this),
-            appearing
-        ], maybeNode = _ref2[0], maybeAppearing = _ref2[1];
-        var timeouts = this.getTimeouts();
-        var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
-        // if we are mounting and running this it means appear _must_ be set
-        if (!mounting && !enter || (0, _configDefault.default).disabled) {
-            this.safeSetState({
-                status: ENTERED
-            }, function() {
-                _this2.props.onEntered(maybeNode);
-            });
-            return;
-        }
-        this.props.onEnter(maybeNode, maybeAppearing);
-        this.safeSetState({
-            status: ENTERING
-        }, function() {
-            _this2.props.onEntering(maybeNode, maybeAppearing);
-            _this2.onTransitionEnd(enterTimeout, function() {
-                _this2.safeSetState({
-                    status: ENTERED
-                }, function() {
-                    _this2.props.onEntered(maybeNode, maybeAppearing);
-                });
-            });
-        });
-    };
-    _proto.performExit = function performExit() {
-        var _this3 = this;
-        var exit = this.props.exit;
-        var timeouts = this.getTimeouts();
-        var maybeNode = this.props.nodeRef ? undefined : (0, _reactDomDefault.default).findDOMNode(this); // no exit animation skip right to EXITED
-        if (!exit || (0, _configDefault.default).disabled) {
-            this.safeSetState({
-                status: EXITED
-            }, function() {
-                _this3.props.onExited(maybeNode);
-            });
-            return;
-        }
-        this.props.onExit(maybeNode);
-        this.safeSetState({
-            status: EXITING
-        }, function() {
-            _this3.props.onExiting(maybeNode);
-            _this3.onTransitionEnd(timeouts.exit, function() {
-                _this3.safeSetState({
-                    status: EXITED
-                }, function() {
-                    _this3.props.onExited(maybeNode);
-                });
-            });
-        });
-    };
-    _proto.cancelNextCallback = function cancelNextCallback() {
-        if (this.nextCallback !== null) {
-            this.nextCallback.cancel();
-            this.nextCallback = null;
-        }
-    };
-    _proto.safeSetState = function safeSetState(nextState, callback) {
-        // This shouldn't be necessary, but there are weird race conditions with
-        // setState callbacks and unmounting in testing, so always make sure that
-        // we can cancel any pending setState callbacks after we unmount.
-        callback = this.setNextCallback(callback);
-        this.setState(nextState, callback);
-    };
-    _proto.setNextCallback = function setNextCallback(callback) {
-        var _this4 = this;
-        var active = true;
-        this.nextCallback = function(event) {
-            if (active) {
-                active = false;
-                _this4.nextCallback = null;
-                callback(event);
-            }
-        };
-        this.nextCallback.cancel = function() {
-            active = false;
-        };
-        return this.nextCallback;
-    };
-    _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
-        this.setNextCallback(handler);
-        var node = this.props.nodeRef ? this.props.nodeRef.current : (0, _reactDomDefault.default).findDOMNode(this);
-        var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
-        if (!node || doesNotHaveTimeoutOrListener) {
-            setTimeout(this.nextCallback, 0);
-            return;
-        }
-        if (this.props.addEndListener) {
-            var _ref3 = this.props.nodeRef ? [
-                this.nextCallback
-            ] : [
-                node,
-                this.nextCallback
-            ], maybeNode = _ref3[0], maybeNextCallback = _ref3[1];
-            this.props.addEndListener(maybeNode, maybeNextCallback);
-        }
-        if (timeout != null) setTimeout(this.nextCallback, timeout);
-    };
-    _proto.render = function render() {
-        var status = this.state.status;
-        if (status === UNMOUNTED) return null;
-        var _this$props = this.props, children = _this$props.children, _in = _this$props.in, _mountOnEnter = _this$props.mountOnEnter, _unmountOnExit = _this$props.unmountOnExit, _appear = _this$props.appear, _enter = _this$props.enter, _exit = _this$props.exit, _timeout = _this$props.timeout, _addEndListener = _this$props.addEndListener, _onEnter = _this$props.onEnter, _onEntering = _this$props.onEntering, _onEntered = _this$props.onEntered, _onExit = _this$props.onExit, _onExiting = _this$props.onExiting, _onExited = _this$props.onExited, _nodeRef = _this$props.nodeRef, childProps = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props, [
-            "children",
-            "in",
-            "mountOnEnter",
-            "unmountOnExit",
-            "appear",
-            "enter",
-            "exit",
-            "timeout",
-            "addEndListener",
-            "onEnter",
-            "onEntering",
-            "onEntered",
-            "onExit",
-            "onExiting",
-            "onExited",
-            "nodeRef"
-        ]);
-        return(/*#__PURE__*/ // allows for nested Transitions
-        (0, _reactDefault.default).createElement((0, _transitionGroupContextDefault.default).Provider, {
-            value: null
-        }, typeof children === "function" ? children(status, childProps) : (0, _reactDefault.default).cloneElement((0, _reactDefault.default).Children.only(children), childProps)));
-    };
-    return Transition1;
-}((0, _reactDefault.default).Component);
-Transition.contextType = (0, _transitionGroupContextDefault.default);
-Transition.propTypes = {
-    /**
-   * A React reference to DOM element that need to transition:
-   * https://stackoverflow.com/a/51127130/4671932
-   *
-   *   - When `nodeRef` prop is used, `node` is not passed to callback functions
-   *      (e.g. `onEnter`) because user already has direct access to the node.
-   *   - When changing `key` prop of `Transition` in a `TransitionGroup` a new
-   *     `nodeRef` need to be provided to `Transition` with changed `key` prop
-   *     (see
-   *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
-   */ nodeRef: (0, _propTypesDefault.default).shape({
-        current: typeof Element === "undefined" ? (0, _propTypesDefault.default).any : function(propValue, key, componentName, location, propFullName, secret) {
-            var value = propValue[key];
-            return (0, _propTypesDefault.default).instanceOf(value && "ownerDocument" in value ? value.ownerDocument.defaultView.Element : Element)(propValue, key, componentName, location, propFullName, secret);
-        }
-    }),
-    /**
-   * A `function` child can be used instead of a React element. This function is
-   * called with the current transition status (`'entering'`, `'entered'`,
-   * `'exiting'`, `'exited'`), which can be used to apply context
-   * specific props to a component.
-   *
-   * ```jsx
-   * <Transition in={this.state.in} timeout={150}>
-   *   {state => (
-   *     <MyComponent className={`fade fade-${state}`} />
-   *   )}
-   * </Transition>
-   * ```
-   */ children: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).func.isRequired,
-        (0, _propTypesDefault.default).element.isRequired
-    ]).isRequired,
-    /**
-   * Show the component; triggers the enter or exit states
-   */ in: (0, _propTypesDefault.default).bool,
-    /**
-   * By default the child component is mounted immediately along with
-   * the parent `Transition` component. If you want to "lazy mount" the component on the
-   * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
-   * mounted, even on "exited", unless you also specify `unmountOnExit`.
-   */ mountOnEnter: (0, _propTypesDefault.default).bool,
-    /**
-   * By default the child component stays mounted after it reaches the `'exited'` state.
-   * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
-   */ unmountOnExit: (0, _propTypesDefault.default).bool,
-    /**
-   * By default the child component does not perform the enter transition when
-   * it first mounts, regardless of the value of `in`. If you want this
-   * behavior, set both `appear` and `in` to `true`.
-   *
-   * > **Note**: there are no special appear states like `appearing`/`appeared`, this prop
-   * > only adds an additional enter transition. However, in the
-   * > `<CSSTransition>` component that first enter transition does result in
-   * > additional `.appear-*` classes, that way you can choose to style it
-   * > differently.
-   */ appear: (0, _propTypesDefault.default).bool,
-    /**
-   * Enable or disable enter transitions.
-   */ enter: (0, _propTypesDefault.default).bool,
-    /**
-   * Enable or disable exit transitions.
-   */ exit: (0, _propTypesDefault.default).bool,
-    /**
-   * The duration of the transition, in milliseconds.
-   * Required unless `addEndListener` is provided.
-   *
-   * You may specify a single timeout for all transitions:
-   *
-   * ```jsx
-   * timeout={500}
-   * ```
-   *
-   * or individually:
-   *
-   * ```jsx
-   * timeout={{
-   *  appear: 500,
-   *  enter: 300,
-   *  exit: 500,
-   * }}
-   * ```
-   *
-   * - `appear` defaults to the value of `enter`
-   * - `enter` defaults to `0`
-   * - `exit` defaults to `0`
-   *
-   * @type {number | { enter?: number, exit?: number, appear?: number }}
-   */ timeout: function timeout(props) {
-        var pt = (0, _propTypes1.timeoutsShape);
-        if (!props.addEndListener) pt = pt.isRequired;
-        for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)args[_key - 1] = arguments[_key];
-        return pt.apply(void 0, [
-            props
-        ].concat(args));
-    },
-    /**
-   * Add a custom transition end trigger. Called with the transitioning
-   * DOM node and a `done` callback. Allows for more fine grained transition end
-   * logic. Timeouts are still used as a fallback if provided.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * ```jsx
-   * addEndListener={(node, done) => {
-   *   // use the css transitionend event to mark the finish of a transition
-   *   node.addEventListener('transitionend', done, false);
-   * }}
-   * ```
-   */ addEndListener: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired before the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */ onEnter: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired after the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEntering: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired after the "entered" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */ onEntered: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired before the "exiting" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */ onExit: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired after the "exiting" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */ onExiting: (0, _propTypesDefault.default).func,
-    /**
-   * Callback fired after the "exited" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement) -> void
-   */ onExited: (0, _propTypesDefault.default).func
-}; // Name the function so it is clearer in the documentation
-function noop() {}
-Transition.defaultProps = {
-    in: false,
-    mountOnEnter: false,
-    unmountOnExit: false,
-    appear: false,
-    enter: true,
-    exit: true,
-    onEnter: noop,
-    onEntering: noop,
-    onEntered: noop,
-    onExit: noop,
-    onExiting: noop,
-    onExited: noop
-};
-Transition.UNMOUNTED = UNMOUNTED;
-Transition.EXITED = EXITED;
-Transition.ENTERING = ENTERING;
-Transition.ENTERED = ENTERED;
-Transition.EXITING = EXITING;
-exports.default = Transition;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","react":"21dqq","react-dom":"j6uA9","./config":"cepoZ","./utils/PropTypes":"9Zqaa","./TransitionGroupContext":"47LXo","./utils/reflow":"V4VjQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cepoZ":[function(require,module,exports) {
+},{}],"cepoZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = {
@@ -36561,7 +36012,20 @@ CloseButton.propTypes = propTypes;
 CloseButton.defaultProps = defaultProps;
 exports.default = CloseButton;
 
-},{"prop-types":"7wKI2","react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lwVpH":[function(require,module,exports) {
+},{"prop-types":"7wKI2","react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eDg7t":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _jsxRuntime = require("react/jsx-runtime");
+exports.default = (className)=>/*#__PURE__*/ _react.forwardRef((p, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+            ...p,
+            ref: ref,
+            className: (0, _classnamesDefault.default)(p.className, className)
+        }));
+
+},{"react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lwVpH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _anchor = require("@restart/ui/Anchor");
@@ -36714,7 +36178,126 @@ ButtonToolbar.displayName = "ButtonToolbar";
 ButtonToolbar.defaultProps = defaultProps;
 exports.default = ButtonToolbar;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2j3Ij":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lAynp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+var _divWithClassName = require("./divWithClassName");
+var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
+var _cardImg = require("./CardImg");
+var _cardImgDefault = parcelHelpers.interopDefault(_cardImg);
+var _cardHeader = require("./CardHeader");
+var _cardHeaderDefault = parcelHelpers.interopDefault(_cardHeader);
+var _jsxRuntime = require("react/jsx-runtime");
+const DivStyledAsH5 = (0, _divWithClassNameDefault.default)("h5");
+const DivStyledAsH6 = (0, _divWithClassNameDefault.default)("h6");
+const CardBody = (0, _createWithBsPrefixDefault.default)("card-body");
+const CardTitle = (0, _createWithBsPrefixDefault.default)("card-title", {
+    Component: DivStyledAsH5
+});
+const CardSubtitle = (0, _createWithBsPrefixDefault.default)("card-subtitle", {
+    Component: DivStyledAsH6
+});
+const CardLink = (0, _createWithBsPrefixDefault.default)("card-link", {
+    Component: "a"
+});
+const CardText = (0, _createWithBsPrefixDefault.default)("card-text", {
+    Component: "p"
+});
+const CardFooter = (0, _createWithBsPrefixDefault.default)("card-footer");
+const CardImgOverlay = (0, _createWithBsPrefixDefault.default)("card-img-overlay");
+const defaultProps = {
+    body: false
+};
+const Card = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , bg , text , border , body , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div" , ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        ...props,
+        className: (0, _classnamesDefault.default)(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
+        children: body ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(CardBody, {
+            children: children
+        }) : children
+    });
+});
+Card.displayName = "Card";
+Card.defaultProps = defaultProps;
+exports.default = Object.assign(Card, {
+    Img: (0, _cardImgDefault.default),
+    Title: CardTitle,
+    Subtitle: CardSubtitle,
+    Body: CardBody,
+    Link: CardLink,
+    Text: CardText,
+    Header: (0, _cardHeaderDefault.default),
+    Footer: CardFooter,
+    ImgOverlay: CardImgOverlay
+});
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","./divWithClassName":"eDg7t","./CardImg":"1reTi","./CardHeader":"dXnnx","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1reTi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const CardImg = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , variant , as: Component = "img" , ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-img");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(variant ? `${prefix}-${variant}` : prefix, className),
+        ...props
+    });
+});
+CardImg.displayName = "CardImg";
+exports.default = CardImg;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXnnx":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _cardHeaderContext = require("./CardHeaderContext");
+var _cardHeaderContextDefault = parcelHelpers.interopDefault(_cardHeaderContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const CardHeader = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div" , ...props }, ref)=>{
+    const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-header");
+    const contextValue = (0, _react.useMemo)(()=>({
+            cardHeaderBsPrefix: prefix
+        }), [
+        prefix
+    ]);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _cardHeaderContextDefault.default).Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+            ref: ref,
+            ...props,
+            className: (0, _classnamesDefault.default)(className, prefix)
+        })
+    });
+});
+CardHeader.displayName = "CardHeader";
+exports.default = CardHeader;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"36cNB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const context = /*#__PURE__*/ _react.createContext(null);
+context.displayName = "CardHeaderContext";
+exports.default = context;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2j3Ij":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
@@ -44575,6 +44158,522 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = "Tooltip";
 exports.default = Tooltip;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"clIxH":[function() {},{}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _card = require("react-bootstrap/Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _reactBootstrap = require("react-bootstrap");
+var _movieCardScss = require("./movie-card.scss");
+class MovieCard extends (0, _reactDefault.default).Component {
+    render() {
+        const { movie , onMovieClick  } = this.props;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
+                            variant: "top",
+                            src: movie.imageURL
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 17,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
+                                    children: movie.title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 19,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                                    children: movie.description
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 20,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                    onClick: ()=>onMovieClick(movie),
+                                    variant: "link",
+                                    children: "Open"
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 21,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 18,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 16,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 15,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "src/components/movie-card/movie-card.jsx",
+            lineNumber: 14,
+            columnNumber: 7
+        }, this);
+    }
+}
+MovieCard.propTypes = {
+    movie: (0, _propTypesDefault.default).shape({
+        title: (0, _propTypesDefault.default).string.isRequired,
+        description: (0, _propTypesDefault.default).string.isRequired,
+        genre: (0, _propTypesDefault.default).shape({
+            name: (0, _propTypesDefault.default).string.isRequired,
+            description: (0, _propTypesDefault.default).string.isRequired
+        }),
+        director: (0, _propTypesDefault.default).shape({
+            name: (0, _propTypesDefault.default).string.isRequired,
+            bio: (0, _propTypesDefault.default).string.isRequired,
+            birthyear: (0, _propTypesDefault.default).string.isRequired,
+            deathyear: (0, _propTypesDefault.default).string
+        }),
+        actors: (0, _propTypesDefault.default).array.isRequired,
+        year: (0, _propTypesDefault.default).number.isRequired,
+        score: (0, _propTypesDefault.default).number.isRequired,
+        rating: (0, _propTypesDefault.default).string.isRequired,
+        imageURL: (0, _propTypesDefault.default).string,
+        feature: (0, _propTypesDefault.default).bool
+    }).isRequired,
+    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+};
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap":"3AD9A","./movie-card.scss":"d6HH4"}],"d6HH4":[function() {},{}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _movieViewScss = require("./movie-view.scss");
+class MovieView extends (0, _reactDefault.default).Component {
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+    componentDidMount() {
+        document.addEventListener("keypress", this.keypressCallback);
+    }
+    componentWillUnmount() {
+        document.removeEventListener("keypress", this.keypressCallback);
+    }
+    render() {
+        const { movie , onBackClick  } = this.props;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "movie-view",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-poster",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: movie.imageURL,
+                        width: "200",
+                        height: "200"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 26,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-title",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Title: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 29,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.title
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 30,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 28,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-description",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Description: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 33,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.description
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 34,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-genre",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "label",
+                        children: "Genre: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 37,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 36,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-name",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Name: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 41,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.genre?.name
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 42,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "label",
+                    children: "Description: "
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 44,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "value",
+                    children: movie.genre?.description
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 45,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-director",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "label",
+                        children: "Director: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 47,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 46,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "director-name",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Name: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 51,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.director?.name
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 52,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "director-bio",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Bio: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 55,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.director?.bio
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 56,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 54,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "director-birthyear",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Birthyear: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 59,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.director?.birthyear
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 60,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 58,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "director-deathyear",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Deathyear: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 63,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.director?.deathyear
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 64,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 62,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-actors",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "label",
+                        children: "Actors: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 67,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 66,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-year",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Year: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 71,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.year
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 72,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 70,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-score",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Score: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 75,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.score
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 76,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 74,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-rating",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "label",
+                            children: "Rating: "
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 79,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "value",
+                            children: movie.rating
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 80,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 78,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    onClick: ()=>{
+                        onBackClick(null);
+                    },
+                    children: "Back"
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 82,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 24,
+            columnNumber: 7
+        }, this);
+    }
+}
+
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap":"3AD9A","./movie-view.scss":"jnlR5"}],"jnlR5":[function() {},{}],"eBaMl":[function() {},{}],"lOjBx":[function(require,module,exports) {
+"use strict";
+var m = require("react-dom");
+var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.createRoot(c, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.hydrateRoot(c, h, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+
+},{"react-dom":"j6uA9"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

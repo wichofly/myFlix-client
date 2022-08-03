@@ -1,5 +1,11 @@
-$color: steelblue;
+$color: #0D9488;
+$color2: #061D1C;
+$color3: #BAE1DB;
+$color4: #F8FAFC;
 
-.my-flix {
-  color: $color;
+
+body {
+  display: grid;
+  background: $color4;
+  min-height: 100vh;
 }
