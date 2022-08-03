@@ -1,9 +1,9 @@
 import React from 'react';
+import { Container } from 'react-bootstrap'; // It is another way to import Bootstrap compoonent
 // import ReactDOM from 'react-dom';
-import ReactDOM from "react-dom/client";
+import ReactDOM from 'react-dom/client';
 // MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
 import { MainView } from './components/main-view/main-view';
-
 
 // Import statement to indicate that you need to bundle
 import './index.scss';
@@ -12,7 +12,9 @@ import './index.scss';
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <MainView />
+      <Container>
+        <MainView />
+      </Container>
     );
   }
 }
@@ -24,7 +26,9 @@ class MyFlixApplication extends React.Component {
 // ReactDOM.render(React.createElement(MyFlixApplication), container);
 
 // Correcting warning "ReactDOM.render is no longer supported in React 18"
-const root = ReactDOM.createRoot(document.getElementsByClassName('app-container')[0]);
+const root = ReactDOM.createRoot(
+  document.getElementsByClassName('app-container')[0]
+);
 root.render(
   <React.StrictMode>
     <MyFlixApplication />
