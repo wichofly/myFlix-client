@@ -64,17 +64,20 @@ export class MainView extends React.Component {
   }
 
   // Condensed code
+  //
+
   render() {
     const { movies, user } = this.state; // Deconstructing
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    if (!user) return;
-    <Row>
-      <Col>
-        <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-      </Col>
-    </Row>;
-
+    if (!user)
+      return (
+        <Row>
+          <Col>
+            <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+          </Col>
+        </Row>
+      );
     // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
 
@@ -94,11 +97,46 @@ export class MainView extends React.Component {
           />
           <Route
             path="/movies/:movieId"
-            render={({ match }) => {
+            render={({ match, history }) => {
               return (
                 <Col md={8}>
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path="/genres/:name"
+            render={({ match, history }) => {
+              if (movies.length === 0) return <Row className="main-view" />;
+              return (
+                <Col md={8}>
+                  <GenreView
+                    genre={
+                      movies.find((m) => m.Genre.Name === match.params.name)
+                        .Genre
+                    }
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path="/directors/:name"
+            render={({ match, history }) => {
+              if (movies.length === 0) return <Row className="main-view" />;
+              return (
+                <Col md={8}>
+                  <DirectorView
+                    director={
+                      movies.find((m) => m.Director.Name === match.params.name)
+                        .Director
+                    }
+                    onBackClick={() => history.goBack()}
                   />
                 </Col>
               );
