@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { Menubar } from '../navbar/navbar';
 
 import './main-view.scss';
 
@@ -64,8 +64,6 @@ export class MainView extends React.Component {
   }
 
   // Condensed code
-  //
-
   render() {
     const { movies, user } = this.state; // Deconstructing
 
@@ -83,16 +81,38 @@ export class MainView extends React.Component {
 
     return (
       <Router>
+        <Menubar user={user} />
         <Row className="main-view justify-content-md-center">
           <Route
             exact
             path="/"
             render={() => {
+              /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+              if (!user) return;
+              <Col>
+                <LoginView
+                  movies={movies}
+                  onLoggedIn={(user) => this.onLoggedIn(user)}
+                />
+              </Col>;
+              //Before movies are loaded
+              if (movies.length === 0) return <Row className="main-view" />; //Might need to change row to div
               return movies.map((m) => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
                 </Col>
               ));
+            }}
+          />
+          <Route
+            path="/register"
+            render={() => {
+              if (user) return <Redirect to="/" />;
+              return (
+                <Col lg={8} md={8}>
+                  <RegistrationView />
+                </Col>
+              );
             }}
           />
           <Route
@@ -136,6 +156,35 @@ export class MainView extends React.Component {
                       movies.find((m) => m.Director.Name === match.params.name)
                         .Director
                     }
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path={`/users/${user}`}
+            render={({ match, history }) => {
+              if (!user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <ProfileView
+                    movies={movies}
+                    user={user}
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path={`/user-update/${user}`}
+            render={({ match, history }) => {
+              if (!user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <UserUpdate
+                    user={user}
                     onBackClick={() => history.goBack()}
                   />
                 </Col>

@@ -1,7 +1,16 @@
 import React, { useState } from 'react'; // using Hooks
 import PropTypes from 'prop-types';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import {
+  Form,
+  Button,
+  Card,
+  CardGroup,
+  Container,
+  Col,
+  Row,
+  Navbar,
+  Nav,
+} from 'react-bootstrap';
 import axios from 'axios';
 
 import './login-view.scss';
@@ -55,44 +64,72 @@ export function LoginView(props) {
   };
 
   return (
-    <Form id="form" className="d-grid h-100">
-      <h2 className="text-center mt-4 mb-4">Login</h2>
-      <Form.Group className="mb-3 w-full" controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter your username"
-        />
-        {/* Code to Display username validation error */}
-        {usernameErr && <p className="validation-message">{usernameErr}</p>}
-      </Form.Group>
+    <Container>
+      <Navbar bg="light" expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="#home">myFlix</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#login">Login</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
-      <Form.Group className="mb-3 w-full" controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        {passwordErr && <p className="validation-message">{passwordErr}</p>}
-      </Form.Group>
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card>
+              <Card.Body className="mt-3">
+                <Card.Title className='text-center'>Welcome to myFlix</Card.Title>
+                <Form id="form" className="d-grid h-100">
+                  <Form.Group className="mb-3 w-full" controlId="formUsername">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Enter your username"
+                    />
+                    {/* Code to Display username validation error */}
+                    {usernameErr && (
+                      <p className="validation-message">{usernameErr}</p>
+                    )}
+                  </Form.Group>
 
-      <Form.Group
-        className="mb-2 d-flex justify-content-center"
-        controlId="rememberMe"
-      >
-        <Form.Check label="Remember me" />
-      </Form.Group>
-      <Button
-        className="w-full"
-        variant="primary"
-        type="submit"
-        onClick={handleSubmit}
-      >
-        Submit
-      </Button>
-    </Form>
+                  <Form.Group className="mb-3 w-full" controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                    />
+                    {passwordErr && (
+                      <p className="validation-message">{passwordErr}</p>
+                    )}
+                  </Form.Group>
+
+                  <Form.Group
+                    className="mb-2 d-flex justify-content-center"
+                    controlId="rememberMe"
+                  >
+                    <Form.Check label="Remember me" />
+                  </Form.Group>
+                  <Button
+                    className="w-full"
+                    variant="primary"
+                    type="submit"
+                    onClick={handleSubmit}
+                  >
+                    Submit
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
