@@ -9,9 +9,9 @@ import {
   Col,
   Row,
 } from 'react-bootstrap';
+import axios from 'axios';
 
 import './registration-view.scss';
-import axios from 'axios';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -102,10 +102,12 @@ export function RegistrationView(props) {
         .then((response) => {
           const data = response.data;
           console.log(data);
+          alert('Registration succesful, please login!');
           window.open('/', '_self');
         })
         .catch((e) => {
           console.log('error registering the user.');
+          alert('Unable to register');
         });
     }
   };
@@ -181,5 +183,10 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired,
+  register: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birthday: PropTypes.string,
+  }),
 };
