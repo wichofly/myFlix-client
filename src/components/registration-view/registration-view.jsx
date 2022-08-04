@@ -1,5 +1,17 @@
 import React, { useState } from 'react'; // using Hooks
 import PropTypes from 'prop-types';
+import {
+  Form,
+  Button,
+  Card,
+  CardGroup,
+  Container,
+  Col,
+  Row,
+} from 'react-bootstrap';
+
+import './registration-view.scss';
+import axios from 'axios';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -9,48 +21,75 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // axios.post('https://wichoflix.herokuapp.com/users', {
+    //  username: username,
+    //  password: password,
+    //  emial: email,
+    //  birthday: birthday
+    // })
+    // .then(response => {
+    //   const data = response.data;
+    //   console.log(data);
+    //   window.open('/', '_self');
+    //   // The second argument '_sel' is necessary so that
+    //   // the page will open in the current tab
+    // })
+    // .catch(e => {
+    //   console.log('error registering the user');
+    //   alert('Something wasn\'t entered correctly')
+    // })
     console.log(username, password, email, birthday);
     props.onRegistration(username);
   };
 
   return (
-    <form>
-      <label>
-        Username:
-        <input
+    <Form>
+      <Form.Group className="mb-3">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
+          placeholder="Enter a username"
         />
-      </label>
-      <label>
-        Password:
-        <input
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
+          minLength="8"
+          placeholder="at least 8 characters"
         />
-      </label>
-      <label>
-        Email:
-        <input
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Email"
         />
-      </label>
-      <label>
-        Birthday:
-        <input
+      </Form.Group>
+
+      <Form.Group className="mb-2">
+        <Form.Label>Birthday:</Form.Label>
+        <Form.Control
           type="date"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
         />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
+      </Form.Group>
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
         Register
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 }
 

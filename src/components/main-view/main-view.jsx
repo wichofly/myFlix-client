@@ -8,6 +8,8 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
+import './main-view.scss';
+
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
 // Exposing a component makes it available for use by other components, modules, and files
 export class MainView extends React.Component {
@@ -58,7 +60,7 @@ export class MainView extends React.Component {
 
   // Condensed code
   render() {
-    const { movies, selectedMovie, user, registered } = this.state;
+    const { movies, selectedMovie, user, registered } = this.state; // Deconstructing
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
     if (!user)
@@ -77,18 +79,28 @@ export class MainView extends React.Component {
 
     return (
       <Row className="main-view justify-content-md-center">
-        {selectedMovie
-          ? (
-            <Col md={8}>
-              <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-            </Col>
-          )
-          : movies.map(movie => (
+        {selectedMovie ? (
+          <Col md={8}>
+            <MovieView
+              movie={selectedMovie}
+              onBackClick={(newSelectedMovie) => {
+                this.setSelectedMovie(newSelectedMovie);
+              }}
+            />
+          </Col>
+        ) : (
+          movies.map((movie) => (
             <Col md={3}>
-              <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+              <MovieCard
+                key={movie._id}
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  this.setSelectedMovie(newSelectedMovie);
+                }}
+              />
             </Col>
           ))
-        }
+        )}
       </Row>
     );
   }
