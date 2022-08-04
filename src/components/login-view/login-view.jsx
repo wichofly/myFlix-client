@@ -9,23 +9,49 @@ import './login-view.scss';
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  // Declare hook for each input error message (in case of invalid)
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  // Validate user inputs
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username is required.');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be at least 5 characters long.');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password is required.');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be at least 6 characters long.');
+      isReq = false;
+    }
+    return isReq;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* Send a request to the server for authentication */
-    axios
-      .post('https://wichoflix.herokuapp.com/login', {
-        // they sould be like my API objects with the first letter lowercase
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        const data = response.data;
-        props.onLoggedIn(data);
-      })
-      .catch((e) => {
-        console.log('no such user');
-      });
+    const isReq = validate();
+    if (isReq) {
+      /* Send a request to the server for authentication */
+      axios
+        .post('https://wichoflix.herokuapp.com/login', {
+          // they sould be like my API objects with the first letter lowercase
+          username: username,
+          password: password,
+        })
+        .then((response) => {
+          const data = response.data;
+          props.onLoggedIn(data);
+        })
+        .catch((e) => {
+          console.log('no such user');
+        });
+    }
   };
 
   return (
@@ -38,6 +64,8 @@ export function LoginView(props) {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter your username"
         />
+        {/* Code to Display username validation error */}
+        {usernameErr && <p className="validation-message">{usernameErr}</p>}
       </Form.Group>
 
       <Form.Group className="mb-3 w-full" controlId="formPassword">
@@ -47,6 +75,7 @@ export function LoginView(props) {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
+        {passwordErr && <p className="validation-message">{passwordErr}</p>}
       </Form.Group>
 
       <Form.Group

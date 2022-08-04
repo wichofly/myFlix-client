@@ -19,27 +19,95 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // axios.post('https://wichoflix.herokuapp.com/users', {
-    //  username: username,
-    //  password: password,
-    //  emial: email,
-    //  birthday: birthday
-    // })
-    // .then(response => {
-    //   const data = response.data;
-    //   console.log(data);
-    //   window.open('/', '_self');
-    //   // The second argument '_sel' is necessary so that
-    //   // the page will open in the current tab
-    // })
-    // .catch(e => {
-    //   console.log('error registering the user');
-    //   alert('Something wasn\'t entered correctly')
-    // })
-    console.log(username, password, email, birthday);
-    props.onRegistration(username);
+  // Declare hook for each input error message (when invalid)
+  const [values, setValues] = useState({
+    usernameErr: '',
+    passwordErr: '',
+    emailErr: '',
+    birthdayErr: '',
+  });
+
+  const validate = () => {
+    let isReq = true;
+    setValues((prev) => {
+      return {
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: '',
+        birthdayErr: '',
+      };
+    });
+    if (!username) {
+      // setValues re-defines values through a callback that receives
+      // the previous state of values & must return values updated
+      setValues((prevValues) => {
+        return { ...prevValues, usernameErr: 'Username is required.' };
+      });
+      isReq = false;
+    } else if (username.length < 5) {
+      setValues((prevValues) => {
+        return {
+          ...prevValues,
+          usernameErr: 'Username must be at least 5 characters long.',
+        };
+      });
+    }
+    if (!password) {
+      setValues((prevValues) => {
+        return { ...prevValues, passwordErr: 'Password is required.' };
+      });
+      isReq = false;
+    } else if (password.length < 6) {
+      setValues((prevValues) => {
+        return {
+          ...prevValues,
+          passwordErr: 'Password must be at least 6 characters long.',
+        };
+      });
+      isReq = false;
+    }
+    if (!email) {
+      setValues({
+        ...values,
+        emailErr: 'Email is required.',
+      });
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setValues((prevValues) => {
+        return { ...prevValues, emailErr: 'Enter a valid email address.' };
+      });
+      isReg = false;
+    }
+    if (!birthday) {
+      setValues((prevValues) => {
+        return { ...prevValues, birthdayErr: 'Enter a valid date.' };
+      });
+      isReq = false;
+    }
+    return isReq;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const isReq = validate();
+    if (isReq) {
+      // Send a POST request to /users endpoint to register & getting credentials
+      axios
+        .post('https://wichoflix.herokuapp.com/users', {
+          username: username,
+          password: password,
+          email: email,
+          birthday: birthday,
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log(data);
+          window.open('/', '_self');
+        })
+        .catch((e) => {
+          console.log('error registering the user.');
+        });
+    }
   };
 
   return (
@@ -54,9 +122,13 @@ export function RegistrationView(props) {
           required
           placeholder="Enter a username"
         />
+        {/* // code added here to display a validation error */}
+        {values.usernameErr && (
+          <p className="validation-message">{values.usernameErr}</p>
+        )}
       </Form.Group>
 
-      <Form.Group  className="mb-3 w-full" controlId="formPassword">
+      <Form.Group className="mb-3 w-full" controlId="formPassword">
         <Form.Label>Password:</Form.Label>
         <Form.Control
           type="password"
@@ -66,9 +138,12 @@ export function RegistrationView(props) {
           minLength="8"
           placeholder="at least 8 characters"
         />
+        {values.passwordErr && (
+          <p className="validation-message">{values.passwordErr}</p>
+        )}
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId='formEmail'>
+      <Form.Group className="mb-3" controlId="formEmail">
         <Form.Label>Email:</Form.Label>
         <Form.Control
           type="email"
@@ -77,17 +152,28 @@ export function RegistrationView(props) {
           required
           placeholder="Email"
         />
+        {values.emailErr && (
+          <p className="validation-message">{values.emailErr}</p>
+        )}
       </Form.Group>
 
-      <Form.Group className="mb-2" controlId='formBirthday'>
+      <Form.Group className="mb-2" controlId="formBirthday">
         <Form.Label>Birthday:</Form.Label>
         <Form.Control
           type="date"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
         />
+        {values.birthdayErr && (
+          <p className="validation-message">{values.birthdayErr}</p>
+        )}
       </Form.Group>
-      <Button className='w-full' variant="primary" type="submit" onClick={handleSubmit}>
+      <Button
+        className="w-full"
+        variant="primary"
+        type="submit"
+        onClick={handleSubmit}
+      >
         Register
       </Button>
     </Form>
