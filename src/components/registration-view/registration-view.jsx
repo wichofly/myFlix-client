@@ -43,8 +43,9 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Form>
-      <Form.Group className="mb-3">
+    <Form id="form" className="">
+      <h2 className="text-center mt-4 mb-4">Sign Up</h2>
+      <Form.Group className="mb-3 w-full" controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
           type="text"
@@ -55,7 +56,7 @@ export function RegistrationView(props) {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      <Form.Group  className="mb-3 w-full" controlId="formPassword">
         <Form.Label>Password:</Form.Label>
         <Form.Control
           type="password"
@@ -67,7 +68,7 @@ export function RegistrationView(props) {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3" controlId='formEmail'>
         <Form.Label>Email:</Form.Label>
         <Form.Control
           type="email"
@@ -78,7 +79,7 @@ export function RegistrationView(props) {
         />
       </Form.Group>
 
-      <Form.Group className="mb-2">
+      <Form.Group className="mb-2" controlId='formBirthday'>
         <Form.Label>Birthday:</Form.Label>
         <Form.Control
           type="date"
@@ -86,7 +87,7 @@ export function RegistrationView(props) {
           onChange={(e) => setBirthday(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
+      <Button className='w-full' variant="primary" type="submit" onClick={handleSubmit}>
         Register
       </Button>
     </Form>
