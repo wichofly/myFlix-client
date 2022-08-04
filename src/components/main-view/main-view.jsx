@@ -51,22 +51,6 @@ export class MainView extends React.Component {
     }
   }
 
-  // Logout function
-  // onLoggedOut() {
-  //   localStorage.removeItem('token');
-  //   localStorage.removeItem('user');
-  //   this.setState({
-  //     user: null,
-  //   });
-  // }
-
-  /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
-  // setSelectedMovie(movie) {
-  //   this.setState({
-  //     selectedMovie: movie,
-  //   });
-  // }
-
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
   onLoggedIn(authData) {
     console.log(authData);
@@ -79,13 +63,6 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  // When an user succesfully register, this function updates the user properties
-  // onRegistration(registered) {
-  //   this.setState({
-  //     registered,
-  //   });
-  // }
-
   // Condensed code
   render() {
     const { movies, user } = this.state; // Deconstructing
@@ -97,14 +74,6 @@ export class MainView extends React.Component {
         <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
       </Col>
     </Row>;
-
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    // if (!registered)
-    //   return (
-    //     <RegistrationView
-    //       onRegistration={(register) => this.onRegistration(register)}
-    //     />
-    //   );
 
     // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
