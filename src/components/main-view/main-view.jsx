@@ -25,31 +25,29 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user'),
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  getMovies(token) {
     axios
-      .get('https://wichoflix.herokuapp.com/movies')
+      .get('https://wichoflix.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
+      })
       .then((response) => {
+        // Assign the result to the state
         this.setState({
           movies: response.data,
         });
       })
-      .catch((error) => {
+      .catch(function (error) {
         console.log(error);
       });
-  }
-
-  getMovies(token) {
-    axios.get('https://wichoflix.herokuapp.com/movies', {
-      headers: { Authorization: `Bearer ${token}`} // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
-    })
-    .then(response => {
-      // Assign the result to the state
-      this.setState({
-        movies: response.data
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
 
   /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
@@ -63,9 +61,9 @@ export class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
     });
-  
+
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
