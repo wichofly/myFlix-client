@@ -104,12 +104,10 @@ export function RegistrationView(props) {
         .then((response) => {
           const data = response.data;
           console.log(data);
-          alert('Registration succesful, please login!');
           window.open('/', '_self');
         })
         .catch((e) => {
           console.log('error registering the user.');
-          alert('Unable to register');
         });
     }
   };
