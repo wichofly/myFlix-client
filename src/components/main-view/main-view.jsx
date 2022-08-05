@@ -8,6 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { Menubar } from '../navbar/navbar';
+import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
 
