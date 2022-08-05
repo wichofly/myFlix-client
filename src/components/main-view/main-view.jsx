@@ -4,9 +4,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { RegistrationView } from '../registration-view/registration-view';
 import { Menubar } from '../navbar/navbar';
 
 import './main-view.scss';
@@ -20,9 +20,17 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       user: null,
-      // selectedMovie: null,
-      // register: null,
     };
+  }
+
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user'),
+      });
+      this.getMovies(accessToken);
+    }
   }
 
   getMovies(token) {
@@ -39,16 +47,6 @@ export class MainView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
-      this.getMovies(accessToken);
-    }
   }
 
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
@@ -112,6 +110,7 @@ export class MainView extends React.Component {
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
+              if (movies.length === 0) return <div className="main-view" />;
               return (
                 <Col md={8}>
                   <MovieView
