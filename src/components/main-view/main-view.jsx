@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
 import { Container, Row, Col } from 'react-bootstrap';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
