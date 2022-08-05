@@ -153,8 +153,8 @@ export class MainView extends React.Component {
                 <Col md={8}>
                   <DirectorView
                     director={
-                      movies.find((m) => m.Director.Name === match.params.name)
-                        .Director
+                      movies.find((m) => m.director.name === match.params.name)  //Trying to see with lowercase as my database
+                        .director // ".Director" is looping to find drirector name
                     }
                     onBackClick={() => history.goBack()}
                   />
