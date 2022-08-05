@@ -90,6 +90,7 @@ export function LoginView(props) {
                       type="text"
                       onChange={(e) => setUsername(e.target.value)}
                       placeholder="Enter your username"
+                      required
                     />
                     {/* Code to Display username validation error */}
                     {usernameErr && (
@@ -103,6 +104,7 @@ export function LoginView(props) {
                       type="password"
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
+                      required
                     />
                     {passwordErr && (
                       <p className="validation-message">{passwordErr}</p>

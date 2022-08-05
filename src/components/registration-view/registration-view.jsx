@@ -89,7 +89,7 @@ export function RegistrationView(props) {
     return isReq;
   };
 
-  const handleSubmit = (event) => {   // Should i use handelRegister instead of handleSubmit?
+  const handleSubmit = (event) => {   // Should i use handelRegister instead of handleSubmit???
     event.preventDefault();
     const isReq = validate();
     if (isReq) {

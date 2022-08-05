@@ -2,10 +2,20 @@ import React from 'react';
 import { Button, Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      movies: [],
+      user: null,
+    };
+  }
+
   keypressCallback(event) {
     console.log(event.key);
   }
@@ -17,6 +27,47 @@ export class MovieView extends React.Component {
   componentWillUnmount() {
     document.removeEventListener('keypress', this.keypressCallback);
   }
+
+  addFavorite(movie, user) {
+    let username = localStorage.getItem('user');
+    let token = localStorage.getItem('token');
+    console.log(movie);
+    console.log(token);
+
+    axios
+      .post(
+        `https://wichoflix.herokuapp.com/users/${username}/movies/${movie._id}`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        console.log(response.data);
+        alert(`${movie.title} has beeen added to your favorites.`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  removeFavorite = (movie, user) => {
+    let username = localStorage.getItem('user');
+    let token = localStorage.getItem('token');
+
+    axios
+      .delete(
+        `https://wichoflix.herokuapp.com/users/${username}/movies/${movie._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        alert(`${movie.title} has been removed from your favorites.`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   render() {
     const { movie, onBackClick } = this.props;

@@ -34,7 +34,7 @@ export function ProfileView({ movies, onUpdateUserInfo }) {
             </Card.Body>
           </Card>
         </Col>
-        
+
         <Col xs={12} sm={8}>
           <Card>
             <Card.Body>
@@ -43,9 +43,9 @@ export function ProfileView({ movies, onUpdateUserInfo }) {
           </Card>
         </Col>
       </Row>
-
-      <FavoriteMovies favoriteMovieList={favoriteMovieList} />
+      <Row>
+        <FavoriteMovies favoriteMovieList={favoriteMovieList} />
+      </Row>
     </Container>
   );
 }
-
