@@ -18,6 +18,8 @@ export function Menubar({ user }) {
     }
   };
 
+  console.log('user in navbar', user);
+
   return (
     <Navbar
       className="main-nav"
@@ -33,12 +35,18 @@ export function Menubar({ user }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            {isAuth() && <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>}
+            {user
+              ? isAuth() && (
+                  <Nav.Link href={`/users/${user.username}`}>
+                    {user.username}
+                  </Nav.Link>
+                )
+              : null}
             {isAuth() && (
               <Button
                 variant="link"
                 onClick={() => {
-                  this.onLoggedOut();
+                  onLoggedOut();
                 }}
               >
                 Logout

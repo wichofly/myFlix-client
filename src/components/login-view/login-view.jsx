@@ -53,6 +53,7 @@ export function LoginView(props) {
           username: username,
           password: password,
         })
+        // onLoggedIn = (authData) => this.onLoggedIn(authData) 
         .then((response) => {
           const data = response.data;
           props.onLoggedIn(data);
@@ -64,26 +65,16 @@ export function LoginView(props) {
   };
 
   return (
-    <Container>
-      <Navbar bg="light" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#home">myFlix</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#login">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+    <Container fluid className='my-3 mx-12'>
       <Row>
-        <Col>
+        <Col >
           <CardGroup>
             <Card>
               <Card.Body className="mt-3">
-                <Card.Title className='text-center'>Welcome to myFlix</Card.Title>
-                <Form id="form" className="d-grid h-100">
+                <Card.Title className="text-center">
+                  Welcome to myFlix
+                </Card.Title>
+                <Form id="form">
                   <Form.Group className="mb-3 w-full" controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control

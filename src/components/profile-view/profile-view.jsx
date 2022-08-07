@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'react-router-dom';
 import axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
@@ -9,9 +9,7 @@ import UpdateUser from './update-user';
 
 import './profile-view.scss';
 
-export function ProfileView({ movies, onUpdateUserInfo }) {
-  const [user, setUser] = useState({});
-
+export function ProfileView({ movies, onUpdateUserInfo, user }) {
   const favoriteMovieList = movies.filter((movies) => {});
 
   const getUser = () => {};
@@ -38,7 +36,7 @@ export function ProfileView({ movies, onUpdateUserInfo }) {
         <Col xs={12} sm={8}>
           <Card>
             <Card.Body>
-              <UpdateUser user={user} setUser={setUser} />
+              <UpdateUser user={user} />
             </Card.Body>
           </Card>
         </Col>

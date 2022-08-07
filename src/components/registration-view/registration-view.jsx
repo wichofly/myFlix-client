@@ -89,7 +89,8 @@ export function RegistrationView(props) {
     return isReq;
   };
 
-  const handleSubmit = (event) => {   // Should i use handelRegister instead of handleSubmit???
+  const handleSubmit = (event) => {
+    // Should i use handelRegister instead of handleSubmit???
     event.preventDefault();
     const isReq = validate();
     if (isReq) {
@@ -113,19 +114,7 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Container fluid className="registerContainer text-center my-3 mx-12">
-      <Navbar bg="light" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#home">myFlix</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#login">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+    <Container fluid className="registerContainer my-3 mx-12">
       <Row>
         <Col>
           <CardGroup>

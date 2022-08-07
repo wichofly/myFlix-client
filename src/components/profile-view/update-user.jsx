@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Col, Row, Button, Form } from 'react-bootstrap';
 
-function UpdateUser({ handleSubmit, handleUpdate }) {
+function UpdateUser({ handleSubmit, handleUpdate, user }) {
   return (
     <Form className="profile-form" onSubmit={(e) => handleSubmit(e)}>
       <h2>Edit User Info</h2>

@@ -29,8 +29,12 @@ export class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
+      // you saved only the username in the local storage, not the object (not the hole information)
+      // then when you took out the user from the local storage, you saved it into user (setState), but in the moment, user was not a user object, but only a usename
+      const userString = localStorage.getItem('user');
+      const user = JSON.parse(userString);
       this.setState({
-        user: localStorage.getItem('user'),
+        user,
       });
       this.getMovies(accessToken);
     }
@@ -56,17 +60,18 @@ export class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.username,
+      user: authData.user,  
     });
 
     localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.username);
+    localStorage.setItem('user', JSON.stringify(authData.user));
     this.getMovies(authData.token);
   }
 
   // Condensed code
   render() {
     const { movies, user } = this.state; // Deconstructin
+    console.log('user in main view', user);
     return (
       <Router>
         <Menubar user={user} />
@@ -77,8 +82,10 @@ export class MainView extends React.Component {
             render={() => {
               if (!user)
                 return (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                  <Col lg={8} md={8}>
+                    <LoginView
+                      onLoggedIn={(authData) => this.onLoggedIn(authData)}
+                    />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -109,7 +116,9 @@ export class MainView extends React.Component {
               if (!user)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView
+                      onLoggedIn={(authData) => this.onLoggedIn(authData)}
+                    />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -130,7 +139,9 @@ export class MainView extends React.Component {
               if (!user)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView
+                      onLoggedIn={(authData) => this.onLoggedIn(authData)}
+                    />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -139,7 +150,7 @@ export class MainView extends React.Component {
                   <GenreView
                     genre={
                       movies.find((m) => m.genre.name === match.params.name)
-                        .Genre
+                        .genre
                     }
                     onBackClick={() => history.goBack()}
                   />
@@ -154,7 +165,9 @@ export class MainView extends React.Component {
               if (!user)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView
+                      onLoggedIn={(authData) => this.onLoggedIn(authData)}
+                    />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -163,7 +176,7 @@ export class MainView extends React.Component {
                   <DirectorView
                     director={
                       movies.find((m) => m.director.name === match.params.name)
-                        .Director
+                        .director
                     }
                     onBackClick={() => history.goBack()}
                   />
@@ -173,14 +186,17 @@ export class MainView extends React.Component {
           />
 
           <Route
-            path={`/users/${user}`}
+            path={user ? `/users/${user.username}` : '/users/undefined'}
             render={({ match, history }) => {
               if (!user)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView
+                      onLoggedIn={(autData) => this.onLoggedIn(autData)}
+                    />
                   </Col>
                 );
+              console.log('show me the user', user);
               return (
                 <Col>
                   <ProfileView

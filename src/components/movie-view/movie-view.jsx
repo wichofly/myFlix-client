@@ -28,15 +28,16 @@ export class MovieView extends React.Component {
     document.removeEventListener('keypress', this.keypressCallback);
   }
 
-  addFavorite(movie, user) {
-    let username = localStorage.getItem('user');
+  addFavorite(movie) {
+    let userString = localStorage.getItem('user');
+    const user = JSON.parse(userString)
     let token = localStorage.getItem('token');
     console.log(movie);
     console.log(token);
 
     axios
       .post(
-        `https://wichoflix.herokuapp.com/users/${username}/movies/${movie._id}`,
+        `https://wichoflix.herokuapp.com/users/${user.username}/movies/${movie._id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -49,13 +50,14 @@ export class MovieView extends React.Component {
       });
   }
 
-  removeFavorite = (movie, user) => {
-    let username = localStorage.getItem('user');
+  removeFavorite = (movie) => {
+    let userString = localStorage.getItem('user');
+    const user = JSON.parse(userString)
     let token = localStorage.getItem('token');
 
     axios
       .delete(
-        `https://wichoflix.herokuapp.com/users/${username}/movies/${movie._id}`,
+        `https://wichoflix.herokuapp.com/users/${user.username}/movies/${movie._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -247,5 +249,4 @@ MovieView.propTypes = {
     imageURL: PropTypes.string,
     feature: PropTypes.bool,
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired,
 };
