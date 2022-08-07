@@ -66,8 +66,7 @@ export class MainView extends React.Component {
 
   // Condensed code
   render() {
-    const { movies, user } = this.state; // Deconstructing
-
+    const { movies, user } = this.state; // Deconstructin
     return (
       <Router>
         <Menubar user={user} />
@@ -139,7 +138,7 @@ export class MainView extends React.Component {
                 <Col md={8}>
                   <GenreView
                     genre={
-                      movies.find((m) => m.Genre.Name === match.params.name)
+                      movies.find((m) => m.genre.name === match.params.name)
                         .Genre
                     }
                     onBackClick={() => history.goBack()}
@@ -163,7 +162,7 @@ export class MainView extends React.Component {
                 <Col md={8}>
                   <DirectorView
                     director={
-                      movies.find((m) => m.Director.Name === match.params.name)
+                      movies.find((m) => m.director.name === match.params.name)
                         .Director
                     }
                     onBackClick={() => history.goBack()}
