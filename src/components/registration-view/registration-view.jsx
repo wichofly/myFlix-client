@@ -8,8 +8,6 @@ import {
   Container,
   Col,
   Row,
-  Navbar,
-  Nav,
 } from 'react-bootstrap';
 import axios from 'axios';
 
