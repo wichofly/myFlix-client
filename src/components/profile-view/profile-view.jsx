@@ -12,7 +12,22 @@ import './profile-view.scss';
 export function ProfileView({ movies, onUpdateUserInfo, user }) {
   const favoriteMovieList = movies.filter((movies) => {});
 
-  const getUser = () => {};
+  const getUser = () => {
+    axios
+      .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        setUser(response.data);
+        setUsername(response.data.username);
+        setEmail(response.data.email);
+        setBirthdate(response.data.birthdate);
+        setFavoriteMovies(response.data.favoriteMovies);
+        console.log(response);
+        console.log(response.data.movies);  
+      })
+      .catch((error) => console.error(error));
+  };
 
   const handleSubmit = (e) => {};
 
@@ -20,7 +35,9 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
 
   const handleUpdate = (e) => {};
 
-  useEffect(() => {});
+  useEffect(() => {
+    getUser;
+  });
 
   return (
     <Container>
