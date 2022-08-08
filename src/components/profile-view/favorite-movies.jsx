@@ -7,6 +7,18 @@ import './profile-view.scss';
 
 function FavoriteMovies({ favoriteMovieList }) {
   const removeFav = (id) => {
+    const getUser = () => {
+      axios
+        .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          setFavoriteMovies(response.data.favoriteMovies);
+          console.log(response);
+        })
+        .catch((error) => console.error(error));
+    };
+
     let token = localStorage.getItem('token');
     let url = `https://wichoflix.herokuapp.com/users/${localStorage.getItem(
       'user'
@@ -14,6 +26,10 @@ function FavoriteMovies({ favoriteMovieList }) {
     axios.delete(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
+
+    useEffect(() => {
+      getUser();
+    }, []);
   };
 
   return (
