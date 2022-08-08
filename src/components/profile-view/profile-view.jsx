@@ -21,7 +21,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
         setUser(response.data);
         setUsername(response.data.username);
         setEmail(response.data.email);
-        setBirthdate(response.data.birthdate);
+        setBirthday(response.data.birthday);
         setFavoriteMovies(response.data.favoriteMovies);
         console.log(response);
         console.log(response.data.movies);  
