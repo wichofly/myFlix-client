@@ -6,19 +6,19 @@ import axios from 'axios';
 import './profile-view.scss';
 
 function FavoriteMovies({ favoriteMovieList }) {
-  const removeFav = (id) => {
-    const getUser = () => {
-      axios
-        .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((response) => {
-          setFavoriteMovies(response.data.favoriteMovies);
-          console.log(response);
-        })
-        .catch((error) => console.error(error));
-    };
+  const getUser = () => {
+    axios
+      .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        setFavoriteMovies(response.data.favoriteMovies);
+        console.log(response);
+      })
+      .catch((error) => console.error(error));
+  };
 
+  const removeFav = (id) => {
     let token = localStorage.getItem('token');
     let url = `https://wichoflix.herokuapp.com/users/${localStorage.getItem(
       'user'
