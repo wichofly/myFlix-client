@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container, Col, Row, Button, Form } from 'react-bootstrap';
 
-function UpdateUser({ handleSubmit, handleUpdate, user }) {
+function UpdateUser({ handleSubmit, user }) {
+  const handleUpdate = (e, propKey) => {
+    user[propKey] = e.target.value;
+  };
   return (
     <Form className="profile-form" onSubmit={(e) => handleSubmit(e)}>
       <h2>Edit User Info</h2>
@@ -11,7 +14,7 @@ function UpdateUser({ handleSubmit, handleUpdate, user }) {
           type="text"
           name="username"
           defaultValue={user.username}
-          onChange={(e) => handleUpdate(e)}
+          onChange={(e) => handleUpdate(e, 'username')}
         />
       </Form.Group>
 
@@ -21,7 +24,7 @@ function UpdateUser({ handleSubmit, handleUpdate, user }) {
           type="password"
           name="password"
           defaultValue={user.password}
-          onChange={(e) => handleUpdate(e)}
+          onChange={(e) => handleUpdate(e, 'password')}
         />
       </Form.Group>
 
@@ -31,11 +34,11 @@ function UpdateUser({ handleSubmit, handleUpdate, user }) {
           type="email"
           name="email"
           defaultValue={user.email}
-          onChange={(e) => handleUpdate(e)}
+          onChange={(e) => handleUpdate(e, 'email')}
         />
       </Form.Group>
 
-      <Button className='mt-3' variant="primary" type="submit">
+      <Button className="mt-3" variant="primary" onClick={handleSubmit}>
         Update
       </Button>
     </Form>

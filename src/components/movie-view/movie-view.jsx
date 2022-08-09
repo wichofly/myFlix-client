@@ -28,13 +28,9 @@ export class MovieView extends React.Component {
     document.removeEventListener('keypress', this.keypressCallback);
   }
 
-  addFavorite(movie) {
-    let userString = localStorage.getItem('user');
-    const user = JSON.parse(userString)
-    let token = localStorage.getItem('token');
-    console.log(movie);
-    console.log(token);
-
+  addFavorite() {
+    const token = localStorage.getItem('token');
+    const { user, movie } = this.props;
     axios
       .post(
         `https://wichoflix.herokuapp.com/users/${user.username}/movies/${movie._id}`,
@@ -43,6 +39,8 @@ export class MovieView extends React.Component {
       )
       .then((response) => {
         console.log(response.data);
+        user.favoriteMovies.push(movie._id);
+        localStorage.setItem('user', JSON.stringify(user));
         alert(`${movie.title} has beeen added to your favorites.`);
       })
       .catch((error) => {
@@ -52,7 +50,7 @@ export class MovieView extends React.Component {
 
   removeFavorite = (movie) => {
     let userString = localStorage.getItem('user');
-    const user = JSON.parse(userString)
+    const user = JSON.parse(userString);
     let token = localStorage.getItem('token');
 
     axios
@@ -222,6 +220,14 @@ export class MovieView extends React.Component {
           }}
         >
           Back
+        </Button>
+        <Button
+          style={{ marginLeft: '5px' }}
+          onClick={() => {
+            this.addFavorite();
+          }}
+        >
+          Add to Favorites
         </Button>
       </Container>
     );

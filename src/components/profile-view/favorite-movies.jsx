@@ -5,39 +5,29 @@ import axios from 'axios';
 
 import './profile-view.scss';
 
-function FavoriteMovies({ favoriteMovieList }) {
-  const getUser = () => {
-    axios
-      .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        setFavoriteMovies(response.data.favoriteMovies);
-        console.log(response);
-      })
-      .catch((error) => console.error(error));
-  };
-
+function FavoriteMovies({ favoriteMovieList, user, updateFavoriteMovieList }) {
   const removeFav = (id) => {
     let token = localStorage.getItem('token');
-    let url = `https://wichoflix.herokuapp.com/users/${localStorage.getItem(
-      'user'
-    )}/movies/${id}`;
-    axios.delete(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    useEffect(() => {
-      getUser();
-    }, []);
+    let url = `https://wichoflix.herokuapp.com/users/${user.username}/movies/${id}`;
+    axios
+      .delete(url, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(() => {
+        const newFavMovies = favoriteMovieList.filter((m) => m._id !== id);
+        updateFavoriteMovieList(newFavMovies);
+        user.favoriteMovies = newFavMovies.map((m) => m._id);
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log('user', user);
+      });
   };
 
   return (
     <Card>
       <Card.Body>
         <Row>
-          <Col xs={2}>
-            <h4>Favorite Movies</h4>
+          <Col xs={2} >
+            <h4 className='fav-text'>Favorite Movies</h4>
           </Col>
         </Row>
 
@@ -46,15 +36,12 @@ function FavoriteMovies({ favoriteMovieList }) {
             return (
               <Col xs={12} md={6} lg={3} key={_id} className="fav-movie">
                 <Figure>
-                  <Link to={`/movies/${movies._id}`}>
+                  <Link to={`/movies/${_id}`}>
                     <Figure.Image src={imageURL} alt={title} />
                     <Figure.Caption>{title}</Figure.Caption>
                   </Link>
                 </Figure>
-                <Button
-                  variant="secondary"
-                  onClick={() => removeFav(movies._id)}
-                >
+                <Button variant="secondary" onClick={() => removeFav(_id)}>
                   Remove
                 </Button>
               </Col>

@@ -49,7 +49,7 @@ export function LoginView(props) {
       /* Send a request to the server for authentication */
       axios
         .post('https://wichoflix.herokuapp.com/login', {
-          // they sould be like my API objects with the first letter lowercase
+          // they should be like my API objects with the first letter lowercase
           username: username,
           password: password,
         })
@@ -131,5 +131,4 @@ LoginView.propTypes = {
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
   }),
-  onLoggedIn: PropTypes.func.isRequired,
 };

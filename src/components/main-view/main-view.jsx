@@ -29,8 +29,8 @@ export class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      // you saved only the username in the local storage, not the object (not the hole information)
-      // then when you took out the user from the local storage, you saved it into user (setState), but in the moment, user was not a user object, but only a usename
+      // was saved only the username in the local storage, not the object (not the hole information)
+      // then when it was taken out the user from the local storage, it was saved it into user (setState), but in the moment, user was not a user object, but only a usename
       const userString = localStorage.getItem('user');
       const user = JSON.parse(userString);
       this.setState({
@@ -60,7 +60,7 @@ export class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user,  
+      user: authData.user,
     });
 
     localStorage.setItem('token', authData.token);
@@ -71,7 +71,6 @@ export class MainView extends React.Component {
   // Condensed code
   render() {
     const { movies, user } = this.state; // Deconstructin
-    console.log('user in main view', user);
     return (
       <Router>
         <Menubar user={user} />
@@ -125,6 +124,7 @@ export class MainView extends React.Component {
               return (
                 <Col md={8}>
                   <MovieView
+                    user={user}
                     movie={movies.find((m) => m._id === match.params.movieId)}
                     onBackClick={() => history.goBack()}
                   />
@@ -196,7 +196,6 @@ export class MainView extends React.Component {
                     />
                   </Col>
                 );
-              console.log('show me the user', user);
               return (
                 <Col>
                   <ProfileView

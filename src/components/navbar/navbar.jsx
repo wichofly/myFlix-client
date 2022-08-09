@@ -18,8 +18,6 @@ export function Menubar({ user }) {
     }
   };
 
-  console.log('user in navbar', user);
-
   return (
     <Navbar
       className="main-nav"

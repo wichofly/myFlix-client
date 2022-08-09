@@ -10,7 +10,21 @@ import UpdateUser from './update-user';
 import './profile-view.scss';
 
 export function ProfileView({ movies, onUpdateUserInfo, user }) {
-  const favoriteMovieList = movies.filter((movies) => {});
+  const [favoriteMovieList, setFavoriteMovieList] = useState([]);
+  let token = localStorage.getItem('token');
+
+  useEffect(() => {
+    // take the favorite movie ids
+    const favMovieIds = user.favoriteMovies;
+    const favoriteMovieListLocal = [];
+    movies.forEach((movie) => {
+      // if movie id is in favMovieIds, then add to favMovieList
+      if (favMovieIds.includes(movie._id)) {
+        favoriteMovieListLocal.push(movie);
+      }
+    });
+    setFavoriteMovieList(favoriteMovieListLocal);
+  }, [movies]);
 
   const getUser = () => {
     axios
@@ -29,10 +43,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
       .catch((error) => console.error(error));
   };
 
-  const handleSubmit = (e) => {};
-
   const removeFav = (id) => {
-    let token = localStorage.getItem('token');
     let url = `https://wichoflix.herokuapp.com/users/${localStorage.getItem(
       'user'
     )}/movies/${id}`;
@@ -41,13 +52,23 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
     });
   };
 
-  const handleUpdate = (e) => {};
+  const handleSubmit = () => {
+    const body = {
+      ...user,
+    };
+    delete body.password;
+    axios
+      .put(`https://wichoflix.herokuapp.com/users/${user.username}`, body, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(() => {
+        localStorage.setItem('user', JSON.stringify(user));
+      });
+  };
 
   const deleteUser = () => {
-    let token = localStorage.getItem('token');
-    let user = localStorage.getItem('user');
     axios
-      .delete(`https://wichoflix.herokuapp.com/users/${user}`, {
+      .delete(`https://wichoflix.herokuapp.com/users/${user.username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -60,6 +81,10 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
       .catch((e) => {
         console.log('Error');
       });
+  };
+
+  const updateFavoriteMovieList = (newFavMovies) => {
+    setFavoriteMovieList(newFavMovies);
   };
 
   useEffect(() => {
@@ -83,17 +108,19 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
         <Col xs={12} sm={8}>
           <Card>
             <Card.Body>
-              <UpdateUser user={user} />
+              <UpdateUser handleSubmit={handleSubmit} user={user} />
             </Card.Body>
           </Card>
         </Col>
       </Row>
 
       <Row>
-        <FavoriteMovies favoriteMovieList={favoriteMovieList} />
-        <Button variant="primary" onClick={() => removeFav(movies._id)}>
-          Remove from Favorites Movies
-        </Button>
+        <FavoriteMovies
+          favoriteMovieList={favoriteMovieList}
+          movies={movies}
+          user={user}
+          updateFavoriteMovieList={updateFavoriteMovieList}
+        />
       </Row>
     </Container>
   );
