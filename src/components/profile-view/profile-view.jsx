@@ -52,11 +52,11 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const body = {
       ...user,
     };
-    delete body.password;
     axios
       .put(`https://wichoflix.herokuapp.com/users/${user.username}`, body, {
         headers: { Authorization: `Bearer ${token}` },
