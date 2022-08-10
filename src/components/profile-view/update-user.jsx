@@ -5,6 +5,7 @@ function UpdateUser({ handleSubmit, user }) {
   const handleUpdate = (e, propKey) => {
     user[propKey] = e.target.value;
   };
+
   return (
     <Form className="profile-form" onSubmit={(e) => handleSubmit(e)}>
       <h2>Edit User Info</h2>
@@ -23,7 +24,8 @@ function UpdateUser({ handleSubmit, user }) {
         <Form.Control
           type="password"
           name="password"
-          defaultValue={user.password}
+          // defaultValue={user.password}
+          required={true}
           onChange={(e) => handleUpdate(e, 'password')}
         />
       </Form.Group>
@@ -38,7 +40,7 @@ function UpdateUser({ handleSubmit, user }) {
         />
       </Form.Group>
 
-      <Button className="mt-3" variant="primary" onClick={handleSubmit}>
+      <Button type="submit" className="mt-3" variant="primary">
         Update
       </Button>
     </Form>
