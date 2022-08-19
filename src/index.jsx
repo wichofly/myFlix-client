@@ -5,8 +5,8 @@ import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-// MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
-import { MainView } from './components/main-view/main-view';
+// now is exported with default component, that's wy the curly braces were removed
+import MainView from './components/main-view/main-view';
 // Import statement to indicate that you need to bundle
 import './index.scss';
 import moviesApp from './reducers/reducers';

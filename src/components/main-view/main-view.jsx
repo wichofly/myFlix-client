@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'; // It will help to perform an ajax operation to call the movies from myFlix API
-import { Container, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
@@ -11,17 +12,27 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { Menubar } from '../navbar/navbar';
 import { ProfileView } from '../profile-view/profile-view';
+// #0 impot relevant actions
+import { setMovies } from '../../actions/actions';
+// we haven't written this one yet
+import MoviesList from '../movies-list/movies-list';
+/* 
+  #1 The rest of components import statements but without the MovieCard's 
+  because it will be imported and used in the MoviesList component rather
+  than in here. 
+*/
 
 import './main-view.scss';
 
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
-// Exposing a component makes it available for use by other components, modules, and files
-export class MainView extends React.Component {
+// Exposing a component makes it available for use by other components, modules, and files.
+// #2 export keyword removed from here
+class MainView extends React.Component {
   // React will use this constructor method to create the component's state.
   constructor() {
     super(); // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor().
+    // #3 movies state removed from here
     this.state = {
-      movies: [],
       user: null,
     };
   }
@@ -46,9 +57,9 @@ export class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
       })
       .then((response) => {
-        // Assign the result to the state
-        this.setState({
-          movies: response.data,
+        this.props({
+          // #4 change movies to setMovies
+          setMovies: response.data,
         });
       })
       .catch(function (error) {
@@ -70,7 +81,10 @@ export class MainView extends React.Component {
 
   // Condensed code
   render() {
-    const { movies, user } = this.state; // Deconstructin
+    // #5 movies is extracted from this.props rather than from this.state
+    let { movies } = this.props;
+    let { user } = this.state;
+
     return (
       <Router>
         <Menubar user={user} />
@@ -88,12 +102,8 @@ export class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ));
+              // #6 
+              return <MovieList movies={movies} />;
             }}
           />
 
@@ -233,4 +243,14 @@ export class MainView extends React.Component {
   }
 }
 
-// export default MainView;
+// #7
+let mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+    user: state.user,
+  };
+};
+
+// #8
+export default connect(mapStateToProps, { setMovies })(MainView);
+
