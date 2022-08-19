@@ -1,20 +1,27 @@
 import React from 'react';
-import { Container } from 'react-bootstrap'; // It is another way to import Bootstrap component
-// import ReactDOM from 'react-dom';
+import { Container } from 'react-bootstrap'; // It is another way to import Bootstrap component without "/container" but using "{}" at the begininng
 import ReactDOM from 'react-dom/client';
+import { legacy_createStore as createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+
 // MainView is in enclosed in curly braces because was exported without the "default" keyword in "main-view.jsx"
 import { MainView } from './components/main-view/main-view';
-
 // Import statement to indicate that you need to bundle
 import './index.scss';
+import moviesApp from './reducers/reducers';
+
+const store = createStore(moviesApp, devToolsEnhancer());
 
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <Container>
-        <MainView />
-      </Container>
+      <Provider store={store}>
+        <Container>
+          <MainView />
+        </Container>
+      </Provider>
     );
   }
 }
