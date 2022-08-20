@@ -12,10 +12,10 @@ function UserInfo({ email, name, password, birthday }) {
         <Col className="value">{name}</Col>
       </Row>
 
-      <Row>
+      {/* <Row>
         <Col className="label">Password: </Col>
         <Col className="value">{password}</Col>
-      </Row>
+      </Row> */}
 
       <Row>
         <Col className="label">Email: </Col>

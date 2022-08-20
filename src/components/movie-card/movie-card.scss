@@ -3,26 +3,49 @@ $color2: #061d1c;
 $color3: #bae1db;
 $color4: #f8fafc;
 
-body {
-  background-color: $color;
-}
-
 .card {
   box-shadow: 0 4px 5px rgb(0, 0, 0, 0.2);
   border-radius: 3px;
+}
+
+.card-main {
   position: relative;
   overflow: hidden;
 }
 
-// .card-body {
-//   background-color: $color3;
-//   .card-title {
-//     text-align: center;
-//     color: $color2;
-//   }
-// }
+.card-body-main {
+  background-color: $color3;
+  .card-title-main {
+    text-align: center;
+    color: $color2;
+    font-weight: bold;
+  }
+  .card-text-main {
+    background-color: $color4;
+    color: $color2;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(110%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+  }
+  .btn-link {
+    color: $color2;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
 
-.card-title {
-  text-align: center;
-  color: $color2;
+.card-main:hover .card-text-main {
+  transform: translateY(0);
+}
+
+.btn-link:hover {
+  color: $color;
+  cursor: pointer; // why does not show?
 }
