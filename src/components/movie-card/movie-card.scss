@@ -46,6 +46,6 @@ $color4: #f8fafc;
 }
 
 .btn-link:hover {
-  color: $color;
-  cursor: pointer; // why does not show?
+  color: $color; // why does not show?
+  cursor: pointer; 
 }

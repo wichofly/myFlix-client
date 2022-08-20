@@ -1,0 +1,21 @@
+$color: #0d9488;
+$color2: #061d1c;
+$color3: #bae1db;
+$color4: #f8fafc;
+
+.genre-view {
+  color: $color4;
+}
+
+.genre-name,
+.genre-description {
+  font-weight: 500;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-back-genre{
+    margin-top: 700px;
+    margin-bottom: 20px;
+}
