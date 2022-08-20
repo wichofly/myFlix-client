@@ -18,30 +18,33 @@ export class DirectorView extends React.Component {
 
     return (
       <Container className="director-view">
-        <Row className="mt-3">
+        <Row className="director-name mt-3">
           <Col className="label">Director: </Col>
           <Col className="value">{director.name}</Col>
-          <Row className="mt-3">
+
+          <Row className="director-bio mt-3">
             <Col className="label">Bio: </Col>
             <Col className="value">{director.bio}</Col>
           </Row>
-          <Row className="mt-3">
+          <Row className="director-birth mt-3">
             <div>
               <Col className="label">Birth: </Col>
-              <Col className="value mt-3 ml-3 ">{director.birthyear}</Col>.
+              <Col className="value ">{director.birthyear}</Col>
             </div>
           </Row>
-          <Row className="mt-3">
+          <Row className="director-death mt-3">
             <div>
               <Col className="label">Death: </Col>
-              <Col className="value mt-3 ml-3 ">{director.deathyear}</Col>.
+              <Col className="value">{director.deathyear}</Col>
             </div>
           </Row>
           <Row>
             <Col>
               <div>
                 <Button
-                  className=""
+                  className="btn-back-director"
+                  style={{ fontSize: '20px' }}
+                  variant="dark"
                   onClick={() => {
                     onBackClick();
                   }}

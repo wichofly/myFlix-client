@@ -17,19 +17,23 @@ export class GenreView extends React.Component {
 
     return (
       <Container>
-        <Row className="mt-3">
-          <Col className="label">Genre:</Col>
-          <Col className="value">{genre.name}</Col>
-        </Row>
-        <Row className="mt-3">
-          <Col className="label">Description:</Col>
-          <Col className="value">{genre.description}</Col>
-        </Row>
+        <div className="genre-view">
+          <Row className="genre-name mt-3">
+            <Col className="label">Genre:</Col>
+            <Col className="value">{genre.name}</Col>
+          </Row>
+          <Row className="genre-description mt-3">
+            <Col className="label">Description:</Col>
+            <Col className="value">{genre.description}</Col>
+          </Row>
+        </div>
         <Button
+          className="btn-back-genre"
+          style={{ fontSize: '20px' }}
+          variant="dark"
           onClick={() => {
             onBackClick();
           }}
-          variant="primary"
         >
           Back
         </Button>

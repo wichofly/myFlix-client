@@ -77,158 +77,143 @@ export class MovieView extends React.Component {
         <Row>
           <Col>
             <div className="movie-poster">
-              <img src={movie.imageURL} width="200" height="200" />
+              <img src={movie.imageURL} width="300" height="450" />
             </div>
           </Col>
         </Row>
+        <div className="box-one">
+          <Row>
+            <Col>
+              <div className="movie-title">
+                <span className="label"></span>
+                <span className="value">{movie.title}</span>
+              </div>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col>
-            <div className="movie-title">
-              <span className="label">Title: </span>
-              <span className="value">{movie.title}</span>
-            </div>
-          </Col>
-        </Row>
+          <Row>
+            <Col>
+              <div className="movie-description">
+                <span className="label"></span>
+                <span className="value">{movie.description}</span>
+              </div>
+            </Col>
+          </Row>
+        </div>
 
-        <Row>
-          <Col>
-            <div className="movie-description">
-              <span className="label">Description: </span>
-              <span className="value">{movie.description}</span>
-            </div>
-          </Col>
-        </Row>
+        <div className="box-two">
+          <Row>
+            <Col>
+              <div className="movie-year">
+                <span className="label">Year: </span>
+                <span className="value">{movie.year}</span>
+              </div>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col>
-            <div className="movie-genre">
-              <span className="label">Genre: </span>
-              {/* <span className="value">{movie.genre}</span> */}
-            </div>
-          </Col>
-        </Row>
+          <Row>
+            <Col>
+              <div className="movie-score">
+                <span className="label">Score: </span>
+                <span className="value">{movie.score}</span>
+              </div>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col>
-            <div className="movie-name">
-              <span className="label">Name: </span>
-              <span className="value">{movie.genre?.name}</span>
-            </div>
-          </Col>
-        </Row>
+          <Row>
+            <Col>
+              <div className="movie-rating">
+                <span className="label">Rating: </span>
+                <span className="value">{movie.rating}</span>
+              </div>
+            </Col>
+          </Row>
+        </div>
 
-        <Row>
-          <Col>
-            <span className="label">Description: </span>
-            <span className="value">{movie.genre?.description}</span>
-          </Col>
-        </Row>
+        <div className="box-three">
+          <Row>
+            <Col>
+              <div className="movie-director">
+                <span className="label">Director: </span>
+                <span className="value">
+                  {' '}
+                  <Link to={`/directors/${movie.director.name}`}>
+                    <Button
+                      className="btn-link-director"
+                      style={{
+                        color: '#f8fafc',
+                        textDecoration: 'none',
+                        fontSize: '25px',
+                        fontWeight: 'bold',
+                      }}
+                      variant="link"
+                    >
+                      {movie.director?.name}
+                    </Button>
+                  </Link>
+                </span>
+                {/* <span className="value">{movie.director}</span> */}
+              </div>
+            </Col>
+          </Row>
 
-        <Link to={`/directors/${movie.director.name}`}>
-          <Button variant="link">Director</Button>
-        </Link>
+          <Row>
+            <Col>
+              <div className="movie-genre">
+                <span className="label">Genre: </span>
+                <span className="value">
+                  <Link to={`/genres/${movie.genre.name}`}>
+                    <Button
+                      className="btn-link-genre"
+                      style={{
+                        color: '#f8fafc',
+                        textDecoration: 'none',
+                        fontSize: '25px',
+                        fontWeight: 'bold',
+                      }}
+                      variant="link"
+                    >
+                      {movie.genre?.name}
+                    </Button>
+                  </Link>
+                </span>
+                {/* <span className="value">{movie.genre}</span> */}
+              </div>
+            </Col>
+          </Row>
 
-        <Link to={`/genres/${movie.genre.name}`}>
-          <Button variant="link">Genre</Button>
-        </Link>
+          <Row>
+            <Col>
+              <div className="movie-actors">
+                <span className="label">Actors: </span>
+                {/* <span className="value">{movie.actors}</span> */}
+              </div>
+            </Col>
+          </Row>
+        </div>
 
-        <Row>
-          <Col>
-            <div className="movie-director">
-              <span className="label">Director: </span>
-              {/* <span className="value">{movie.director}</span> */}
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="director-name">
-              <span className="label">Name: </span>
-              <span className="value">{movie.director?.name}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="director-bio">
-              <span className="label">Bio: </span>
-              <span className="value">{movie.director?.bio}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="director-birthyear">
-              <span className="label">Birthyear: </span>
-              <span className="value">{movie.director?.birthyear}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="director-deathyear">
-              <span className="label">Deathyear: </span>
-              <span className="value">{movie.director?.deathyear}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="movie-actors">
-              <span className="label">Actors: </span>
-              {/* <span className="value">{movie.actors}</span> */}
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="movie-year">
-              <span className="label">Year: </span>
-              <span className="value">{movie.year}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="movie-score">
-              <span className="label">Score: </span>
-              <span className="value">{movie.score}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <div className="movie-rating">
-              <span className="label">Rating: </span>
-              <span className="value">{movie.rating}</span>
-            </div>
-          </Col>
-        </Row>
-
-        <Button
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </Button>
-        <Button
-          style={{ marginLeft: '5px' }}
-          onClick={() => {
-            this.addFavorite();
-          }}
-        >
-          Add to Favorites
-        </Button>
+        <div className="box-button">
+          <Button
+            className="btn-back"
+            style={{ fontSize: '20px' }}
+            variant="dark"
+            onClick={() => {
+              onBackClick(null);
+            }}
+          >
+            Back
+          </Button>
+          <Button
+            className="btn-addFav"
+            style={{ fontSize: '20px' }}
+            variant="dark"
+            onClick={() => {
+              this.addFavorite();
+            }}
+          >
+            Add to Favorites
+          </Button>
+        </div>
       </Container>
     );
   }

@@ -1,0 +1,76 @@
+$color: #0d9488;
+$color2: #061d1c;
+$color3: #bae1db;
+$color4: #f8fafc;
+
+.movie-view {
+  color: $color4;
+}
+
+.movie-description,
+.movie-genre,
+.movie-director,
+.movie-actors,
+.movie-year,
+.movie-score,
+.movie-rating {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+// This does not display, why not?
+// .btn-link-genre,
+// .btn-link-director {
+//   color: $color4;
+//   text-decoration: none;
+// }
+
+.movie-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-title{
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+}
+
+// .box-one {
+//   display: flex;
+//   align-items: center;
+// }
+
+.box-two {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+  margin-top: 50px;
+}
+
+.box-three {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+  margin-top: 25px;
+}
+
+
+.box-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; 
+  margin-top: 50px;
+}
+
+.btn-back {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-addFav {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
