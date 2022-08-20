@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { SET_MOVIES, SET_FILTER, SET_USER, ADD_FAVMOVIE, REM_FAVMOVIE } from '../actions/actions';
+import { SET_MOVIES, SET_FILTER, SET_USER } from '../actions/actions';
 
 function movies(state = [], action) {
   switch (action.type) {
