@@ -103,7 +103,7 @@ class MainView extends React.Component {
                 );
               if (movies.length === 0) return <div className="main-view" />;
               // #6 
-              return <MovieList movies={movies} />;
+              return <MoviesList movies={movies} />;
             }}
           />
 
