@@ -74,25 +74,20 @@ export class MovieView extends React.Component {
 
     return (
       <Container className="movie-view">
-        <Row>
-          <Col>
-            <div className="movie-poster">
-              <img src={movie.imageURL} width="300" height="450" />
-            </div>
-          </Col>
-        </Row>
         <div className="box-one">
           <Row>
+            <Col>
+              <div className="movie-poster">
+                <img src={movie.imageURL} width="300" height="450" />
+              </div>
+            </Col>
+
             <Col>
               <div className="movie-title">
                 <span className="label"></span>
                 <span className="value">{movie.title}</span>
               </div>
-            </Col>
-          </Row>
 
-          <Row>
-            <Col>
               <div className="movie-description">
                 <span className="label"></span>
                 <span className="value">{movie.description}</span>

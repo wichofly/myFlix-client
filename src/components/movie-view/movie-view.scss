@@ -25,22 +25,18 @@ $color4: #f8fafc;
 //   text-decoration: none;
 // }
 
-.movie-poster {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .movie-title{
   font-weight: 700;
   font-size: 40px;
   text-align: center;
 }
 
-// .box-one {
-//   display: flex;
-//   align-items: center;
-// }
+.box-one {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 20px;
+}
 
 .box-two {
   display: flex;
@@ -61,7 +57,7 @@ $color4: #f8fafc;
   display: flex;
   align-items: center;
   justify-content: space-evenly; 
-  margin-top: 50px;
+  margin-top: 300px;
 }
 
 .btn-back {
