@@ -26,12 +26,14 @@ export class DirectorView extends React.Component {
             <Col className="label">Bio: </Col>
             <Col className="value">{director.bio}</Col>
           </Row>
+
           <Row className="director-birth mt-3">
             <div>
               <Col className="label">Birth: </Col>
               <Col className="value ">{director.birthyear}</Col>
             </div>
           </Row>
+
           <Row className="director-death mt-3">
             <div>
               <Col className="label">Death: </Col>

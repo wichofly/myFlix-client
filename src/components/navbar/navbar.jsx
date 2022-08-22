@@ -21,18 +21,26 @@ export function Menubar({ user }) {
   return (
     <Navbar
       className="main-nav"
+      style={{ height: '70px' }}
       sticky="top"
       bg="dark"
       expand="lg"
       variant="dark"
     >
       <Container>
-        <Navbar.Brand className="navbar-logo" href="/">
+        <Navbar.Brand
+          className="navbar-logo"
+          style={{ fontSize: '2rem', fontWeight: 'bold' }}
+          href="/"
+        >
           myFlix
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav
+            className="ml-auto"
+            style={{ textDecoration: 'none', fontSize: '1.5rem', marginLeft: 'auto' }}
+          >
             {user
               ? isAuth() && (
                   <Nav.Link href={`/users/${user.username}`}>
@@ -42,6 +50,7 @@ export function Menubar({ user }) {
               : null}
             {isAuth() && (
               <Button
+                style={{ textDecoration: 'none', fontSize: '1.5rem' }}
                 variant="link"
                 onClick={() => {
                   onLoggedOut();
