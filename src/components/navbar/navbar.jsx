@@ -21,7 +21,7 @@ export function Menubar({ user }) {
   return (
     <Navbar
       className="main-nav"
-      style={{ height: '70px' }}
+      // style={{ height: '70px' }}
       sticky="top"
       bg="dark"
       expand="lg"
@@ -38,7 +38,7 @@ export function Menubar({ user }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
-            className="ml-auto"
+            // className="ml-auto"
             style={{ textDecoration: 'none', fontSize: '1.5rem', marginLeft: 'auto' }}
           >
             {user
@@ -59,8 +59,8 @@ export function Menubar({ user }) {
                 Logout
               </Button>
             )}
-            {!isAuth() && <Nav.Link href="/">Sign-in</Nav.Link>}
-            {!isAuth() && <Nav.Link href="/register">Sign-up</Nav.Link>}
+            {!isAuth() && <Nav.Link href="/">Login</Nav.Link>}
+            {!isAuth() && <Nav.Link href="/register">Register</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
