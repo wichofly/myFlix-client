@@ -34,6 +34,7 @@ class MainView extends React.Component {
     // #3 movies state removed from here
     this.state = {
       user: null,
+      movies: []
     };
   }
 
@@ -57,9 +58,9 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
       })
       .then((response) => {
-        this.props({
+        this.setState({
           // #4 change movies to setMovies
-          setMovies: response.data,
+          movies: response.data,
         });
       })
       .catch(function (error) {
@@ -82,7 +83,7 @@ class MainView extends React.Component {
   // Condensed code
   render() {
     // #5 movies is extracted from this.props rather than from this.state
-    let { movies } = this.props;
+    let { movies } = this.state;
     let { user } = this.state;
 
     return (
