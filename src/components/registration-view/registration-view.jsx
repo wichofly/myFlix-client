@@ -127,7 +127,7 @@ export function RegistrationView(props) {
                 >
                   Sign Up
                 </Card.Title>
-                <Form id="form">
+                <Form id="">
                   <div className="first-box">
                     <Form.Group
                       className="mb-3"
@@ -173,7 +173,7 @@ export function RegistrationView(props) {
                       )}
                     </Form.Group>
                   </div>
-                  
+
                   <div className='second-box'>
                     <Form.Group className="mb-3" controlId="formEmail">
                       <Form.Label className="form-label-email">

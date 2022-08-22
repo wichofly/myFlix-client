@@ -5,13 +5,10 @@
 .first-box {
   display: flex;
   justify-content: space-around;
-  align-content: space-around;
-  align-items: center;
   margin-top: 50px;
 }
 
 .second-box {
   display: flex;
-  justify-content: space-around;
-  align-content: space-between;
+  justify-content: space-around; 
 }
