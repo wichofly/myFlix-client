@@ -26,8 +26,8 @@ function FavoriteMovies({ favoriteMovieList, user, updateFavoriteMovieList }) {
     <Card style={{background: '#bae1db'}}>
       <Card.Body>
         <Row>
-          <Col xs={2}>
-            <h3 className="fav-text" style={{ textAlign: 'center' }}>
+          <Col>
+            <h3 className="fav-text">
               Favorite Movies
             </h3>
           </Col>

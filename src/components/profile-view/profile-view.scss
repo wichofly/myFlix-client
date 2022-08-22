@@ -30,12 +30,28 @@ $color4: #f8fafc;
   }
 }
 
-.card {
+div .card {
   margin-bottom: 15px;
+  background: #bae1db;
 }
 
 .fav-text {
-  font-weight: 700;
-  font-size: 40px;
+  font-size: 3rem;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-label-updateInfo,
+.info-text {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.form-label-updateUser,
+.form-label-updatePass,
+.form-label-updateEmail,
+.text-userInfo,
+.text-userEmail,
+.text-userBirth {
+  font-size: 25px;
 }

@@ -151,7 +151,7 @@ export function RegistrationView(props) {
                       )}
                     </Form.Group>
 
-                    <Form.Group style={{marginLeft: '50px'}}
+                    <Form.Group style={{marginLeft: '30px'}}
                       className="mb-3"
                       controlId="formPassword"
                     >
