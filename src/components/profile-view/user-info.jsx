@@ -5,9 +5,9 @@ function UserInfo({ email, name, password, birthday }) {
   return (
     <Container>
       <Row>
-        <h4>Your Info</h4>
+        <h4 className='info-text'>Your Info</h4>
       </Row>
-      <Row>
+      <Row className='text-userInfo'>
         <Col className="label">Username: </Col>
         <Col className="value">{name}</Col>
       </Row>
@@ -17,12 +17,12 @@ function UserInfo({ email, name, password, birthday }) {
         <Col className="value">{password}</Col>
       </Row> */}
 
-      <Row>
+      <Row className='text-userEmail'>
         <Col className="label">Email: </Col>
         <Col className="value">{email}</Col>
       </Row>
 
-      <Row>
+      <Row className='text-userBirth'>
         <Col className="label">Birthday: </Col>
         <Col className="value">{birthday}</Col>
       </Row>

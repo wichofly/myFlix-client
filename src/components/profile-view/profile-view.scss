@@ -1,3 +1,8 @@
+$color: #0d9488;
+$color2: #061d1c;
+$color3: #bae1db;
+$color4: #f8fafc;
+
 .fav-movie {
   margin-bottom: 15px;
   figure {
@@ -13,7 +18,10 @@
       margin: auto;
     }
     figcaption {
+      color: $color2;
+      font-size: 25px;
       text-align: center;
+      text-decoration: none;
     }
   }
   button.btn {
@@ -22,10 +30,28 @@
   }
 }
 
-.card {
+div .card {
   margin-bottom: 15px;
+  background: #bae1db;
 }
 
 .fav-text {
+  font-size: 3rem;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-label-updateInfo,
+.info-text {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.form-label-updateUser,
+.form-label-updatePass,
+.form-label-updateEmail,
+.text-userInfo,
+.text-userEmail,
+.text-userBirth {
+  font-size: 25px;
 }

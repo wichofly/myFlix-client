@@ -53,7 +53,7 @@ export function LoginView(props) {
           username: username,
           password: password,
         })
-        // onLoggedIn = (authData) => this.onLoggedIn(authData) 
+        // onLoggedIn = (authData) => this.onLoggedIn(authData)
         .then((response) => {
           const data = response.data;
           props.onLoggedIn(data);
@@ -65,18 +65,26 @@ export function LoginView(props) {
   };
 
   return (
-    <Container fluid className='my-3 mx-12'>
+    <Container fluid className="my-3 mx-12">
       <Row>
-        <Col >
+        <Col>
           <CardGroup>
-            <Card>
+            <Card className="card-login" style={{ background: '#bae1db', marginBottom: '500px' }}>
               <Card.Body className="mt-3">
-                <Card.Title className="text-center">
+                <Card.Title
+                  className="text-title-login"
+                  style={{ fontSize: '3rem' }}
+                >
                   Welcome to myFlix
                 </Card.Title>
                 <Form id="form">
-                  <Form.Group className="mb-3 w-full" controlId="formUsername">
-                    <Form.Label>Username:</Form.Label>
+                  <Form.Group
+                    className="mb-3 mt-5 w-full"
+                    controlId="formUsername"
+                  >
+                    <Form.Label className="form-label-user">
+                      Username:
+                    </Form.Label>
                     <Form.Control
                       type="text"
                       onChange={(e) => setUsername(e.target.value)}
@@ -90,7 +98,9 @@ export function LoginView(props) {
                   </Form.Group>
 
                   <Form.Group className="mb-3 w-full" controlId="formPassword">
-                    <Form.Label>Password:</Form.Label>
+                    <Form.Label className="form-label-password">
+                      Password:
+                    </Form.Label>
                     <Form.Control
                       type="password"
                       onChange={(e) => setPassword(e.target.value)}
@@ -110,7 +120,7 @@ export function LoginView(props) {
                   </Form.Group>
                   <Button
                     className="w-full"
-                    variant="primary"
+                    variant="dark"
                     type="submit"
                     onClick={handleSubmit}
                   >

@@ -8,9 +8,9 @@ function UpdateUser({ handleSubmit, user }) {
 
   return (
     <Form className="profile-form" onSubmit={(e) => handleSubmit(e)}>
-      <h2>Edit User Info</h2>
+      <h2 className="form-label-updateInfo">Edit User Info</h2>
       <Form.Group>
-        <Form.Label>Username:</Form.Label>
+        <Form.Label className="form-label-updateUser">Username:</Form.Label>
         <Form.Control
           type="text"
           name="username"
@@ -20,7 +20,7 @@ function UpdateUser({ handleSubmit, user }) {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Password:</Form.Label>
+        <Form.Label className="form-label-updatePass">Password:</Form.Label>
         <Form.Control
           type="password"
           name="password"
@@ -31,7 +31,7 @@ function UpdateUser({ handleSubmit, user }) {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Email:</Form.Label>
+        <Form.Label className="form-label-updateEmail">Email:</Form.Label>
         <Form.Control
           type="email"
           name="email"
@@ -40,7 +40,7 @@ function UpdateUser({ handleSubmit, user }) {
         />
       </Form.Group>
 
-      <Button type="submit" className="mt-3" variant="primary">
+      <Button type="submit" className="mt-3" variant="dark">
         Update
       </Button>
     </Form>

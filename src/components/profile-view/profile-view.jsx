@@ -95,10 +95,10 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
     <Container>
       <Row>
         <Col xs={12} sm={4}>
-          <Card>
+          <Card style={{background: '#bae1db'}}>
             <Card.Body>
               <UserInfo name={user.username} email={user.email} />
-              <Button className="mt-3" variant="primary" onClick={deleteUser}>
+              <Button className="mt-3" variant="dark" onClick={deleteUser}>
                 Delete User
               </Button>
             </Card.Body>

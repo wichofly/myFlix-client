@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-$color: #0d9488;
-$color2: #061d1c;
-$color3: #bae1db;
-$color4: #f8fafc;
-
-.register {
-    background-color: $color;
-    color: $color4;
-}
+.text-title-registration {
+    text-align: center;
+  }
+  
+  .first-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .second-box {
+    display: flex;
+    justify-content: space-around; 
+  }

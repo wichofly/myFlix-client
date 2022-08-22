@@ -1,3 +1,8 @@
+$color: #0d9488;
+$color2: #061d1c;
+$color3: #bae1db;
+$color4: #f8fafc;
+
 #form {
   place-items: center;
   width: 50%;
@@ -7,4 +12,16 @@
 
 .w-full {
   width: 100%;
+}
+
+.text-title-login {
+  text-align: center;
+  color: $color4;
+}
+
+.form-label-user,
+.form-label-password,
+.form-label-email,
+.form-label-birthday {
+  font-size: 2rem;
 }
