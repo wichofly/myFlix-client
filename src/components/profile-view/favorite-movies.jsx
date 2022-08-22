@@ -23,11 +23,13 @@ function FavoriteMovies({ favoriteMovieList, user, updateFavoriteMovieList }) {
   };
 
   return (
-    <Card>
+    <Card style={{background: '#bae1db'}}>
       <Card.Body>
         <Row>
-          <Col xs={2} >
-            <h4 className='fav-text'>Favorite Movies</h4>
+          <Col xs={2}>
+            <h3 className="fav-text" style={{ textAlign: 'center' }}>
+              Favorite Movies
+            </h3>
           </Col>
         </Row>
 
@@ -41,7 +43,7 @@ function FavoriteMovies({ favoriteMovieList, user, updateFavoriteMovieList }) {
                     <Figure.Caption>{title}</Figure.Caption>
                   </Link>
                 </Figure>
-                <Button variant="secondary" onClick={() => removeFav(_id)}>
+                <Button variant="dark" onClick={() => removeFav(_id)}>
                   Remove
                 </Button>
               </Col>

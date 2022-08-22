@@ -7,7 +7,11 @@ function UpdateUser({ handleSubmit, user }) {
   };
 
   return (
-    <Form className="profile-form" onSubmit={(e) => handleSubmit(e)}>
+    <Form
+      className="profile-form"
+      // style={{ background: '#bae1db' }}
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <h2>Edit User Info</h2>
       <Form.Group>
         <Form.Label>Username:</Form.Label>
@@ -40,7 +44,7 @@ function UpdateUser({ handleSubmit, user }) {
         />
       </Form.Group>
 
-      <Button type="submit" className="mt-3" variant="primary">
+      <Button type="submit" className="mt-3" variant="dark">
         Update
       </Button>
     </Form>

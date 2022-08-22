@@ -116,67 +116,103 @@ export function RegistrationView(props) {
       <Row>
         <Col>
           <CardGroup>
-            <Card>
+            <Card
+              className="card-registration"
+              style={{ background: '#bae1db', marginBottom: '500px' }}
+            >
               <Card.Body>
-                <Card.Title className="text-center">Sign Up</Card.Title>
-                <Form>
-                  <Form.Group className="mb-3" controlId="formUsername">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      required
-                      placeholder="Enter a username"
-                    />
-                    {/* // code added here to display a validation error */}
-                    {values.usernameErr && (
-                      <p className="validation-message">{values.usernameErr}</p>
-                    )}
-                  </Form.Group>
+                <Card.Title
+                  className="text-title-registration"
+                  style={{ fontSize: '3rem' }}
+                >
+                  Sign Up
+                </Card.Title>
+                <Form id="form">
+                  <div className="first-box">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="formUsername"
+                    >
+                      <Form.Label className="form-label-user">
+                        Username:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        placeholder="Enter a username"
+                      />
+                      {/* // code added here to display a validation error */}
+                      {values.usernameErr && (
+                        <p className="validation-message">
+                          {values.usernameErr}
+                        </p>
+                      )}
+                    </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formPassword">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      minLength="8"
-                      placeholder="at least 8 characters"
-                    />
-                    {values.passwordErr && (
-                      <p className="validation-message">{values.passwordErr}</p>
-                    )}
-                  </Form.Group>
+                    <Form.Group style={{marginLeft: '50px'}}
+                      className="mb-3"
+                      controlId="formPassword"
+                    >
+                      <Form.Label className="form-label-password" >
+                        Password:
+                      </Form.Label>
+                      <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        minLength="8"
+                        placeholder="at least 8 characters"
+                      />
+                      {values.passwordErr && (
+                        <p className="validation-message">
+                          {values.passwordErr}
+                        </p>
+                      )}
+                    </Form.Group>
+                  </div>
+                  
+                  <div className='second-box'>
+                    <Form.Group className="mb-3" controlId="formEmail">
+                      <Form.Label className="form-label-email">
+                        Email:
+                      </Form.Label>
+                      <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        placeholder="Email"
+                      />
+                      {values.emailErr && (
+                        <p className="validation-message">{values.emailErr}</p>
+                      )}
+                    </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formEmail">
-                    <Form.Label>Email:</Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      placeholder="Email"
-                    />
-                    {values.emailErr && (
-                      <p className="validation-message">{values.emailErr}</p>
-                    )}
-                  </Form.Group>
-
-                  <Form.Group className="mb-2" controlId="formBirthday">
-                    <Form.Label>Birthday:</Form.Label>
-                    <Form.Control
-                      type="date"
-                      value={birthday}
-                      onChange={(e) => setBirthday(e.target.value)}
-                    />
-                    {values.birthdayErr && (
-                      <p className="validation-message">{values.birthdayErr}</p>
-                    )}
-                  </Form.Group>
+                    <Form.Group style={{marginLeft: '50px'}}
+                      className="mb-3"
+                      controlId="formBirthday"
+                    >
+                      <Form.Label className="form-label-birthday">
+                        Birthday:
+                      </Form.Label>
+                      <Form.Control
+                        type="date"
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                      />
+                      {values.birthdayErr && (
+                        <p className="validation-message">
+                          {values.birthdayErr}
+                        </p>
+                      )}
+                    </Form.Group>
+                  </div>
                   <Button
-                    variant="primary"
+                    className="w-full"
+                    variant="dark"
                     type="submit"
                     onClick={handleSubmit}
                   >

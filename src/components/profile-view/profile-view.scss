@@ -1,3 +1,8 @@
+$color: #0d9488;
+$color2: #061d1c;
+$color3: #bae1db;
+$color4: #f8fafc;
+
 .fav-movie {
   margin-bottom: 15px;
   figure {
@@ -13,7 +18,10 @@
       margin: auto;
     }
     figcaption {
+      color: $color2;
+      font-size: 25px;
       text-align: center;
+      text-decoration: none;
     }
   }
   button.btn {
@@ -27,5 +35,7 @@
 }
 
 .fav-text {
+  font-weight: 700;
+  font-size: 40px;
   text-align: center;
 }
