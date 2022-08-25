@@ -177,14 +177,14 @@ export class MovieView extends React.Component {
             </Col>
           </Row>
 
-          <Row>
+          {/* <Row>
             <Col>
               <div className="movie-actors">
                 <span className="label">Actors: </span>
-                {/* <span className="value">{movie.actors}</span> */}
+                <span className="value">{movie.actors.name}</span>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </div>
 
         <div className="box-button">
