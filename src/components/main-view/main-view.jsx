@@ -13,13 +13,13 @@ import { GenreView } from '../genre-view/genre-view';
 import { Menubar } from '../navbar/navbar';
 import { ProfileView } from '../profile-view/profile-view';
 // #0 impot relevant actions
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 // we haven't written this one yet
 import MoviesList from '../movies-list/movies-list';
-/* 
-  #1 The rest of components import statements but without the MovieCard's 
+/*
+  #1 The rest of components import statements but without the MovieCard's
   because it will be imported and used in the MoviesList component rather
-  than in here. 
+  than in here.
 */
 
 import './main-view.scss';
@@ -29,13 +29,13 @@ import './main-view.scss';
 // #2 export keyword removed from here
 class MainView extends React.Component {
   // React will use this constructor method to create the component's state.
-  constructor() {
-    super(); // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor().
+  constructor(props) {
+    super(props); // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor().
     // #3 movies state removed from here
-    this.state = {
-      user: null,
-      movies: []
-    };
+    // this.state = {
+    //   user: null,
+    //   // movies: [],
+    // };
   }
 
   componentDidMount() {
@@ -45,9 +45,7 @@ class MainView extends React.Component {
       // then when it was taken out the user from the local storage, it was saved it into user (setState), but in the moment, user was not a user object, but only a usename
       const userString = localStorage.getItem('user');
       const user = JSON.parse(userString);
-      this.setState({
-        user,
-      });
+      this.props.setUser(user);
       this.getMovies(accessToken);
     }
   }
@@ -58,10 +56,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
       })
       .then((response) => {
-        this.setState({
-          // #4 change movies to setMovies
-          movies: response.data,
-        });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -83,8 +78,8 @@ class MainView extends React.Component {
   // Condensed code
   render() {
     // #5 movies is extracted from this.props rather than from this.state
-    let { movies } = this.state;
-    let { user } = this.state;
+    let { movies } = this.props;
+    let { user } = this.props;
 
     return (
       <Router>
@@ -103,7 +98,7 @@ class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              // #6 
+              // #6
               return <MoviesList movies={movies} />;
             }}
           />
@@ -253,5 +248,5 @@ let mapStateToProps = (state) => {
 };
 
 // #8
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
 
