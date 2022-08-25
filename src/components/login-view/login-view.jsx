@@ -69,7 +69,10 @@ export function LoginView(props) {
       <Row>
         <Col>
           <CardGroup>
-            <Card className="card-login" style={{ background: '#bae1db', marginBottom: '500px' }}>
+            <Card
+              className="card-login"
+              style={{ background: '#bae1db', marginBottom: '500px' }}
+            >
               <Card.Body className="mt-3">
                 <Card.Title
                   className="text-title-login"

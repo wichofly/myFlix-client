@@ -25,7 +25,7 @@ import MoviesList from '../movies-list/movies-list';
 import './main-view.scss';
 
 // You’re essentially telling React to create a new MainView component using the generic React.Component template as its foundation.
-// Exposing a component makes it available for use by other components, modules, and files.
+// Exposing a component makes it available for use by other components, modules, and files. (this is the old way to do it, now is more used function with the hooks)
 // #2 export keyword removed from here
 class MainView extends React.Component {
   // React will use this constructor method to create the component's state.
