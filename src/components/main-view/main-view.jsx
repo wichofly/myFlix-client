@@ -5,7 +5,7 @@ import { Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
+// import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { DirectorView } from '../director-view/director-view';
@@ -13,9 +13,9 @@ import { GenreView } from '../genre-view/genre-view';
 import { Menubar } from '../navbar/navbar';
 import { ProfileView } from '../profile-view/profile-view';
 // #0 impot relevant actions
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 // we haven't written this one yet
-import MoviesList from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list'; // In this file is setFilter action
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -29,13 +29,14 @@ import './main-view.scss';
 // #2 export keyword removed from here
 class MainView extends React.Component {
   // React will use this constructor method to create the component's state.
-  constructor() {
-    super(); // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor().
+  constructor(props) {
+    super(props); // initializes your component’s state, and without it, you’ll get an error if you try to use this.state inside constructor().
     // #3 movies state removed from here
-    this.state = {
-      user: null,
-      movies: []
-    };
+    // The code below will be run as props, not as a state, so it is unnecessary.
+    // this.state = {
+    //   user: null,
+    //   // movies: []
+    // };
   }
 
   componentDidMount() {
@@ -45,9 +46,11 @@ class MainView extends React.Component {
       // then when it was taken out the user from the local storage, it was saved it into user (setState), but in the moment, user was not a user object, but only a usename
       const userString = localStorage.getItem('user');
       const user = JSON.parse(userString);
-      this.setState({
-        user,
-      });
+      // It is not run as a state, but as props.
+      // this.setState({
+      //   user,
+      // });
+      this.props.setUser(user)
       this.getMovies(accessToken);
     }
   }
@@ -58,10 +61,12 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
       })
       .then((response) => {
-        this.setState({
-          // #4 change movies to setMovies
-          movies: response.data,
-        });
+        // It is not run as a state, but as props.
+        // this.setState({
+        //   // #4 change movies to setMovies
+        //   movies: response.data,
+        // });
+        this.props.setMovies(response.data)
       })
       .catch(function (error) {
         console.log(error);
@@ -83,8 +88,8 @@ class MainView extends React.Component {
   // Condensed code
   render() {
     // #5 movies is extracted from this.props rather than from this.state
-    let { movies } = this.state;
-    let { user } = this.state;
+    let { movies } = this.props;
+    let { user } = this.props;
 
     return (
       <Router>
@@ -253,5 +258,5 @@ let mapStateToProps = (state) => {
 };
 
 // #8
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
 
