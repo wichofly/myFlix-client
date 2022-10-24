@@ -14,6 +14,10 @@ Download the project code. Once you have it, run in the terminal `npm install` t
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+you can login with the next information:
+Username: testtest
+Password testtest
+
 ## Tech used  
 - React
 - React Bootstrap
