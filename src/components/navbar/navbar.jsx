@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export function Menubar({ user }) {
   const onLoggedOut = () => {
@@ -43,9 +44,9 @@ export function Menubar({ user }) {
           >
             {user
               ? isAuth() && (
-                  <Nav.Link href={`/users/${user.username}`}>
+                  <Link to={`/users/${user.username}`}>
                     {user.username}
-                  </Nav.Link>
+                  </Link>
                 )
               : null}
             {isAuth() && (
@@ -59,8 +60,8 @@ export function Menubar({ user }) {
                 Logout
               </Button>
             )}
-            {!isAuth() && <Nav.Link href="/">Login</Nav.Link>}
-            {!isAuth() && <Nav.Link href="/register">Register</Nav.Link>}
+            {!isAuth() && <Link to="/">Login</Link>}
+            {!isAuth() && <Link to="/register">Register</Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
