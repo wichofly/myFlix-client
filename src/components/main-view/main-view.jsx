@@ -16,10 +16,10 @@ import { ProfileView } from '../profile-view/profile-view';
 import { setMovies, setUser } from '../../actions/actions';
 // we haven't written this one yet
 import MoviesList from '../movies-list/movies-list'; // In this file is setFilter action
-/* 
-  #1 The rest of components import statements but without the MovieCard's 
+/*
+  #1 The rest of components import statements but without the MovieCard's
   because it will be imported and used in the MoviesList component rather
-  than in here. 
+  than in here.
 */
 
 import './main-view.scss';
@@ -83,6 +83,7 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', JSON.stringify(authData.user));
     this.getMovies(authData.token);
+    this.componentDidMount();
   }
 
   // Condensed code
@@ -108,7 +109,7 @@ class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              // #6 
+              // #6
               return <MoviesList movies={movies} />;
             }}
           />
