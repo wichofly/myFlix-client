@@ -31,7 +31,7 @@ export function Menubar({ user }) {
       <Container>
         <Navbar.Brand
           className="navbar-logo"
-          style={{ fontSize: '2rem', fontWeight: 'bold' }}
+          style={{ fontSize: "2rem", fontWeight: "bold" }}
           href="/"
         >
           myFlix
@@ -40,18 +40,20 @@ export function Menubar({ user }) {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
             // className="ml-auto"
-            style={{ textDecoration: 'none', fontSize: '1.5rem', marginLeft: 'auto' }}
+            style={{
+              textDecoration: "none",
+              fontSize: "1.5rem",
+              marginLeft: "auto",
+            }}
           >
             {user
               ? isAuth() && (
-                  <Link to={`/users/${user.username}`}>
-                    {user.username}
-                  </Link>
+                  <Link to={`/users/${user.username}`}>{user.username}</Link>
                 )
               : null}
             {isAuth() && (
               <Button
-                style={{ textDecoration: 'none', fontSize: '1.5rem' }}
+                style={{ textDecoration: "none", fontSize: "1.5rem" }}
                 variant="link"
                 onClick={() => {
                   onLoggedOut();
@@ -60,8 +62,16 @@ export function Menubar({ user }) {
                 Logout
               </Button>
             )}
-            {!isAuth() && <Link to="/">Login</Link>}
-            {!isAuth() && <Link to="/register">Register</Link>}
+            {!isAuth() && (
+              <Nav.Link>
+                <Link to="/">Login</Link>
+              </Nav.Link>
+            )}
+            {!isAuth() && (
+              <Nav.Link>
+                <Link to="/register">Register</Link>
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
