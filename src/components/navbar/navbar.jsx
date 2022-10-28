@@ -48,7 +48,11 @@ export function Menubar({ user }) {
           >
             {user
               ? isAuth() && (
-                  <Link to={`/users/${user.username}`}>{user.username}</Link>
+                  <Link to={`/users/${user.username}`}>
+                    <Nav.Link href={`/users/${user.username}`}>
+                      Profile
+                    </Nav.Link>
+                  </Link>
                 )
               : null}
             {isAuth() && (
@@ -63,14 +67,14 @@ export function Menubar({ user }) {
               </Button>
             )}
             {!isAuth() && (
-              <Nav.Link>
-                <Link to="/">Login</Link>
-              </Nav.Link>
+              <Link to="/">
+                <Nav.Link href="/">Login</Nav.Link>
+              </Link>
             )}
             {!isAuth() && (
-              <Nav.Link>
-                <Link to="/register">Register</Link>
-              </Nav.Link>
+              <Link to="/register">
+                <Nav.Link href="/register">Register</Nav.Link>
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>
