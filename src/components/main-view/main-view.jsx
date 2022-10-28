@@ -50,7 +50,7 @@ class MainView extends React.Component {
       // this.setState({
       //   user,
       // });
-      this.props.setUser(user)
+      this.props.setUser(user);
       this.getMovies(accessToken);
     }
   }
@@ -66,7 +66,7 @@ class MainView extends React.Component {
         //   // #4 change movies to setMovies
         //   movies: response.data,
         // });
-        this.props.setMovies(response.data)
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -83,6 +83,7 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', JSON.stringify(authData.user));
     this.getMovies(authData.token);
+    this.componentDidMount(); // With this code, as soon the user login goes direct to the main page witout click on the logo to get in to teh main page.
   }
 
   // Condensed code
@@ -108,7 +109,7 @@ class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              // #6 
+              // #6
               return <MoviesList movies={movies} />;
             }}
           />
@@ -259,4 +260,3 @@ let mapStateToProps = (state) => {
 
 // #8
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);
-

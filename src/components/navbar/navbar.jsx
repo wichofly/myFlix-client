@@ -66,16 +66,8 @@ export function Menubar({ user }) {
                 Logout
               </Button>
             )}
-            {!isAuth() && (
-              <Link to="/">
-                <Nav.Link href="/">Login</Nav.Link>
-              </Link>
-            )}
-            {!isAuth() && (
-              <Link to="/register">
-                <Nav.Link href="/register">Register</Nav.Link>
-              </Link>
-            )}
+            {!isAuth() && <Link to="/">Login</Link>}
+            {!isAuth() && <Link to="/register">Register</Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
