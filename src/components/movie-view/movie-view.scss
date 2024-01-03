@@ -25,7 +25,7 @@ $color4: #f8fafc;
 //   text-decoration: none;
 // }
 
-.movie-title{
+.movie-title {
   font-weight: 700;
   font-size: 40px;
   text-align: center;
@@ -45,23 +45,21 @@ $color4: #f8fafc;
 .box-two {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
   margin-top: 50px;
 }
 
 .box-three {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
   margin-top: 25px;
 }
 
-
 .box-button {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly; 
-  margin-top: 300px;
+  justify-content: space-evenly;
+  margin-top: 25px;
 }
 
 .btn-back {
