@@ -16,7 +16,7 @@ export class GenreView extends React.Component {
     const { genre, onBackClick } = this.props;
 
     return (
-      <Container>
+      <Container className='genre'>
         <div className="genre-view">
           <Row className="genre-name mt-3">
             <Col className="label">Genre:</Col>

@@ -4,6 +4,7 @@ $color3: #bae1db;
 $color4: #f8fafc;
 
 .director-view {
+  background: #0d9488;
   color: $color4;
   display: flex;
 }
@@ -18,7 +19,6 @@ $color4: #f8fafc;
   flex-direction: column;
 }
 
-.btn-back-director{
-  margin-top: 500px;
-  margin-bottom: 20px;
+.btn-back-director {
+  margin: 25px auto;
 }
