@@ -28,7 +28,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
 
   const getUser = () => {
     axios
-      .get(`https://wichoflix.herokuapp.com/users/${currentUser}`, {
+      .get(`https://wichoflix.onrender.com/users/${currentUser}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -44,7 +44,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
   };
 
   const removeFav = (id) => {
-    let url = `https://wichoflix.herokuapp.com/users/${localStorage.getItem(
+    let url = `https://wichoflix.onrender.com/users/${localStorage.getItem(
       'user'
     )}/movies/${id}`;
     axios.delete(url, {
@@ -58,7 +58,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
       ...user,
     };
     axios
-      .put(`https://wichoflix.herokuapp.com/users/${user.username}`, body, {
+      .put(`https://wichoflix.onrender.com/users/${user.username}`, body, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -68,7 +68,7 @@ export function ProfileView({ movies, onUpdateUserInfo, user }) {
 
   const deleteUser = () => {
     axios
-      .delete(`https://wichoflix.herokuapp.com/users/${user.username}`, {
+      .delete(`https://wichoflix.onrender.com/users/${user.username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

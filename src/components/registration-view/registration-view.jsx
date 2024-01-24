@@ -94,7 +94,7 @@ export function RegistrationView(props) {
     if (isReq) {
       // Send a POST request to /users endpoint to register & getting credentials
       axios
-        .post('https://wichoflix.herokuapp.com/users', {
+        .post('https://wichoflix.onrender.com/users', {
           username: username,
           password: password,
           email: email,

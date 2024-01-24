@@ -57,7 +57,7 @@ class MainView extends React.Component {
 
   getMovies(token) {
     axios
-      .get('https://wichoflix.herokuapp.com/movies', {
+      .get('https://wichoflix.onrender.com/movies', {
         headers: { Authorization: `Bearer ${token}` }, // By passing bearer authorization in the header of your HTTP requests, I can make authenticated requests to my API.
       })
       .then((response) => {

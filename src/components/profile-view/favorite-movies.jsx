@@ -8,7 +8,7 @@ import './profile-view.scss';
 function FavoriteMovies({ favoriteMovieList, user, updateFavoriteMovieList }) {
   const removeFav = (id) => {
     let token = localStorage.getItem('token');
-    let url = `https://wichoflix.herokuapp.com/users/${user.username}/movies/${id}`;
+    let url = `https://wichoflix.onrender.com/users/${user.username}/movies/${id}`;
     axios
       .delete(url, {
         headers: { Authorization: `Bearer ${token}` },

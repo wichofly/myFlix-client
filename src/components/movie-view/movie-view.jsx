@@ -33,7 +33,7 @@ export class MovieView extends React.Component {
     const { user, movie } = this.props;
     axios
       .post(
-        `https://wichoflix.herokuapp.com/users/${user.username}/movies/${movie._id}`,
+        `https://wichoflix.onrender.com/users/${user.username}/movies/${movie._id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -55,7 +55,7 @@ export class MovieView extends React.Component {
 
     axios
       .delete(
-        `https://wichoflix.herokuapp.com/users/${user.username}/movies/${movie._id}`,
+        `https://wichoflix.onrender.com/users/${user.username}/movies/${movie._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

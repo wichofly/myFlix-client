@@ -48,7 +48,7 @@ export function LoginView(props) {
     if (isReq) {
       /* Send a request to the server for authentication */
       axios
-        .post('https://wichoflix.herokuapp.com/login', {
+        .post('https://wichoflix.onrender.com/login', {
           // they should be like my API objects with the first letter lowercase
           username: username,
           password: password,
